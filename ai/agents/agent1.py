@@ -27,7 +27,7 @@ def get_position_analyst():
 
         _position_analyst = Agent(
             model="google-gla:gemini-1.5-pro",
-            result_type=PositionProfile,
+            output_type=PositionProfile,
             system_prompt=_SYSTEM_PROMPT,
         )
     return _position_analyst

@@ -35,7 +35,7 @@ def get_advisor():
 
         _advisor = Agent(
             model="google-gla:gemini-1.5-pro",
-            result_type=AdvisorReport,
+            output_type=AdvisorReport,
             deps_type=OrchestratorDeps,
             system_prompt=_SYSTEM_PROMPT,
         )

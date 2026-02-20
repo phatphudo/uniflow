@@ -26,7 +26,7 @@ def get_interview_coach():
 
         _interview_coach = Agent(
             model="google-gla:gemini-1.5-pro",
-            result_type=InterviewResult,
+            output_type=InterviewResult,
             system_prompt=_SYSTEM_PROMPT,
         )
     return _interview_coach
