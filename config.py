@@ -24,7 +24,9 @@ class Settings(BaseSettings):
        'google-gla:gemini-1.5-pro'   (Google Gemini via Generative Language API)
        'openai:gpt-4o'               (OpenAI)
     """
-
+    # -- TTS and STT Agents ────────────────────────────────────────────────────
+    agent3_model: str = "openai:gpt-4o-tts"
+    
     # ── API Keys ────────────────────────────────────────────────────────────────
     openai_api_key: str = ""
     """Required when ai_model starts with 'openai:'."""

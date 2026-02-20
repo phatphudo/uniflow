@@ -12,7 +12,8 @@ from __future__ import annotations
 from ai.prompts import load_prompt
 from config import settings
 from schemas.agent3 import InterviewResult, StarScores
-
+from pydantic_ai import Agent
+from pydantic import BaseModel, Field
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
 
@@ -23,15 +24,40 @@ def get_interview_coach():
     """Return the PydanticAI Interview Coach agent, creating it on first call."""
     global _interview_coach
     if _interview_coach is None:
-        from pydantic_ai import Agent
 
         _interview_coach = Agent(
-            model=settings.ai_model,
+            model=settings.agent3_model,
             output_type=InterviewResult,
             system_prompt=_SYSTEM_PROMPT,
         )
     return _interview_coach
 
+class StarScores(BaseModel):
+    situation: int = Field(..., ge=0, le=25)
+    task: int = Field(..., ge=0, le=25)
+    action: int = Field(..., ge=0, le=25)
+    result: int = Field(..., ge=0, le=25)
+
+    @property
+    def total(self) -> int:
+        return self.situation + self.task + self.action + self.result
+    
+class InterviewResult(BaseModel):
+    question: str
+    student_answer: str
+    star_scores: StarScores
+    strengths: list[str]
+    improvements: list[str]
+    stronger_closing: str
+
+    @property
+    def result(self):
+        return {
+            "star_scores.total": self.star_scores.total,
+            "strengths": self.strengths,
+            "improvements": self.improvements,
+            "stronger_closing": self.stronger_closing,
+        }
 
 # ── Phase 1 mock ──────────────────────────────────────────────────────────────
 MOCK_INTERVIEW_RESULT = InterviewResult(
@@ -62,3 +88,4 @@ MOCK_INTERVIEW_RESULT = InterviewResult(
         "doubling down on the initiative in Q4.'"
     ),
 )
+print(MOCK_INTERVIEW_RESULT.result)
