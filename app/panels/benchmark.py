@@ -1,0 +1,66 @@
+"""
+app/panels/benchmark.py — Panel 1: Resume Benchmark.
+
+render_benchmark(gap_report) renders the readiness score gauge,
+matched/missing skill badges, and the top-gap highlight card.
+"""
+
+import streamlit as st
+
+from schemas.agent2 import GapReport
+
+
+def render_benchmark(gap: GapReport) -> None:
+    """Render the Resume Benchmark panel into the current Streamlit column."""
+    st.markdown("## 📊 Resume Benchmark")
+    score = gap.benchmark_score
+
+    matched_badges = "".join(
+        f'<span class="badge badge-matched" style="margin:2px">{s}</span>'
+        for s in gap.matched_skills
+    )
+    missing_badges = "".join(
+        f'<span class="badge badge-missing" style="margin:2px">{s}</span>'
+        for s in gap.missing_skills
+    )
+
+    st.markdown(
+        f"""
+<div class="uniflow-card">
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+        <div>
+            <div style="font-size:0.8rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em;">Readiness Score</div>
+            <div class="score-big">{score}</div>
+            <div style="font-size:0.85rem;color:#94a3b8;">out of 100</div>
+        </div>
+        <div style="flex:1;">
+            <div style="background:#1e293b;border-radius:9999px;height:12px;overflow:hidden;">
+                <div style="width:{score}%;height:12px;border-radius:9999px;
+                            background:linear-gradient(90deg,#6366f1,#a78bfa);
+                            transition:width 1s ease;"></div>
+            </div>
+            <div style="margin-top:0.5rem;font-size:0.8rem;color:#64748b;">
+                Target: <b style="color:#a78bfa">100</b> ·
+                Current: <b style="color:#6366f1">{score}</b>
+            </div>
+        </div>
+    </div>
+    <hr style="border-color:rgba(99,102,241,0.2);margin:1rem 0;">
+    <div>
+        <div style="font-size:0.75rem;color:#94a3b8;margin-bottom:0.5rem;">MATCHED SKILLS</div>
+        {matched_badges}
+    </div>
+    <div style="margin-top:0.75rem;">
+        <div style="font-size:0.75rem;color:#94a3b8;margin-bottom:0.5rem;">MISSING SKILLS</div>
+        {missing_badges}
+    </div>
+    <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(239,68,68,0.08);
+                border-radius:10px;border-left:3px solid #f87171;">
+        <div style="font-size:0.7rem;color:#f87171;text-transform:uppercase;font-weight:600;">Top Gap</div>
+        <div style="color:#fca5a5;font-weight:500;margin-top:2px;">{gap.top_gap}</div>
+        <div style="color:#94a3b8;font-size:0.8rem;margin-top:4px;">{gap.top_gap_evidence}</div>
+    </div>
+</div>
+""",
+        unsafe_allow_html=True,
+    )
