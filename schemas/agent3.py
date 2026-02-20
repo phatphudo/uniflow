@@ -19,3 +19,13 @@ class InterviewResult(BaseModel):
     strengths: list[str]
     improvements: list[str]
     stronger_closing: str
+
+    @property
+    def result(self):
+        return {
+            "star_scores.total": self.star_scores.total,
+            "strengths": self.strengths,
+            "improvements": self.improvements,
+            "stronger_closing": self.stronger_closing,
+        }
+
