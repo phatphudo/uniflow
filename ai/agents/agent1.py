@@ -10,6 +10,7 @@ The agent is created lazily so Phase 1 works without a GOOGLE_API_KEY set.
 from __future__ import annotations
 
 from ai.prompts import load_prompt
+from config import settings
 from schemas.agent1 import PositionProfile
 
 # Loaded from disk — edit ai/prompts/agent1_position_analyst.md to tune the prompt.
@@ -26,7 +27,7 @@ def get_position_analyst():
         from pydantic_ai import Agent
 
         _position_analyst = Agent(
-            model="google-gla:gemini-1.5-pro",
+            model=settings.ai_model,
             output_type=PositionProfile,
             system_prompt=_SYSTEM_PROMPT,
         )

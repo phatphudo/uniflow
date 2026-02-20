@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 
 from ai.agents.deps import OrchestratorDeps
 from ai.prompts import load_prompt
+from config import settings
 from schemas.agent2 import (
     AdvisorReport,
     CourseRecommendation,
@@ -34,7 +35,7 @@ def get_advisor():
         from pydantic_ai import Agent, RunContext
 
         _advisor = Agent(
-            model="google-gla:gemini-1.5-pro",
+            model=settings.ai_model,
             output_type=AdvisorReport,
             deps_type=OrchestratorDeps,
             system_prompt=_SYSTEM_PROMPT,

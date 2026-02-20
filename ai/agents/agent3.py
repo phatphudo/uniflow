@@ -10,6 +10,7 @@ Agent is created lazily so Phase 1 works without API keys.
 from __future__ import annotations
 
 from ai.prompts import load_prompt
+from config import settings
 from schemas.agent3 import InterviewResult, StarScores
 
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
@@ -25,7 +26,7 @@ def get_interview_coach():
         from pydantic_ai import Agent
 
         _interview_coach = Agent(
-            model="google-gla:gemini-1.5-pro",
+            model=settings.ai_model,
             output_type=InterviewResult,
             system_prompt=_SYSTEM_PROMPT,
         )
