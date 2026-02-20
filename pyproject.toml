@@ -15,5 +15,6 @@ dependencies = [
     "pydantic-ai>=1.62.0",
     "python-dotenv>=1.2.1",
     "sentence-transformers>=5.2.3",
+    "sounddevice>=0.5.5",
     "streamlit>=1.54.0",
 ]

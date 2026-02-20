@@ -9,10 +9,18 @@ Agent is created lazily so Phase 1 works without API keys.
 
 from __future__ import annotations
 
+from pathlib import Path
+import wave
+import sounddevice as sd
 from ai.prompts import load_prompt
 from config import settings
 from schemas.agent3 import InterviewResult, StarScores
+from openai import OpenAI
 from pydantic_ai import Agent
+import asyncio
+import time
+import threading
+
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
 
@@ -25,12 +33,81 @@ def get_interview_coach():
     if _interview_coach is None:
 
         _interview_coach = Agent(
-            model=settings.agent3_model,
+            model=settings.ai_model,
             output_type=InterviewResult,
             system_prompt=_SYSTEM_PROMPT,
         )
     return _interview_coach
 
+def _write_pcm16_wav(path: Path, frames, sample_rate: int, channels: int) -> None:
+    """Persist int16 PCM frames to a WAV file."""
+    with wave.open(str(path), "wb") as wav_file:
+        wav_file.setnchannels(channels)
+        wav_file.setsampwidth(2)  # int16
+        wav_file.setframerate(sample_rate)
+        wav_file.writeframes(frames.tobytes())
+
+
+async def record_student_answer(
+    filename: str,
+    *,
+    duration_seconds: float = 5.0, #Adjust longer for longer answers
+    sample_rate: int = 16_000,
+    channels: int = 1,
+) -> Path:
+    """Record a student's answer from the default input device and save as WAV."""
+    if duration_seconds <= 0:
+        raise ValueError("duration_seconds must be > 0")
+    if sample_rate <= 0:
+        raise ValueError("sample_rate must be > 0")
+    if channels <= 0:
+        raise ValueError("channels must be > 0")
+
+    output_path = Path(filename).expanduser().resolve()
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        recording = sd.rec(
+            int(duration_seconds * sample_rate),
+            samplerate=sample_rate,
+            channels=channels,
+            dtype="int16",
+        )
+        sd.wait()
+    except Exception as exc:
+        raise RuntimeError(f"Failed to record audio: {exc}") from exc
+
+    _write_pcm16_wav(output_path, recording, sample_rate, channels)
+    return output_path
+
+
+def transcribe_student_answer(
+    audio_path: str = "student_answer.wav",
+    *,
+    model: str | None = None,
+) -> str:
+    """Transcribe a WAV/MP3 file into text using OpenAI STT."""
+    input_path = Path(audio_path).expanduser().resolve()
+    if not input_path.exists():
+        raise FileNotFoundError(f"Audio file not found: {input_path}")
+    if input_path.stat().st_size == 0:
+        raise ValueError(f"Audio file is empty: {input_path}")
+
+    api_key = settings.openai_api_key
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
+
+    client = OpenAI(api_key=api_key)
+    with input_path.open("rb") as audio_file:
+        transcription = client.audio.transcriptions.create(
+            model=model or settings.stt_model,
+            file=audio_file,
+        )
+
+    text = (transcription.text or "").strip()
+    if not text:
+        raise RuntimeError("Transcription returned empty text.")
+    return transcription.text
 
 # ── Phase 1 mock ──────────────────────────────────────────────────────────────
 MOCK_INTERVIEW_RESULT = InterviewResult(
@@ -61,3 +138,13 @@ MOCK_INTERVIEW_RESULT = InterviewResult(
         "doubling down on the initiative in Q4.'"
     ),
 )
+
+async def _demo() -> None:
+    result = await get_interview_coach().run(MOCK_INTERVIEW_RESULT.model_dump_json())
+    print(result.output)  # parsed InterviewResult
+
+if __name__ == "__main__":
+    print("Recorded student answer")
+    asyncio.run(record_student_answer("student_answer.wav"))
+    print("Recoding done")
+    print(transcribe_student_answer("student_answer.wav"))
