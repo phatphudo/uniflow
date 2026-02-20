@@ -81,15 +81,24 @@ uv sync
 
 ## Environment Variables
 
-Copy the example below into a `.env` file at the project root and fill in your keys:
+All settings are managed via [`config.py`](config.py) using **pydantic-settings**.
+
+Create your local `.env` from the provided example:
 
 ```bash
-# .env
-GOOGLE_API_KEY=your_google_gemini_api_key
-SERPER_API_KEY=your_serper_api_key          # for live event search (Phase 4)
+cp .env.example .env
 ```
 
-> **Phase 1 note:** The app currently runs entirely with mock data — no API keys are required to launch and explore the UI.
+Then open `.env` and fill in the values you need:
+
+| Variable | Required for | Where to get it |
+|---|---|---|
+| `AI_MODEL` | All phases | Set to `google-gla:gemini-1.5-pro` (default) or `openai:gpt-4o` |
+| `GOOGLE_API_KEY` | AI_MODEL = `google-gla:*` | [Google AI Studio](https://aistudio.google.com/apikey) |
+| `OPENAI_API_KEY` | AI_MODEL = `openai:*` | [OpenAI Platform](https://platform.openai.com/api-keys) |
+| `SERPER_API_KEY` | Phase 4+ (live events) | [Serper](https://serper.dev) |
+
+> **Phase 1 note:** The app runs entirely with mock data out of the box — no API keys are required to launch and explore the UI.
 
 ---
 
