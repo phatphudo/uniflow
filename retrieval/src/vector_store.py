@@ -1,7 +1,7 @@
 import chromadb, os
 from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
 import json
-from src.utils import Chunk
+from schemas.retrieval import Chunk
 def get_collection():
     embedding_fn = OpenAIEmbeddingFunction(
         api_key=os.getenv("OPENAI_API_KEY"),
