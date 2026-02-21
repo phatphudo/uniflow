@@ -29,3 +29,6 @@ class InterviewResult(BaseModel):
             "stronger_closing": self.stronger_closing,
         }
 
+class Agent3Input(BaseModel):
+    student_answer: str
+    
