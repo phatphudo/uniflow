@@ -9,7 +9,9 @@ Usage anywhere in the project:
 """
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -19,14 +21,17 @@ class Settings(BaseSettings):
     )
 
     # ── LLM ────────────────────────────────────────────────────────────────────
-    ai_model: str = "google-gla:gemini-1.5-pro"
+    ai_model: str = "openai:gpt-4o"
     """PydanticAI model string. Examples:
        'google-gla:gemini-1.5-pro'   (Google Gemini via Generative Language API)
        'openai:gpt-4o'               (OpenAI)
     """
-
+    # -- TTS and STT Agents ────────────────────────────────────────────────────
+    agent3_model: str = "openai:gpt-4o-tts"
+    stt_model: str = "gpt-4o-mini-transcribe"
+    
     # ── API Keys ────────────────────────────────────────────────────────────────
-    openai_api_key: str = ""
+    openai_api_key: str = os.getenv("OPENAI_API_KEY")
     """Required when ai_model starts with 'openai:'."""
 
     serper_api_key: str = ""
