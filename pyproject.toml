@@ -13,6 +13,7 @@ dependencies = [
     "openai>=2.21.0",
     "pdfplumber>=0.11.9",
     "pydantic-ai>=1.62.0",
+    "pydantic-settings>=2.6.0",
     "python-dotenv>=1.2.1",
     "sentence-transformers>=5.2.3",
     "sounddevice>=0.5.5",

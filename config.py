@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     )
 
     # ── LLM ────────────────────────────────────────────────────────────────────
-    ai_model: str = "openai:gpt-4o"
+    ai_model: str = os.getenv("AI_MODEL")
     """PydanticAI model string. Examples:
        'google-gla:gemini-1.5-pro'   (Google Gemini via Generative Language API)
        'openai:gpt-4o'               (OpenAI)
@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     # -- TTS and STT Agents ────────────────────────────────────────────────────
     agent3_model: str = "openai:gpt-4o-tts"
     stt_model: str = "gpt-4o-mini-transcribe"
-    
+
     # ── API Keys ────────────────────────────────────────────────────────────────
     openai_api_key: str = os.getenv("OPENAI_API_KEY")
     """Required when ai_model starts with 'openai:'."""
