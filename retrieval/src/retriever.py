@@ -1,6 +1,6 @@
 from pydantic_ai import Agent
 from src.vector_store import query as chroma_query
-from c0nfig import settings
+from config import settings
 agent =Agent(
     model=settings.LLM_MODEL,
     system_prompt="You are a helpful assistant for retrieving relevant information from a vector database based on user queries. You will receive a user query and return the most relevant information from the database.",
