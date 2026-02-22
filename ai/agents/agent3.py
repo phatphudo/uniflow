@@ -23,8 +23,9 @@ from schemas.agent3 import Agent3Input
 
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
-_GENERATE_QUESTION_PROMPT = load_prompt("generate_question")
+
 _interview_coach = None
+
 
 def get_interview_coach():
     """Return the PydanticAI Interview Coach agent, creating it on first call."""
@@ -38,16 +39,7 @@ def get_interview_coach():
         )
     return _interview_coach
 
-def get_question_generator():
-    """Return the Agent 3 question generator, creating it on first call."""
-    global _question_generator
-    if _question_generator is None:
-        _question_generator = Agent(
-            model=settings.ai_model,
-            output_type=InterviewResult,
-            system_prompt=_GENERATE_QUESTION_PROMPT,
-        )
-    return _question_generator
+
 
 def _write_pcm16_wav(path: Path, frames, sample_rate: int, channels: int) -> None:
     """Persist int16 PCM frames to a WAV file."""
@@ -133,6 +125,104 @@ async def receive_student_answer(filename: str,
     )
     return transcribe_student_answer(str(output_path))
 
+# ── Mock pipeline helpers ─────────────────────────────────────────────────────
+MOCK_STUDENT_ANSWER = (
+    "During my internship, our team had conflicting requests from design and sales "
+    "for the roadmap. I was responsible for prioritization. I built a scorecard with "
+    "impact and effort, aligned stakeholders in a working session, and proposed a plan. "
+    "We shipped the top 3 features and improved weekly active users by 11%."
+)
+
+
+def _mock_star_score(student_answer: str) -> StarScores:
+    """Rule-based STAR scoring for local mock runs (no model call)."""
+    text = student_answer.lower()
+
+    # Situation: context cues
+    situation = 10
+    if any(k in text for k in ("during", "at my", "team", "project", "internship")):
+        situation += 8
+    if len(student_answer) > 200:
+        situation += 3
+
+    # Task: ownership cues
+    task = 8
+    if any(k in text for k in ("i was responsible", "my role", "owned", "responsible")):
+        task += 10
+
+    # Action: concrete verbs
+    action = 8
+    action_hits = sum(
+        1
+        for k in ("built", "analyzed", "aligned", "proposed", "implemented", "led")
+        if k in text
+    )
+    action += min(action_hits * 3, 12)
+
+    # Result: measurable outcomes
+    result = 6
+    if any(k in text for k in ("%","increased","reduced","improved","grew","saved")):
+        result += 14
+    if any(k in text for k in ("users", "revenue", "retention", "nps", "conversion")):
+        result += 4
+
+    # Clamp to schema range
+    return StarScores(
+        situation=max(0, min(25, situation)),
+        task=max(0, min(25, task)),
+        action=max(0, min(25, action)),
+        result=max(0, min(25, result)),
+    )
+
+
+def run_mock_agent3_pipeline(student_answer: str | None = None) -> InterviewResult:
+    """
+    Local mock of Agent 3 pipeline:
+    1) use mock student profile/context
+    2) get (mock) student answer
+    3) return STAR-style judged InterviewResult
+    """
+    _ = MOCK_AGENT3_INPUT.position_profile  # mock profile/context source
+    question = MOCK_GENERATED_QUESTION.question
+    answer = student_answer or MOCK_STUDENT_ANSWER
+    score = _mock_star_score(answer)
+
+    strengths: list[str] = []
+    improvements: list[str] = []
+
+    if score.situation >= 16:
+        strengths.append("Context is clear and grounded in a real scenario.")
+    else:
+        improvements.append("Make the Situation more specific (team, timeline, constraints).")
+
+    if score.task >= 16:
+        strengths.append("Your personal ownership and responsibility are explicit.")
+    else:
+        improvements.append("Clarify your exact task and scope of ownership.")
+
+    if score.action >= 16:
+        strengths.append("Actions are concrete and show decision-making.")
+    else:
+        improvements.append("Describe your actions step-by-step with concrete methods.")
+
+    if score.result >= 16:
+        strengths.append("Result includes measurable impact.")
+    else:
+        improvements.append("Add measurable outcomes (%, KPI change, business impact).")
+
+    return InterviewResult(
+        question=question,
+        student_answer=answer,
+        star_scores=score,
+        strengths=strengths or ["Solid baseline answer structure."],
+        improvements=improvements,
+        stronger_closing=(
+            "A stronger close: 'The prioritized roadmap shipped in 6 weeks and "
+            "improved weekly active users by 11%, and I reused the framework for the "
+            "next planning cycle.'"
+        ),
+    )
+
 
 
 
@@ -198,5 +288,5 @@ if __name__ == "__main__":
     # print("Recoding done")
     # print(transcribe_student_answer("student_answer.wav"))
     # #Record the answer -> Transcript it -> pass it to AI -> AI judging
-    print("demo")
-    asyncio.run(_demo())
+    print("demo mock pipeline")
+    print(run_mock_agent3_pipeline().model_dump_json(indent=2))
