@@ -1,0 +1,2442 @@
+[
+  {
+    "course_id": "APP-101",
+    "title": "How To Tell Your Story: Cornerstone Course I",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Weaves together the art of writing with the principles of design thinking to explore the transformative power of story in both self-discovery and academic discourse. Covers the multifaceted process of writing, from brainstorming and outlining to drafting, revising, and editing. Emphasizes thesis statements, persuasive arguments, and integration of evidence. Digital tools including AI are embraced throughout.",
+    "skills_taught": ["Academic writing", "Design thinking", "Thesis development", "Persuasive argumentation", "AI tools", "Self-narrative"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-102",
+    "title": "How to Design Your Life: A Journey Through Personal Epistemology",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Empowers students to become the architect of their own life by critically examining beliefs, values, and assumptions. Covers eight essential life domains: physical health, mental health, spiritual health, relationships, finances, play, growth, and career. Applies design thinking principles. Culminates in a personalized four-year life plan.",
+    "skills_taught": ["Design thinking", "Critical thinking", "Self-inquiry", "Life planning", "Empathy", "Ideation", "Prototyping"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-103",
+    "title": "How to Communicate in a Global Context",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Delves into the complexities of communication in a globalized world, examining cultural nuances, technological advancements, and cross-cultural communication strategies. Covers public speaking, written communication, visual communication, and debate in varied cultural settings.",
+    "skills_taught": ["Public speaking", "Written communication", "Visual communication", "Debate", "Cross-cultural communication", "Intercultural collaboration"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-104",
+    "title": "How to Lead: Transforming Insights from History into Modern Movements",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Comprehensive exploration of modern leadership theories, contemporary approaches, and timeless lessons from influential leaders. Analyzes case studies and social movements. Final project involves designing a movement and creating a model campaign.",
+    "skills_taught": ["Leadership", "Case study analysis", "Campaign design", "Strategic thinking", "Movement building"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-201",
+    "title": "How to Use Math in Real Life: The Mathematical Mindsets that Shape Our World",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Explores mathematics as a flexible, conceptual, and creative way of thinking. Covers quantitative reasoning, linear equations, data analysis, and social justice applications of math. Emphasizes mathematical mindsets, productive struggle, and ethical dimensions of mathematical applications.",
+    "skills_taught": ["Quantitative reasoning", "Data analysis", "Linear equations", "Mathematical modeling", "Critical analysis", "Problem-solving"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-202",
+    "title": "How Your Brain Works",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Blends foundational neuroscience with applied psychology. Covers brain structures, cognitive processes (attention, memory, learning agility), habits, and decision-making. Students design and conduct personal experiments to test learning strategies and build better habits.",
+    "skills_taught": ["Neuroscience fundamentals", "Metacognition", "Habit formation", "Learning strategies", "Reflective writing", "Experimental design"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-203",
+    "title": "How to \"Be Creative\" in Partnership with Computation & Machine Learning",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Explores the evolving relationship between human and computational creativity. Covers cognitive and emotional factors influencing creativity, hands-on experimentation with generative tools and machine learning, and 360-degree feedback on creative products.",
+    "skills_taught": ["Creative thinking", "Generative AI tools", "Machine learning basics", "Design", "Feedback and iteration", "Creative problem-solving"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-204",
+    "title": "How to Use Data Science & Game Thinking for Social Impact",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Navigates the intersection of data science, game theory, and social sciences to tackle societal challenges. Covers systems thinking, data modeling, research methods, and ethical implications. Final project involves creating a framework addressing a critical social challenge.",
+    "skills_taught": ["Data science", "Game theory", "Systems thinking", "Data modeling", "Research methods", "Critical problem-solving"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-301",
+    "title": "How Can We Thrive? Scientific Inquiry & the Future of Sustainability (Collective Capstone)",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Examines Earth's sustainability through physical and biological sciences. Applies systems thinking to environmental integrity, economic viability, and social equity. Covers renewable energy, sustainable materials, circular economy, bio-inspired design, climate change, nanotechnology, and sustainable agriculture.",
+    "skills_taught": ["Systems thinking", "Scientific inquiry", "Sustainability analysis", "Prototype development", "Interdisciplinary research"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "APP-302",
+    "title": "How to Design Social Innovation/Impact Solutions to Thrive | SFBU Capstone",
+    "department": "Agility Praxis Pathway",
+    "credits": 3,
+    "description": "Guides students through the design thinking process: user research, problem definition, ideation, and prototyping. Offers a social impact entrepreneurship pathway including support to launch an LLC or 501(c)3. Integrates social impact, business administration, and wellness.",
+    "skills_taught": ["Design thinking", "User research", "Prototyping", "Entrepreneurship", "Social impact strategy", "Business planning"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-100",
+    "title": "English Structure and Composition",
+    "department": "English",
+    "credits": 0,
+    "description": "Focuses on structural components of academic writing: parts of speech, sentence types, parallelism, word usage, punctuation, unity, coherence, and structure of paragraphs and standard academic essays.",
+    "skills_taught": ["Grammar", "Sentence structure", "Punctuation", "Academic writing", "Paragraph writing"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-101",
+    "title": "Expository Writing",
+    "department": "English",
+    "credits": 3,
+    "description": "Fundamental college writing course covering mechanics of communication and informative writing. Students enhance skills through prewriting, organizing, drafting, revising, and editing expository essays. Covers grammar, sentence structure, punctuation, and persuasive writing.",
+    "skills_taught": ["Expository writing", "Persuasive writing", "Grammar", "Essay organization", "Editing and revision"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-102",
+    "title": "Critical Thinking",
+    "department": "English",
+    "credits": 3,
+    "description": "Focuses on becoming an effective provider and consumer of ideas. Students learn to identify message intent, judge argument soundness, and evaluate evidence validity. Covers clear, impartial problem-solving and decision-making across speaking, writing, debating, and persuading.",
+    "skills_taught": ["Critical thinking", "Argument analysis", "Evidence evaluation", "Decision-making", "Logical reasoning"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-115",
+    "title": "Public Speaking",
+    "department": "English",
+    "credits": 3,
+    "description": "Develops effective skills in extemporaneous speaking, formal presentations, and listening. Covers nonverbal communication, cultural differences in communication, and research methodology.",
+    "skills_taught": ["Public speaking", "Presentation skills", "Nonverbal communication", "Active listening", "Research methodology"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-220",
+    "title": "Small Group Communication",
+    "department": "English",
+    "credits": 3,
+    "description": "Covers theories and principles of small group decision-making and problem-solving. Provides hands-on experience working in small groups and opportunities to observe real-life task-oriented groups.",
+    "skills_taught": ["Group communication", "Decision-making", "Problem-solving", "Team collaboration", "Leadership in groups"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-320",
+    "title": "Intercultural Communication",
+    "department": "English",
+    "credits": 3,
+    "description": "Introduces theories and practices regarding intercultural relationships and communication. Helps students adapt to a diverse workforce. Covers forces that shape cultures and influence intercultural contacts.",
+    "skills_taught": ["Intercultural communication", "Cultural awareness", "Relationship building", "Diversity adaptation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ENGL-425",
+    "title": "Modern American Literature",
+    "department": "English",
+    "credits": 3,
+    "description": "Examines fiction and nonfiction by American authors in the 20th and 21st centuries. Covers themes, styles, and genres including drama, action, and science fiction. Requires critical analysis of essays on various readings.",
+    "skills_taught": ["Literary analysis", "Critical thinking", "Essay writing", "Cultural analysis", "Genre study"],
+    "prerequisites": ["ENGL-101"],
+    "open_seats": null
+  },
+  {
+    "course_id": "HU-210",
+    "title": "Introduction to Philosophy",
+    "department": "Humanities",
+    "credits": 3,
+    "description": "Introduction to great questions of philosophy using a historical approach. Covers Western and non-Western traditions from pre-Socratic and Confucian times to modern times.",
+    "skills_taught": ["Philosophical reasoning", "Historical analysis", "Critical thinking", "Comparative philosophy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HU-230",
+    "title": "Art Appreciation",
+    "department": "Humanities",
+    "credits": 3,
+    "description": "Crash course in Western art aesthetics from ancient art to post-modernism. Provides historical Western art background with comparisons to the East and tools to analyze paintings from one's own cultural point of view.",
+    "skills_taught": ["Art analysis", "Art history", "Aesthetic evaluation", "Cultural comparison"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HU-240",
+    "title": "Music Appreciation",
+    "department": "Humanities",
+    "credits": 3,
+    "description": "Explores fundamentals of music through easy-listening examples covering tone, color, harmony, rhythm, mood, dynamics, tempo, themes, and forms. Students analyze music with respect to historical and cultural context.",
+    "skills_taught": ["Music analysis", "Music history", "Cultural context analysis", "Listening skills"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HU-280",
+    "title": "Principles of Ethics",
+    "department": "Humanities",
+    "credits": 3,
+    "description": "Reveals ethical principles and problems applicable to students' lives. Covers application of ethical principles, philosophical background of ethics, ethical practices, and practical ethical problems and solutions.",
+    "skills_taught": ["Ethical reasoning", "Philosophical analysis", "Moral decision-making", "Applied ethics"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HU-420",
+    "title": "Critical Analysis of Film",
+    "department": "Humanities",
+    "credits": 3,
+    "description": "Examines the impact of film on society and vice versa. Students review, critique, and analyze films. Covers content, meaning, history, and culture of American and foreign films across various genres and film movements.",
+    "skills_taught": ["Film analysis", "Critical thinking", "Cultural analysis", "Genre study", "Media criticism"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HU-450",
+    "title": "Information Literacy for Academics, Life, and the Workplace",
+    "department": "Humanities",
+    "credits": 3,
+    "description": "Teaches students to read, evaluate, and understand newspapers, magazines, websites, journalistic materials, business writing, and journals. Students learn to evaluate bias, propaganda, agenda, point-of-view, and misinformation.",
+    "skills_taught": ["Information literacy", "Bias detection", "Source evaluation", "Media literacy", "Research synthesis"],
+    "prerequisites": ["ENGL-101"],
+    "open_seats": null
+  },
+  {
+    "course_id": "MATH-201",
+    "title": "Calculus I",
+    "department": "Mathematics",
+    "credits": 3,
+    "description": "First course in calculus series. Covers functions, limits, continuous functions, derivatives and applications, antiderivatives, composite functions and chain rules, graphing techniques, implicit differentiation, finite integrals, and fundamental theorems of calculus.",
+    "skills_taught": ["Differentiation", "Integration", "Limits", "Graphing", "Chain rule", "Implicit differentiation"],
+    "prerequisites": ["Pre-calculus"],
+    "open_seats": null
+  },
+  {
+    "course_id": "MATH-202",
+    "title": "Calculus II",
+    "department": "Mathematics",
+    "credits": 3,
+    "description": "Second calculus course covering integration techniques and differentiation of functions of multiple variables. Topics include logarithmic and exponential functions, inverse trigonometric functions, L'Hopital's rule, integration techniques, sequences, series, partial derivatives, and improper integrals.",
+    "skills_taught": ["Integration techniques", "Series and sequences", "Partial derivatives", "Exponential functions", "L'Hopital's rule"],
+    "prerequisites": ["MATH-201"],
+    "open_seats": null
+  },
+  {
+    "course_id": "MATH-203",
+    "title": "Linear Algebra",
+    "department": "Mathematics",
+    "credits": 3,
+    "description": "Covers linear algebra from geometric representation of systems to abstract ideas such as singular value decomposition. Relevant to computer science and data science students. Topics include systems of equations, vector spaces, matrices, and transformations.",
+    "skills_taught": ["Matrix operations", "Vector spaces", "Linear transformations", "Singular value decomposition", "Abstract algebra"],
+    "prerequisites": ["MATH-201"],
+    "open_seats": null
+  },
+  {
+    "course_id": "MATH-208",
+    "title": "Probability and Statistics",
+    "department": "Mathematics",
+    "credits": 3,
+    "description": "Covers concepts, theory, and applications of probability and statistics. Topics include permutation, combination, random variables, distribution, means and variance, normal distribution, random sampling, estimation, confidence interval, hypothesis testing, linear correlation, and regression.",
+    "skills_taught": ["Probability theory", "Statistical analysis", "Hypothesis testing", "Regression", "Data distributions", "Confidence intervals"],
+    "prerequisites": ["Pre-calculus"],
+    "open_seats": null
+  },
+  {
+    "course_id": "PHYS-101",
+    "title": "Introduction to Physical Sciences",
+    "department": "Physics and Physical Sciences",
+    "credits": 3,
+    "description": "Introductory course exposing students to physical science subjects, including basics of astronomy, chemistry, earth science, and physics.",
+    "skills_taught": ["Astronomy basics", "Chemistry fundamentals", "Earth science", "Physics fundamentals"],
+    "prerequisites": ["Pre-calculus"],
+    "open_seats": null
+  },
+  {
+    "course_id": "PHYS-201",
+    "title": "Physics I",
+    "department": "Physics and Physical Sciences",
+    "credits": 3,
+    "description": "First course in physics series for engineering students. Topics include vectors, motion, Newton's laws, gravitation, work and energy, momentum, rigid body mechanics, oscillations, kinetic theory of gases, waves and sound, and thermodynamics. Includes weekly lab.",
+    "skills_taught": ["Newtonian mechanics", "Thermodynamics", "Wave physics", "Lab techniques", "Data analysis"],
+    "prerequisites": ["MATH-201"],
+    "open_seats": null
+  },
+  {
+    "course_id": "PHYS-201L",
+    "title": "Physics Lab I",
+    "department": "Physics and Physical Sciences",
+    "credits": 1,
+    "description": "Lab concurrent with PHYS-201. Students learn measuring equipment, experimental procedures, and lab safety. Lab topics include measurements, kinematics, Newton's laws, energy, momentum, conservation laws, collisions, torque, rotational dynamics, waves, and thermodynamics.",
+    "skills_taught": ["Lab safety", "Experimental procedures", "Data analysis", "Lab report writing", "Measurement techniques"],
+    "prerequisites": ["MATH-201"],
+    "open_seats": null
+  },
+  {
+    "course_id": "PHYS-202",
+    "title": "Physics II",
+    "department": "Physics and Physical Sciences",
+    "credits": 3,
+    "description": "Second course in physics series for engineering students. Topics include Coulomb's law, electric fields, DC circuits, magnetic fields, time-varying EM fields, AC circuits, optics, interference, diffraction, and introduction to modern physics. Includes weekly lab.",
+    "skills_taught": ["Electromagnetism", "Circuit analysis", "Optics", "Modern physics", "Lab techniques"],
+    "prerequisites": ["PHYS-201"],
+    "open_seats": null
+  },
+  {
+    "course_id": "PHYS-202L",
+    "title": "Physics Lab II",
+    "department": "Physics and Physical Sciences",
+    "credits": 1,
+    "description": "Lab concurrent with PHYS-202. Covers electrical measuring equipment and experiments in electromagnetism. Topics include electric field, simple circuits, resistors, DC/AC circuits, Kirchhoff's laws, capacitors, magnetic effects, inductors, RLC circuits, geometrical optics, and lenses.",
+    "skills_taught": ["Electrical measurement", "Circuit experiments", "Electromagnetic lab techniques", "Data analysis", "Lab report writing"],
+    "prerequisites": ["PHYS-201L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-201",
+    "title": "California History",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Exposes students to California's unique history and evolution. Covers social, economic, and political development over the last three centuries, spanning Native American, Spanish, Mexican, and American periods. Uses lectures, case studies, and field trips.",
+    "skills_taught": ["Historical analysis", "Research", "Cultural studies", "Political history"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "PSY-210",
+    "title": "Introduction to Psychology",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Reflects on theories and concepts of behavior and processes of the mind. Covers motivation, emotion, personality, social behavior, perception, learning, and development. Examines cognitive, forensic, social, and developmental psychology.",
+    "skills_taught": ["Psychological theory", "Behavioral analysis", "Research methods", "Critical thinking"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "PSY-450",
+    "title": "Cyberpsychology: Understanding Human Behavior in the Digital Age",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Explores how digital technologies shape human behavior, identity, relationships, mental health, and society. Covers social media, cyberbullying, digital addiction, AI, VR, UX, and algorithmic bias. Culminates in a final design promoting digital well-being or equity.",
+    "skills_taught": ["Cyberpsychology", "Digital ethics", "UX analysis", "Social media analysis", "Research", "Design thinking"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-215",
+    "title": "Introduction to Sociology",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Study of culture, social organization, and social relations. Covers major social problems, their interrelations, and society's role in creating and perpetuating them. Addresses cross-culture and diversity issues.",
+    "skills_taught": ["Sociological analysis", "Cultural studies", "Critical thinking", "Diversity awareness"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-235",
+    "title": "Multiculturalism in the United States",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Looks into various aspects of multiculturalism in American society, exploring issues related to race, ethnicity, gender, sexual orientation, disability, and other social group identities.",
+    "skills_taught": ["Cultural analysis", "Social identity studies", "Diversity and inclusion", "Critical analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-250",
+    "title": "Public Administration",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Introduction to public administration. Covers early key thinkers, public policy formation, public management, human resources, reinvention, privatization, e-government, public finance, performance measurement, and ethics.",
+    "skills_taught": ["Public policy analysis", "Public management", "Ethics in administration", "Performance measurement"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-260",
+    "title": "Civilization and Urbanization",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Covers the 5,000-year shift from rural to urban worldwide. Topics include ancient walled cities, utopian writings, urban theories, English Garden Cities, American Greenbelt Towns, New Urbanism, Smart Growth, and Healthy Cities.",
+    "skills_taught": ["Urban history", "City planning theory", "Cultural analysis", "Sustainability concepts"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-275",
+    "title": "The American Experience",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Guides students in examining the 20th-century rise of the United States as a modern multiethnic society with emphasis on the socioeconomic and political forces that shaped its development.",
+    "skills_taught": ["American history", "Socioeconomic analysis", "Political history", "Cultural studies"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HIST-340",
+    "title": "Modern American History",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Covers U.S. development from post-Civil War (1865) to the present. Topics include Reconstruction, immigration, industrialization, WWI, Great Depression, New Deal, WWII, Korean War, Vietnam War, civil rights movement, globalization, September 11, terrorism, and modern technology.",
+    "skills_taught": ["Historical research", "Academic writing", "Critical thinking", "Presentation skills"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HIST-400",
+    "title": "Early American History",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Examines early periods of American history including America before Columbus, European expansion, the founding era and Revolution, the Constitution and the New Republic, and subsequent periods up to the Civil War.",
+    "skills_taught": ["Historical analysis", "Research", "Critical thinking", "Academic writing"],
+    "prerequisites": ["ENGL-101"],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-450",
+    "title": "Emotional Intelligence",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Covers emotional intelligence (EQ): recognizing one's own emotions and those of others and controlling them. Students learn to manage interpersonal relations and increase EQ by developing abilities to perceive, use, understand, and manage emotions. Includes EQ self-assessment at start and end of term.",
+    "skills_taught": ["Emotional intelligence", "Self-awareness", "Interpersonal skills", "Emotion management", "Self-assessment"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-450",
+    "title": "Professional and Technical Writing",
+    "department": "Business / Engineering",
+    "credits": 3,
+    "description": "Practical instructions about communicating in academic and workplace environments. Students learn to produce technical reports, white papers, proposals, and theses. Covers writing styles, approaches, formats, and citations.",
+    "skills_taught": ["Technical writing", "Report writing", "Proposal writing", "Academic writing", "Citations and formatting"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-305",
+    "title": "Computer Organization",
+    "department": "Computer Systems Engineering",
+    "credits": 3,
+    "description": "Covers fundamental issues in designing and implementing modern computer systems. Topics include RISC vs. CISC CPU design, instruction sets, pipelining, instruction scheduling, cache, storage hierarchy, and modern I/O architectures (PCI, SATA, SCSI, USB).",
+    "skills_taught": ["Computer architecture", "CPU design", "Pipelining", "Cache design", "I/O architecture"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-450",
+    "title": "Fundamentals of Embedded Engineering",
+    "department": "Computer Systems Engineering",
+    "credits": 3,
+    "description": "First course in embedded systems series. Topics include microprocessors, memory, registers, I/O, interrupt handling, real-time programming, multitasking, concurrency, mutual exclusion, RTOS overview, and debug issues. Hands-on exercises required.",
+    "skills_taught": ["Embedded systems", "Real-time programming", "Multitasking", "Interrupt handling", "RTOS", "Debugging"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-450L",
+    "title": "Embedded Engineering Lab",
+    "department": "Computer Systems Engineering",
+    "credits": 1,
+    "description": "Lab concurrent with CE-450. Students gain hands-on experience with embedded systems programming and design. Guided to work on projects involving control systems.",
+    "skills_taught": ["Embedded programming", "Control systems", "Lab projects"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-200",
+    "title": "Discrete Logic",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces the Linux operating system and environment. Covers core Linux concepts, shell commands, visual editor, file manipulation and security, utility commands, shell features, regular expressions with grep/sed/awk, basic shell programming, and various Linux shells.",
+    "skills_taught": ["Linux", "Shell scripting", "File management", "Regular expressions", "Bash", "Bourne", "Korn shell"],
+    "prerequisites": ["Pre-calculus"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-230",
+    "title": "Linux & Shell Scripting",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Familiarizes students with the Linux environment. Topics include Linux OS concepts, shell commands, file manipulation, utility commands, regular expressions, grep/sed/awk, shell programming, file systems, and resource management. Hands-on exercises required.",
+    "skills_taught": ["Linux", "Shell scripting", "Bash", "File management", "Regular expressions", "grep", "sed", "awk"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-230L",
+    "title": "Linux & Shell Scripting Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-230. Hands-on experience with Unix/Linux commands, vi editor, Linux utility, shell scripting/programming, security issues, managing long files, and user environment customization.",
+    "skills_taught": ["Linux commands", "vi editor", "Shell scripting", "Security", "Environment customization"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-250",
+    "title": "Introduction to Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduction to computer science using Python. Covers defining and analyzing problems, algorithms, implementation, debugging, documentation, basic algorithms, programming concepts, data types, control structures, iteration, methods, argument passing, and classes.",
+    "skills_taught": ["Python", "Algorithm design", "Debugging", "Control structures", "Object-oriented basics", "Documentation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-250L",
+    "title": "Introduction to Programming Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-250. Covers Python basics: strings, math operations, sequences, user input/output, flow control, file I/O, functions, and exception handling.",
+    "skills_taught": ["Python", "String manipulation", "File I/O", "Functions", "Exception handling"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-350",
+    "title": "Data Structures",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Teaches efficient use of data structures and algorithms. Topics include arrays, stacks, queues, trees, graphs, sorting, hashing, and heap structures. Hands-on exercises required.",
+    "skills_taught": ["Data structures", "Algorithms", "Sorting", "Hashing", "Trees", "Graphs"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-350L",
+    "title": "Data Structures Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-350. Further investigates C language. Topics include pointer structure, structure and union, stack, queue, linked list, sort, binary tree, and heaps.",
+    "skills_taught": ["C programming", "Pointers", "Linked lists", "Binary trees", "Stacks and queues"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-360",
+    "title": "Programming in C and C++",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Develops skills in designing, coding, and documenting programs in C and C++. Covers data types, expressions, functions, run-time memory allocation, function overloading, template functions, class mechanisms, inheritance, and transitioning from C to C++.",
+    "skills_taught": ["C programming", "C++", "Object-oriented programming", "Memory management", "Inheritance", "Templates"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-360L",
+    "title": "Programming in C and C++ Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-360. Practice and development of programming skills in both C and C++.",
+    "skills_taught": ["C programming", "C++", "Programming practice"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-380",
+    "title": "Operating Systems",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers fundamental concepts and implementation techniques of modern operating systems. Topics include processes, threads, concurrency, memory management, file systems, I/O systems, security, and OS virtualization. Case studies on Linux/UNIX, Windows, Android, and VMWare.",
+    "skills_taught": ["Operating systems", "Process management", "Memory management", "Concurrency", "File systems", "Virtualization"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-453",
+    "title": "Compiler Design",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Provides fundamental knowledge of compilers and interpreters for modern computer languages. Topics include regular expressions, lexical analysis, parsing techniques, context-free grammar, and syntax-directed translation. Hands-on exercises and projects required.",
+    "skills_taught": ["Compiler design", "Lexical analysis", "Parsing", "Context-free grammar", "Regular expressions"],
+    "prerequisites": ["CS-350"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-455",
+    "title": "Algorithms & Structured Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces design, analysis, and implementation of algorithms. Covers common algorithms, algorithmic complexity, and data structures. Concentrates on design of algorithms and analysis of their efficiency.",
+    "skills_taught": ["Algorithm design", "Algorithmic complexity", "Data structures", "Object-oriented programming", "Problem-solving"],
+    "prerequisites": ["CS-350"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-457",
+    "title": "Data Modeling and Implementation Techniques",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "First course in relational database series. Topics include database architecture, relational model, SQL, DML, DDL, database design, ER modeling, normalization, denormalization, and physical database design. Uses Oracle and Microsoft SQL Server.",
+    "skills_taught": ["SQL", "Database design", "ER modeling", "Data normalization", "Oracle", "Microsoft SQL Server"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-457L",
+    "title": "Database Technologies Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-457. Hands-on experience in database applications using Oracle and Microsoft SQL servers. Guided work on database design projects.",
+    "skills_taught": ["SQL", "Oracle", "Microsoft SQL Server", "Database design", "Query optimization"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-470",
+    "title": "Network Engineering and Management",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces network communications. Topics include network-layered models (OSI, TCP/IP), architecture, principles, service models and protocols, data communication basics, switching, routing, security, network management, and wireless/mobile networks.",
+    "skills_taught": ["Networking", "TCP/IP", "OSI model", "Routing", "Switching", "Network security", "Wireless networks"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-477",
+    "title": "Ethical Hacking and Penetration Testing",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers computer hacking techniques in depth. Students learn to quantitatively assess threats to information assets, discover vulnerabilities, and deploy proactive countermeasures. Teaches ethical hacking methods used in professional security roles.",
+    "skills_taught": ["Ethical hacking", "Penetration testing", "Vulnerability assessment", "Network security", "Countermeasures"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-478",
+    "title": "Blockchain Technology and Applications",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Explores fundamentals and applications of blockchain technology. Covers types of blockchain, cryptocurrency underpinnings, real-life cases, and potential disruptive impact on business and society.",
+    "skills_taught": ["Blockchain", "Distributed ledgers", "Cryptocurrency concepts", "Research", "Business analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-480",
+    "title": "Java and Internet Applications",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces Java programming with emphasis on object-oriented concepts, GUI design, and core Java libraries. Covers syntax, classes, inheritance, interfaces, graphics programming, event handling, Swing UI, Java applets, exception handling, and streams.",
+    "skills_taught": ["Java", "Object-oriented programming", "GUI design", "Swing", "Event handling", "Exception handling"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-480L",
+    "title": "Java Programming Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-480. Weekly hands-on exercises corresponding to lecture material to develop Java programming skills.",
+    "skills_taught": ["Java", "Programming practice", "Hands-on projects"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-481",
+    "title": "Introduction to Machine Learning and Data Science",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Interdisciplinary course combining mathematics, statistics, and programming. Covers gaining knowledge from structured and unstructured data, scientific methods, algorithms, and systems for data science problems.",
+    "skills_taught": ["Machine learning", "Data science", "Statistics", "Python", "Data analysis", "Algorithm design"],
+    "prerequisites": ["MATH-208"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-483",
+    "title": "Fundamentals of Artificial Intelligence",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers AI applications in problem-solving, reasoning, planning, NLP, computer vision, autonomous navigation, and machine learning. Major algorithms include machine learning, search, Markov decision processes, constraint satisfaction, graphical models, and logic. Uses Python.",
+    "skills_taught": ["Artificial intelligence", "Machine learning", "Python", "Search algorithms", "Markov decision processes", "NLP basics", "Computer vision"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-483L",
+    "title": "Artificial Intelligence & Machine Learning Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab using Google Colab with numpy, pandas, matplotlib, scikit-learn, seaborn, tensorflow, and Keras. Students implement ML algorithms, build hands-on design projects, and perform data process analysis and error analysis.",
+    "skills_taught": ["Python", "NumPy", "Pandas", "Matplotlib", "scikit-learn", "TensorFlow", "Keras", "Google Colab"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-485",
+    "title": "JavaScript and Internet Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Advanced programming for Internet application development. Covers client-side and server-side scripting with HTML, JavaScript, CSS, jQuery, Bootstrap, Node.js Express, RESTful API, MongoDB, Angular, and React. Hands-on exercises required.",
+    "skills_taught": ["JavaScript", "HTML", "CSS", "Node.js", "React", "Angular", "RESTful API", "MongoDB", "jQuery", "Bootstrap"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-487",
+    "title": "Object-Oriented Design and Implementations",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Teaches object-oriented design methodology for algorithm development. Covers problem specification, analysis, data abstraction, encapsulation, aggregation, inheritance, and basic design patterns. Hands-on practice using Python.",
+    "skills_taught": ["Object-oriented design", "Python", "Design patterns", "Data abstraction", "Encapsulation", "Inheritance"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-494",
+    "title": "Senior Capstone Project I",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "First part of senior capstone project. Develops creativity through design effort and implementation of a self-selected project. Steps include research, problem statement formulation, design specifications, alternative solutions, development plan, implementation, and final report.",
+    "skills_taught": ["Research", "Project design", "Problem formulation", "Implementation", "Technical writing"],
+    "prerequisites": ["Senior standing"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-495",
+    "title": "Senior Capstone Project II",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Second part of the senior capstone series. Students enhance or expand their CS-494 project. Culminates in an open-forum presentation and professional report.",
+    "skills_taught": ["Product development", "Research", "Presentation skills", "Technical writing", "Project management"],
+    "prerequisites": ["CS-494"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CPT-401",
+    "title": "Curricular Practicum (Part-Time)",
+    "department": "Curricular Practicum",
+    "credits": 1,
+    "description": "Supervised practical experience applying previously studied theory. Part-time practicum (up to 20 hours/week). Must be in good standing, have completed at least two semesters of coursework, and have a written agreement with the practicum site.",
+    "skills_taught": ["Professional experience", "Applied learning", "Industry skills"],
+    "prerequisites": ["See application and agreement documents"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CPT-402",
+    "title": "Curricular Practicum (Full-Time)",
+    "department": "Curricular Practicum",
+    "credits": 2,
+    "description": "Supervised practical experience applying previously studied theory. Full-time practicum (20-40 hours/week). Must be in good standing, have completed at least two semesters of coursework, and have a written agreement with the practicum site.",
+    "skills_taught": ["Professional experience", "Applied learning", "Industry skills"],
+    "prerequisites": ["See application and agreement documents"],
+    "open_seats": null
+  },
+  {
+    "course_id": "P-450",
+    "title": "Career Development",
+    "department": "Professional Development",
+    "credits": 1,
+    "description": "Prepares students to become working professionals. Topics include effective communication strategies, emotional intelligence, diversity and cultural awareness, professional behavior, and interview skills.",
+    "skills_taught": ["Communication", "Emotional intelligence", "Interview skills", "Professional behavior", "Diversity awareness"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-450G",
+    "title": "Fundamentals of Embedded Engineering (Graduate)",
+    "department": "Embedded Systems Engineering",
+    "credits": 3,
+    "description": "Graduate-level version of CE-450. First in embedded systems series. Topics include microprocessors, memory, I/O, interrupt handling, real-time programming, multitasking, concurrency, RTOS overview, and debug issues. Hands-on exercises required.",
+    "skills_taught": ["Embedded systems", "Real-time programming", "Multitasking", "Interrupt handling", "RTOS", "Debugging"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-450LG",
+    "title": "Embedded Engineering Lab (Graduate)",
+    "department": "Embedded Systems Engineering",
+    "credits": 1,
+    "description": "Graduate lab concurrent with CE-450G. Hands-on experience with embedded systems programming, design, and control systems projects.",
+    "skills_taught": ["Embedded programming", "Control systems", "Lab projects"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-521",
+    "title": "Real-Time Systems and Programming",
+    "department": "Embedded Systems Engineering",
+    "credits": 3,
+    "description": "Second in embedded systems series. Covers real-time OS programming, real-time specification and design, real-time kernels, memory management, task management, synchronization, inter-task communication, and queuing models. Hands-on exercises required.",
+    "skills_taught": ["Real-time OS", "Task management", "Synchronization", "Memory management", "Embedded programming", "Queuing models"],
+    "prerequisites": ["CE-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-522",
+    "title": "Embedded Design in Networking Environment",
+    "department": "Embedded Systems Engineering",
+    "credits": 3,
+    "description": "Covers protocol stack implementation/porting in RTOS. Topics include embedded real-time system architecture, multitasking, task scheduling, synchronization, semaphores, and message queues. Uses industry-standard RTOS.",
+    "skills_taught": ["Protocol stack", "RTOS", "Multitasking", "Task scheduling", "Semaphores", "Message queues"],
+    "prerequisites": ["CE-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-523",
+    "title": "Embedded Design in Device Driver Environment",
+    "department": "Embedded Systems Engineering",
+    "credits": 3,
+    "description": "Investigates OS components interacting with device drivers. Topics include OS architecture, I/O API, kernel internals, building/loading/debugging drivers, device driver architecture, I/O request processing, plug-and-play, memory management, and DMA.",
+    "skills_taught": ["Device drivers", "OS kernel", "I/O API", "Debugging", "Memory management", "DMA"],
+    "prerequisites": ["CE-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CE-530",
+    "title": "Embedded Software Design in Linux",
+    "department": "Embedded Systems Engineering",
+    "credits": 3,
+    "description": "Prepares students for embedded Linux development. Topics include Linux kernel initialization, Linux drivers, bootloaders (U-Boot), embedded Linux file systems, Memory Technology Devices, debugging tools (gdb, KGDB), cross-development environments, and BusyBox configuration.",
+    "skills_taught": ["Embedded Linux", "Linux kernel", "Device drivers", "U-Boot", "BusyBox", "gdb", "Cross-compilation"],
+    "prerequisites": ["CE-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-453G",
+    "title": "Compiler Design (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level compiler design. Covers modern computer languages, regular expressions, lexical analysis, parsing techniques, context-free grammar, and syntax-directed translation. Hands-on exercises and semester projects required.",
+    "skills_taught": ["Compiler design", "Lexical analysis", "Parsing", "Context-free grammar", "Regular expressions"],
+    "prerequisites": ["CS-350"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-455G",
+    "title": "Algorithms & Structured Programming (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level algorithms course. Covers design, analysis, and implementation of algorithms, algorithmic complexity, and data structures for engineering problems.",
+    "skills_taught": ["Algorithm design", "Algorithmic complexity", "Data structures", "Object-oriented programming"],
+    "prerequisites": ["CS-350"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-457G",
+    "title": "Data Modeling and Implementation Techniques (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level relational database course. Topics include database architecture, relational models, SQL, DML, DDL, ER modeling, normalization, and physical database design. Uses Oracle and Microsoft SQL Server.",
+    "skills_taught": ["SQL", "Database design", "ER modeling", "Data normalization", "Oracle", "Microsoft SQL Server"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-457LG",
+    "title": "Database Technologies Lab (Graduate)",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Graduate lab concurrent with CS-457G. Hands-on experience in database applications using Oracle and Microsoft SQL servers and database design projects.",
+    "skills_taught": ["SQL", "Oracle", "Microsoft SQL Server", "Database design"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-470G",
+    "title": "Network Engineering and Management (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level network communications course. Topics include OSI/TCP/IP models, architecture, protocols, data communication, switching, routing, security, network management, and wireless/mobile networks.",
+    "skills_taught": ["Networking", "TCP/IP", "OSI model", "Routing", "Switching", "Network security"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-477G",
+    "title": "Ethical Hacking and Penetration Testing (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level ethical hacking. Covers computer hacking techniques in depth, threat assessment, vulnerability discovery, and proactive countermeasures deployment.",
+    "skills_taught": ["Ethical hacking", "Penetration testing", "Vulnerability assessment", "Network security"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-478G",
+    "title": "Blockchain Technology and Applications (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level blockchain course. Explores fundamentals, types of blockchain, real-life cases, and potential business and societal impact of blockchain technology.",
+    "skills_taught": ["Blockchain", "Distributed ledgers", "Cryptocurrency concepts", "Business analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-480G",
+    "title": "Java and Internet Applications (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level Java course. Covers Java language basics, OOP, GUI design, graphics programming, event handling, Swing, Java applets, exception handling, streams, and files.",
+    "skills_taught": ["Java", "Object-oriented programming", "GUI design", "Swing", "Event handling", "Exception handling"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-480LG",
+    "title": "Java Programming Lab (Graduate)",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Graduate lab concurrent with CS-480G. Weekly hands-on Java programming exercises.",
+    "skills_taught": ["Java", "Programming practice"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-481G",
+    "title": "Introduction to Machine Learning and Data Science (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate data science course. Covers gaining knowledge from structured and unstructured data, scientific methods, algorithms, and systems for data science problems.",
+    "skills_taught": ["Machine learning", "Data science", "Statistics", "Python", "Data analysis"],
+    "prerequisites": ["MATH-208"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-483G",
+    "title": "Fundamentals of Artificial Intelligence (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate AI course. Covers AI applications including NLP, computer vision, autonomous navigation, machine learning, and business intelligence. Major algorithms include search, Markov decision processes, constraint satisfaction, and logic. Uses Python.",
+    "skills_taught": ["Artificial intelligence", "Machine learning", "Python", "Search algorithms", "Markov decision processes"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-483LG",
+    "title": "Artificial Intelligence & Machine Learning Lab (Graduate)",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Graduate lab using Google Colab with numpy, pandas, matplotlib, scikit-learn, seaborn, tensorflow, and Keras. Students implement ML algorithms and build hands-on design projects.",
+    "skills_taught": ["Python", "NumPy", "Pandas", "Matplotlib", "scikit-learn", "TensorFlow", "Keras"],
+    "prerequisites": ["CS-250L"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-485G",
+    "title": "JavaScript and Internet Programming (Graduate)",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Graduate-level Internet programming. Covers HTML, JavaScript, CSS, jQuery, Bootstrap, Node.js Express, RESTful API, MongoDB, Angular, and React. Hands-on exercises required.",
+    "skills_taught": ["JavaScript", "HTML", "CSS", "Node.js", "React", "Angular", "RESTful API", "MongoDB"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-500",
+    "title": "Object-Oriented Design in Python",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Teaches OO design methodology for software development. Covers OO design and analysis, design patterns (Abstract Factory, Observer, Command, Decorator, Adaptor, Iterator, State), and Python language features. Hands-on practice required.",
+    "skills_taught": ["Python", "Object-oriented design", "Design patterns", "Software architecture", "Functional programming"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-500L",
+    "title": "Object-Oriented Design in Python Lab",
+    "department": "Computer Science",
+    "credits": 1,
+    "description": "Lab concurrent with CS-500. Practice object-oriented design and Python programming skills.",
+    "skills_taught": ["Python", "Object-oriented design", "Programming practice"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-501",
+    "title": "Practical Application of Algorithms",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Expands knowledge of algorithms through practical application to real-world computational problems. Trains students in 'Algorithmic Thinking' to develop conceptual understanding and efficient problem-solving skills for interviews and the workplace.",
+    "skills_taught": ["Algorithm design", "Algorithmic thinking", "Problem-solving", "Computational efficiency", "Interview preparation"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-510",
+    "title": "Advanced UNIX/Linux Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers programming in the UNIX/Linux environment using C with system calls. Topics include UNIX file system, process control, signals, and inter-process communications. Requires a term project with substantial programming.",
+    "skills_taught": ["C programming", "UNIX/Linux system calls", "Process control", "IPC", "Signal handling", "File systems"],
+    "prerequisites": ["CS-230", "CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-515",
+    "title": "UNIX/Linux Network Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Hands-on UNIX/Linux network programming. Covers Sockets, XTI, RPC, transport layer (TCP/UDP), threads, and client-server design. Hands-on exercises and projects required.",
+    "skills_taught": ["Network programming", "Sockets", "TCP/UDP", "RPC", "XTI", "Client-server design", "Threads"],
+    "prerequisites": ["CS-230", "CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-521",
+    "title": "Software Project Management",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Applies current software development approaches to managing complex projects. Topics include software development process, project planning, requirements definition, design specification, usability engineering, verification and validation, and process quality improvement.",
+    "skills_taught": ["Project management", "Requirements engineering", "Software quality", "Usability engineering", "Change management"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-522",
+    "title": "Software Quality Assurance and Test Automation",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Teaches static and dynamic techniques for engineering high-quality software. Covers quality management, test development, agile principles, quality risk analysis, system/integration/performance/automated testing, and test automation tools.",
+    "skills_taught": ["Software QA", "Test automation", "Agile testing", "Performance testing", "Integration testing", "Risk analysis"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-526",
+    "title": "Advanced Web Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Teaches how to build modern web applications with web frameworks. Covers HTML, CSS, JavaScript, ORM, MVC architectural pattern, and mobile web development.",
+    "skills_taught": ["Web frameworks", "HTML", "CSS", "JavaScript", "MVC", "ORM", "Mobile web development"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-531",
+    "title": "Python Applications Programming",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces fundamental and advanced Python features for application development. Covers syntax, variable types, control flows, OOP, regular expressions, multithreading, CGI programming, database access, networking, XML processing, and GUI programming.",
+    "skills_taught": ["Python", "OOP", "Multithreading", "Database access", "CGI programming", "Networking", "XML processing", "GUI programming"],
+    "prerequisites": ["CS-230", "CS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-532",
+    "title": "Advanced Internet Programming and Design",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "In-depth Java programming focusing on advanced features: XML, JNI, threading, network programming, generic programming, and internationalization. Students build enterprise-wide Java solutions for client/server problems.",
+    "skills_taught": ["Java", "XML", "JNI", "Threading", "Network programming", "Generic programming", "Enterprise architecture"],
+    "prerequisites": ["CS-480"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-535",
+    "title": "Network Security Fundamentals",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers security issues on the Internet and web. Topics include Internet infrastructure security, techniques to reduce security risks, encryption and cryptography, SSL, web server security, and Java security.",
+    "skills_taught": ["Network security", "Cryptography", "SSL/TLS", "Web security", "Java security", "Encryption"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-540",
+    "title": "Advanced Database Administration",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "In-depth understanding of Oracle DBMS. Topics include Oracle database architecture, configuration and administration, logical/physical database layout, storage management, security, database utilities, monitoring, partitions, and backup/recovery.",
+    "skills_taught": ["Oracle DBA", "Database administration", "Storage management", "Database security", "Backup and recovery", "Performance monitoring"],
+    "prerequisites": ["CS-457"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-547",
+    "title": "Advanced Database Design and Analysis",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Further explores database server development and tuning. Covers stored procedures, functions, packages, database triggers, performance tuning, query optimizers, database hints, and various database access methods.",
+    "skills_taught": ["Stored procedures", "Database triggers", "Performance tuning", "Query optimization", "PL/SQL", "Database design"],
+    "prerequisites": ["CS-457"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-548",
+    "title": "Web Services Techniques and REST Technologies",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers 3-tier enterprise application development. Topics include Spring Framework, JDBC, JPA (Java Persistence API), Hibernate, Spring MVC, Java Servlets, and JavaBeans. Emphasizes best-practice development with ORM tools.",
+    "skills_taught": ["Spring Framework", "JDBC", "JPA", "Hibernate", "Spring MVC", "Java Servlets", "RESTful services", "ORM"],
+    "prerequisites": ["CS-480"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-550",
+    "title": "Machine Learning and Business Intelligence",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces methods for using stored business data to make decisions. Covers operational/nonoperational/metadata data types, patterns and associations, data warehouse concepts, and data mining techniques. Uses modern data analysis software.",
+    "skills_taught": ["Machine learning", "Business intelligence", "Data warehousing", "Data mining", "Data analysis"],
+    "prerequisites": ["CS-457"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-551",
+    "title": "Mobile Computing for Android Mobile Devices",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Hands-on course developing Android applications including map-based, camera-based, and SMS apps. Covers Android platform, advanced topics including security, IPC, and graphics/UI techniques.",
+    "skills_taught": ["Android development", "Java/Kotlin", "Mobile UI", "IPC", "GPS/Maps API", "Camera API"],
+    "prerequisites": ["CS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-556",
+    "title": "Mobile Applications on iPhone Platform",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "In-depth study of design, development, and publication of object-oriented iOS applications using Apple SDK. Students learn to use Xcode, SwiftUI, and UIKit to create iOS apps.",
+    "skills_taught": ["Swift", "SwiftUI", "UIKit", "Xcode", "iOS development", "Apple SDK"],
+    "prerequisites": ["CS-360", "CS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-565",
+    "title": "Advanced Network Management",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "In-depth understanding of network systems management. Covers SNMP management, MIB, management tools, RMON, RMON2, SNMP2, SNMP3, and ITU TMN architecture. Uses industry applications and computer-based training software.",
+    "skills_taught": ["SNMP", "Network management", "MIB", "RMON", "Network monitoring", "Network administration"],
+    "prerequisites": ["CS-470"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-570",
+    "title": "Big Data Processing & Analytics",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers big data computing systems including MapReduce, Hadoop, and Apache Spark. Topics include PageRank, machine learning applications, and social network graph mining.",
+    "skills_taught": ["Hadoop", "Apache Spark", "MapReduce", "Big data analytics", "Scala", "Graph mining"],
+    "prerequisites": ["CS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-571",
+    "title": "Cloud Computing Infrastructure",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduction to cloud computing infrastructure including cloud frameworks, design patterns, virtualization, Docker, and Kubernetes. Covers scalable and resilient application development in cloud-native environments.",
+    "skills_taught": ["Cloud computing", "Docker", "Kubernetes", "Virtualization", "Cloud-native development", "Container orchestration"],
+    "prerequisites": ["CS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-572",
+    "title": "Blockchain Development",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Introduces blockchain fundamentals for decentralized application development. Covers distributed ledgers, consensus mechanisms, smart contracts, and decentralized architecture. Hands-on design, implementation, and deployment of dApps.",
+    "skills_taught": ["Blockchain development", "Smart contracts", "Distributed ledgers", "Consensus mechanisms", "Decentralized apps"],
+    "prerequisites": ["CS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-575",
+    "title": "Network Analysis and Testing",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers computer network analysis and testing techniques. Topics include wiring and cable testing, transmission encoding, MAC addressing, broadcast traffic, switches, Ethernet, Token Ring, IP routing, protocol analysis, and latency. Hands-on exercises with a protocol analyzer.",
+    "skills_taught": ["Network analysis", "Protocol analysis", "Packet analysis", "Network testing", "Ethernet", "IP routing"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-581",
+    "title": "Cloud Security",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Covers cloud infrastructure security including compute, storage, containers, serverless, IAM, and asset management. Examines multi-cloud and hybrid-cloud security challenges, and cybersecurity principles (Least Privilege, Defense in Depth, Shared Responsibility).",
+    "skills_taught": ["Cloud security", "IAM", "Container security", "Serverless security", "Zero trust", "Defense in depth"],
+    "prerequisites": ["Cloud Computing Fundamentals"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-589",
+    "title": "Special Topics",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Special topics courses exposing graduate students to emerging technologies in computer science. Conducted the same way as regular courses by faculty or guest speakers.",
+    "skills_taught": ["Emerging technologies", "Topic-dependent"],
+    "prerequisites": ["Topic-dependent"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CS-595",
+    "title": "Computer Science Capstone Course",
+    "department": "Computer Science",
+    "credits": 3,
+    "description": "Integrates knowledge and hands-on experience from foundation, core, and elective coursework. Instructor determines course objectives based on CS curriculum and technology trends. Student must take near the end of their program.",
+    "skills_taught": ["Integration of CS knowledge", "Research", "Project development", "Technical presentation"],
+    "prerequisites": ["Final semester of program"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CPT-501",
+    "title": "Curricular Practicum (Graduate Part-Time)",
+    "department": "Curricular Practicum",
+    "credits": 1,
+    "description": "Supervised practical training for graduate students. Part-time (up to 20 hours/week). Applies previously studied theory in professional settings.",
+    "skills_taught": ["Professional experience", "Applied learning", "Industry skills"],
+    "prerequisites": ["See application and agreement documents"],
+    "open_seats": null
+  },
+  {
+    "course_id": "CPT-502",
+    "title": "Curricular Practicum (Graduate Full-Time)",
+    "department": "Curricular Practicum",
+    "credits": 2,
+    "description": "Supervised practical training for graduate students. Full-time (20-40 hours/week). Applies previously studied theory in professional settings.",
+    "skills_taught": ["Professional experience", "Applied learning", "Industry skills"],
+    "prerequisites": ["See application and agreement documents"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-500",
+    "title": "Mathematics and Statistics for Data Science",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Provides a solid foundation in mathematical and statistical concepts for data science. Equips students with quantitative skills to analyze and interpret data, make informed decisions, and derive insights from complex datasets.",
+    "skills_taught": ["Statistics", "Mathematics", "Data analysis", "Quantitative methods", "Probability"],
+    "prerequisites": ["MATH-208"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-501",
+    "title": "Python Programming for Data Science",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Foundation course mastering Python programming skills for data analysis and manipulation. Hands-on coding exercises and projects to develop skills for data science challenges.",
+    "skills_taught": ["Python", "Data analysis", "Data manipulation", "Coding", "Data science fundamentals"],
+    "prerequisites": ["CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-512",
+    "title": "Data Engineering",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Comprehensive coverage of data engineering principles, techniques, and tools. Topics include data storage, data processing and integration, data warehousing, data security, and scalability/performance optimization.",
+    "skills_taught": ["Data engineering", "Data storage", "ETL", "Data warehousing", "Data security", "Scalability"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-520",
+    "title": "Deep Learning",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Covers core concepts, techniques, and applications of deep learning. Topics include neural networks (CNNs and RNNs), generative models, and applications in computer vision, NLP, and speech recognition.",
+    "skills_taught": ["Deep learning", "CNNs", "RNNs", "Generative models", "Computer vision", "NLP", "TensorFlow/Keras"],
+    "prerequisites": ["CS-500", "DS-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-540",
+    "title": "Natural Language Processing (NLP)",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Covers fundamental concepts, methods, and applications of NLP. Topics include tokenization, syntactic and semantic analysis, named entity recognition, POS tagging, text classification, machine translation, sentiment analysis, and language models including n-grams, HMMs, and RNNs.",
+    "skills_taught": ["NLP", "Tokenization", "Sentiment analysis", "Text classification", "Machine translation", "Language models", "Python"],
+    "prerequisites": ["DS-500"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-565",
+    "title": "Generative AI-Driven Intelligent Apps Development",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Develops expertise to build intelligent applications using generative AI. Topics include generative AI, deep learning, ML techniques, implementing generative models, ethical considerations, and deploying AI-driven apps. Hands-on projects with real-world case studies.",
+    "skills_taught": ["Generative AI", "Deep learning", "AI ethics", "App development", "AI deployment", "Machine learning"],
+    "prerequisites": ["CS-500", "DS-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-589",
+    "title": "Special Topics (Data Science)",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Special topics courses exposing graduate students to emerging technologies in data science. Conducted the same way as regular courses by faculty or guest speakers.",
+    "skills_taught": ["Emerging technologies", "Topic-dependent"],
+    "prerequisites": ["Topic-dependent"],
+    "open_seats": null
+  },
+  {
+    "course_id": "DS-595",
+    "title": "Data Science Capstone Course",
+    "department": "Data Science",
+    "credits": 3,
+    "description": "Integrates knowledge and hands-on experience from foundation, core, and elective coursework. Instructor determines objectives based on data science curriculum and technology trends. Student must take near the end of their program.",
+    "skills_taught": ["Integration of DS knowledge", "Research", "Project development", "Technical presentation"],
+    "prerequisites": ["Final semester of program"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-461G",
+    "title": "Digital Design and HDL",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Develops ability to design building blocks of modern digital systems. Topics include Verilog HDL, logic modeling, state machine design, memory modeling, FPGA architecture, and EDA tools (Synopsys VCS, Mentor Modelsim, Cadence NC Verilog).",
+    "skills_taught": ["Verilog HDL", "Digital design", "FPGA", "State machine design", "EDA tools", "Logic simulation"],
+    "prerequisites": ["Logic Design"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-461LG",
+    "title": "Digital Design and HDL Lab",
+    "department": "Electrical Engineering",
+    "credits": 1,
+    "description": "Lab concurrent with EE-461G. Hands-on experience with Verilog simulation tools, logic design projects, and scripting languages (Perl, Python, Unix/Linux Shell).",
+    "skills_taught": ["Verilog", "Logic design", "Perl", "Python", "Shell scripting", "Simulation"],
+    "prerequisites": ["Logic Design"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-468G",
+    "title": "Microelectronics Circuit Design and Analysis",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "In-depth understanding of electronic circuit design at the transistor level. Topics include differential amplifiers, current source circuits, amplifier frequency response, feedback, operational amplifiers, and logic circuits. Uses industry-standard CAD tools.",
+    "skills_taught": ["Circuit design", "Transistor-level design", "Amplifier design", "Op-amp design", "CAD tools", "Logic circuits"],
+    "prerequisites": ["Circuit Theory"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-488G",
+    "title": "Computer Architecture",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Introduces organization, design, and applications of modern computer architecture. Topics include performance benchmarks, instruction sets (RISC and CISC), memory, parallelism, I/O, multicore processors, and GPU. Includes HDL and SPIM simulations.",
+    "skills_taught": ["Computer architecture", "RISC/CISC", "Parallelism", "Multicore programming", "HDL", "GPU computing"],
+    "prerequisites": ["EE-461", "CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-504",
+    "title": "Advanced Computer Architecture",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Further investigates modern computer design. Topics include multiprocessor architecture, interconnection networks, pipelines, data flow, algorithm structures, memory and cache design. Hands-on project required.",
+    "skills_taught": ["Multiprocessor architecture", "Pipeline design", "Cache design", "Memory systems", "Performance analysis"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-505",
+    "title": "Advanced Digital IC Design",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Advanced digital circuit design in CMOS technologies. Covers combinational/sequential logic design, arithmetic building blocks, memory circuits, scaling, process variation, signal integrity, and power consumption. Uses HSPICE, Virtuoso, and Composer.",
+    "skills_taught": ["CMOS design", "Digital IC design", "HSPICE", "Cadence Virtuoso", "Signal integrity", "Low-power design"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-508",
+    "title": "VLSI Design - Place and Route",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Third in the VLSI design series. Introduces ASIC place and route. Topics include design flow, floor planning, power planning, timing-driven placement, static time analysis (STA), special routing, final routing, ECO, and batch mode jobs.",
+    "skills_taught": ["VLSI design", "Place and route", "Floor planning", "Static timing analysis", "ASIC design", "ECO"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-509",
+    "title": "Mobile and Wireless Communication",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Covers frequency reuse, wireless channel characteristics, modulation/demodulation, equalization, channel coding, speech coding, multiple access techniques (FDMA, TDMA, CDMA), and commercial standards (AMPS, GSM, IS136, IS-95). Uses MATLAB or System View simulations.",
+    "skills_taught": ["Wireless communications", "Modulation techniques", "CDMA/TDMA", "GSM", "Signal processing", "MATLAB"],
+    "prerequisites": ["CE-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-511",
+    "title": "Advanced Analog IC Design",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Covers concepts and techniques in analog IC design including device modeling, basic circuit building blocks, feedback systems, frequency response, and noise. EDA tools used in assignments and projects.",
+    "skills_taught": ["Analog IC design", "Device modeling", "Feedback systems", "Frequency response", "Noise analysis", "EDA tools"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-512",
+    "title": "Application Specific Integrated Circuit Design (ASIC)",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "HDL-based ASIC design. Topics include ASIC/CPLD/FPGA library modeling, cell characterization, static timing analysis, place and route, DFT, fault modeling, and EDA tools (Synopsys, Cadence, Mentor).",
+    "skills_taught": ["ASIC design", "HDL", "Static timing analysis", "Design for testability", "EDA tools", "Synopsys", "Cadence"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-517",
+    "title": "Introduction to the Internet of Things (IoT)",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Addresses IoT concepts and architecture, IoT enablers, data and knowledge management, and IoT security and reliability. Students complete a term project demonstrating IoT for a chosen application using an embedded system or development platform.",
+    "skills_taught": ["IoT", "Embedded systems", "IoT security", "Sensor integration", "IoT architecture", "Project development"],
+    "prerequisites": ["CS-230", "CS-250"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-520",
+    "title": "Advanced FPGA Design and Implementations",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Digital design using Xilinx FPGAs. Covers FPGA architecture, combinational and sequential logic, finite state machines, RAM, DSP blocks. Hands-on exercises required.",
+    "skills_taught": ["FPGA design", "Xilinx", "Digital design", "State machines", "DSP", "HDL"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-553",
+    "title": "System on Chip (SoC) Design",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Covers SoC components including processor, memory, digital IPs, analog/mixed-signal modules, RF, and interfaces. Focuses on ARM-based on-chip bus platforms, digital IP verification, and SoC integration trends.",
+    "skills_taught": ["SoC design", "ARM architecture", "Digital IP verification", "On-chip bus", "Mixed-signal design"],
+    "prerequisites": ["EE-488"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-577",
+    "title": "Design Verification with System Verilog",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Covers SoC design verification methodologies. Topics include verification strategies, IP block verification, ASIC verification, building verification platforms, test coverage, PLI routines, and formal verification.",
+    "skills_taught": ["SystemVerilog", "Design verification", "Formal verification", "Test coverage", "PLI", "ASIC verification"],
+    "prerequisites": ["EE-461"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-589",
+    "title": "Special Topics (Electrical Engineering)",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Special topics courses exposing graduate students to emerging technologies in electrical engineering. Conducted the same way as regular courses by faculty or guest speakers.",
+    "skills_taught": ["Emerging technologies", "Topic-dependent"],
+    "prerequisites": ["Topic-dependent"],
+    "open_seats": null
+  },
+  {
+    "course_id": "EE-595",
+    "title": "Electrical Engineering Capstone Course",
+    "department": "Electrical Engineering",
+    "credits": 3,
+    "description": "Integrates knowledge and hands-on experience from foundation, core, and elective coursework. Instructor determines course objectives based on EE curriculum and technology trends. Student must take near the end of their program.",
+    "skills_taught": ["Integration of EE knowledge", "Research", "Project development"],
+    "prerequisites": ["Final semester of program"],
+    "open_seats": null
+  },
+  {
+    "course_id": "P-450G",
+    "title": "Career Development (Graduate)",
+    "department": "Professional Development",
+    "credits": 1,
+    "description": "Prepares graduate students to become working professionals. Topics include effective communication strategies, emotional intelligence, diversity and cultural awareness, professional behavior, and interview skills.",
+    "skills_taught": ["Communication", "Emotional intelligence", "Interview skills", "Professional behavior", "Diversity awareness"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-110",
+    "title": "Financial Accounting",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Study of accounting as an information system. Covers accounting information system, recording and reporting of business transactions, GAAP, financial statements, statement analysis, assets/liability/equity valuation, revenue and expense recognition, and cash flow.",
+    "skills_taught": ["Financial accounting", "GAAP", "Financial statements", "Cash flow analysis", "Internal controls"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-120",
+    "title": "Managerial Accounting",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Studies how managers use accounting information for decision-making, planning, and controlling. Covers cost terms, cost behavior, cost structure, cost-volume-profit analysis, cost systems, and performance analysis.",
+    "skills_taught": ["Managerial accounting", "Cost analysis", "Budgeting", "Performance analysis", "Cost-volume-profit"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-450",
+    "title": "Cost Accounting",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Applies financial accounting essentials to management practice. Covers cost definitions, cost behavior, cost estimation, cost accounting in manufacturing/service, planning and control, capital budgeting, and financial statement analysis.",
+    "skills_taught": ["Cost accounting", "Capital budgeting", "Financial analysis", "Cost estimation", "Management control"],
+    "prerequisites": ["ACC-110", "ACC-120"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-451",
+    "title": "Intermediate Accounting I",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Enhances understanding of accounting principles for aspiring accounting professionals. Topics include financial accounting standards, financial statement preparation, required disclosures, current assets, revenue recognition, and fixed assets.",
+    "skills_taught": ["Intermediate accounting", "Financial statements", "Revenue recognition", "Asset accounting", "Accounting standards"],
+    "prerequisites": ["ACC-120", "ACC-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-452",
+    "title": "Intermediate Accounting II",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Continuation of Intermediate Accounting I. Covers current and long-term liabilities, stockholders' equity, investments, pension and postretirement benefits, leases, and cash flow statements.",
+    "skills_taught": ["Intermediate accounting", "Liabilities", "Equity accounting", "Pension accounting", "Lease accounting"],
+    "prerequisites": ["ACC-451"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-490",
+    "title": "Introduction to Taxation",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Covers taxation concepts applied to individual income, deductions, credits, property transactions, and tax accounting methods. Prepares students to prepare individual income tax returns professionally. Also covers taxation rules for financial planning.",
+    "skills_taught": ["Tax preparation", "Individual income tax", "Tax planning", "Tax accounting"],
+    "prerequisites": ["Upper-division/graduate-level status"],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-223",
+    "title": "SQL and Relational Databases",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Emphasizes SQL/RDBMS as a tool for business and data analytics. Covers relational database theory, best practices, SQL for entering/retrieving/updating/sorting data, calculating statistics, and modifying data storage structures.",
+    "skills_taught": ["SQL", "Relational databases", "Data analytics", "Database management", "Querying"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-452",
+    "title": "Excel for Finance, Accounting & Analytics",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Mastery of Excel for professional use. Covers graphics, conditional formatting, sorting, pivot tables, conditional calculations, data loading, and Excel's powerful functions and Analysis Tool Pak/Solver extensions.",
+    "skills_taught": ["Excel", "Pivot tables", "Data visualization", "Financial modeling", "Solver", "Analysis ToolPak"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-460",
+    "title": "Introduction to Business Analytics",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Teaches basics of business analytics. Students use popular data analysis tools to analyze business data for understanding trends, making forecasts, and improving decision-making and business strategies.",
+    "skills_taught": ["Business analytics", "Data analysis", "Forecasting", "Data tools", "Decision-making"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-463",
+    "title": "Data Visualization",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Teaches how to explore data and provide insight using data visualization techniques. Students design, develop, analyze, and interpret various visualizations and develop compelling presentations based on case studies.",
+    "skills_taught": ["Data visualization", "Tableau/BI tools", "Storytelling with data", "Presentation design"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-470",
+    "title": "Intro to Machine Learning-Based Forecasting",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Hands-on application of machine learning to business prediction, forecasting, and decision-making. Python-based, covering AR/ARIMA and AI-based forecasting methods. Covers model selection, data preparation, training, optimization, and recommendations.",
+    "skills_taught": ["Machine learning", "Forecasting", "Python", "ARIMA", "Model evaluation", "Business prediction"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-472",
+    "title": "Introduction to Artificial Intelligence (AI)",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Comprehensive introduction to AI covering history, fundamental concepts, applications, risks, and mitigation strategies. Covers AI components, technologies, development processes, and ethical considerations.",
+    "skills_taught": ["AI fundamentals", "AI ethics", "Risk assessment", "AI applications", "Critical thinking"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BLAW-310",
+    "title": "Introduction to Business Law",
+    "department": "Business Law",
+    "credits": 3,
+    "description": "Introductory-level U.S. business law. Covers the U.S. legal system, sources of law, ethics, contracts, torts, agency, criminal law, business organizations, and judicial and administrative processes.",
+    "skills_taught": ["Business law", "Contract law", "Tort law", "Legal analysis", "Ethics in business"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-387",
+    "title": "Independent Research Project",
+    "department": "Business",
+    "credits": 3,
+    "description": "One-on-one faculty mentorship for in-depth research in a business topic of the student's choice. Culminates in a publication-quality research paper suitable for peer-reviewed journal submission.",
+    "skills_taught": ["Independent research", "Academic writing", "Critical thinking", "Research methodology"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-493",
+    "title": "Senior Project",
+    "department": "Business",
+    "credits": 3,
+    "description": "Culminating undergraduate experience demonstrating mastery of specialized knowledge in a student's professional area of interest. Students communicate results in writing and oral presentations. Projects may be used for industry or graduate study portfolios.",
+    "skills_taught": ["Research", "Presentation skills", "Professional writing", "Domain expertise"],
+    "prerequisites": ["90 semester credit hours completed"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ECON-201",
+    "title": "Principles of Macroeconomics",
+    "department": "Economics",
+    "credits": 3,
+    "description": "Introductory aggregate economic analysis. Topics include aggregate measures, macroeconomic equilibrium, money and financial institutions, monetary and fiscal policy, international economics, and economic growth.",
+    "skills_taught": ["Macroeconomics", "Economic analysis", "Fiscal policy", "Monetary policy", "International economics"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ECON-202",
+    "title": "Principles of Microeconomics",
+    "department": "Economics",
+    "credits": 3,
+    "description": "Introductory course on individual economic decision-making. Topics include scarcity, specialization, market equilibrium, elasticity, production and cost theory, market structures, factor markets, and market failure.",
+    "skills_taught": ["Microeconomics", "Market analysis", "Supply and demand", "Cost analysis", "Market structures"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ECON-588",
+    "title": "Managerial Economics",
+    "department": "Economics",
+    "credits": 3,
+    "description": "Rigorous study of microeconomics and macroeconomics with business applications. Covers consumption models, market efficiency, behavioral economics, game theory, macro-financial linkages, monetary policy, and econometric skills.",
+    "skills_taught": ["Managerial economics", "Game theory", "Econometrics", "Behavioral economics", "Financial analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-310",
+    "title": "Fundamentals of Finance",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Introduces finance and financial management. Covers financial statements, cash flow analysis, time value of money, bond and stock valuation, risk and return, capital budgeting, and international finance.",
+    "skills_taught": ["Financial management", "Valuation", "Capital budgeting", "Risk and return", "Time value of money"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-310",
+    "title": "Principles of Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Covers basic skills, applications, and foundations of management. Includes organizational structure, planning, organizing, leadership, motivation, decision-making, communication, and negotiation.",
+    "skills_taught": ["Management principles", "Leadership", "Decision-making", "Communication", "Organizational behavior"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-450",
+    "title": "Organizational Behavior and Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Explores dimensions of organizational behavior including communication, self-awareness, perception, motivation, problem-solving, and culture. Covers leadership theories and organizational change.",
+    "skills_taught": ["Organizational behavior", "Leadership", "Communication", "Change management", "Motivation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-451",
+    "title": "Project Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Introduces project and program management principles, roles of project management, matrix organization, and project management techniques for efficient execution and completion. Requires proposal development, case studies, and independent projects.",
+    "skills_taught": ["Project management", "Program management", "Planning", "Proposal development", "Case analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-460",
+    "title": "Production and Operations Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Balances theory and practice of production and operations management. Covers strategies, process design, and quantitative techniques. Uses Excel Analysis Tool Pak and Solver for multivariate operational constraints.",
+    "skills_taught": ["Operations management", "Production planning", "Forecasting", "Inventory control", "Excel", "Optimization"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-480",
+    "title": "Entrepreneurship",
+    "department": "Management",
+    "credits": 3,
+    "description": "Explores the full range of entrepreneurial processes including evaluation, development, and creation of a successful business. Covers organizational structure, market analysis, financing entrepreneurial ventures, and business plan development.",
+    "skills_taught": ["Entrepreneurship", "Business planning", "Market analysis", "Venture financing", "Business development"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-482",
+    "title": "Launching Innovative Startups",
+    "department": "Management",
+    "credits": 3,
+    "description": "Hands-on project-based course covering the entrepreneur development process from ideation and business modeling through funding and marketing launch. Topics include design thinking, lean startup, market validation, and startup management.",
+    "skills_taught": ["Startup launch", "Design thinking", "Lean startup", "Business modeling", "Marketing", "Fundraising"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-483",
+    "title": "Business Innovation – A Historical and Cultural Perspective",
+    "department": "Management",
+    "credits": 3,
+    "description": "Explores business innovation through history, culture, and global influence from the Industrial Revolution to the digital age. Covers the role of entrepreneurship, cross-cultural problem-solving, and the interplay between tradition and disruption.",
+    "skills_taught": ["Innovation management", "Business history", "Cultural analysis", "Strategic thinking", "Leadership"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-491",
+    "title": "Agility-Based Leadership",
+    "department": "Management",
+    "credits": 3,
+    "description": "Uses Business Agility Institute best practices to cultivate adaptive organizations through cultural engagement, agile principles, and operational efficiency. Covers workforce engagement strategies, performance-driven business models, and continuous improvement.",
+    "skills_taught": ["Agile leadership", "Business agility", "Organizational culture", "Continuous improvement", "Workforce engagement"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-221",
+    "title": "HTML & CSS Web Page Construction",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Provides understanding of how websites work and proficiency in HTML and CSS to create, modify, and maintain web pages. Covers Hypertext Markup Language, Cascading Style Sheets, and optionally JavaScript and SQL.",
+    "skills_taught": ["HTML", "CSS", "Web development", "JavaScript basics", "SQL basics"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-310",
+    "title": "Principles of Marketing",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Introduces major marketing principles, marketing's role in companies and the global economy. Covers market segmentation, product planning, new product development, wholesalers/retailers, pricing, and promotion.",
+    "skills_taught": ["Marketing principles", "Market segmentation", "Product development", "Pricing strategy", "Promotion"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-450",
+    "title": "Marketing Management",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Studies marketing management via real-world case analysis. Covers situation assessment, strategy formulation, marketing planning, implementation, and evaluation.",
+    "skills_taught": ["Marketing management", "Strategic marketing", "Case analysis", "Marketing planning", "Campaign evaluation"],
+    "prerequisites": ["MKT-310"],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-483",
+    "title": "Monetizing Intellectual Property",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Covers innovative models and strategies for generating capital from intangible assets. Topics include outright sales, third-party licensing, royalty securitizations, Bowie Bonds, collateralization, copyrights, trademarks, trade secrets, and patents.",
+    "skills_taught": ["IP monetization", "Licensing", "Royalty management", "IP strategy", "Business development"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-491",
+    "title": "The Art of Negotiation",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Develops advanced skills for complex negotiation scenarios. Covers theories and strategies for win-win outcomes, strategic mindset, disciplined preparation, and interpersonal skills. Includes Silicon Valley case studies and simulations.",
+    "skills_taught": ["Negotiation", "Persuasion", "Stakeholder management", "Strategic thinking", "Interpersonal skills"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-450G",
+    "title": "Cost Accounting (Graduate)",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Graduate-level cost accounting. Applies financial accounting essentials to management, covering cost definitions, behavior, estimation, and application to manufacturing/service organizations, planning, control, capital budgeting, and financial statement analysis.",
+    "skills_taught": ["Cost accounting", "Capital budgeting", "Financial analysis", "Cost estimation", "Management control"],
+    "prerequisites": ["ACC-110", "ACC-120"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-451G",
+    "title": "Intermediate Accounting I (Graduate)",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Graduate-level intermediate accounting. Covers accounting standards, financial statement preparation, required disclosures, current assets, revenue recognition, and fixed assets.",
+    "skills_taught": ["Intermediate accounting", "Financial statements", "Revenue recognition", "Asset accounting"],
+    "prerequisites": ["ACC-120", "ACC-450"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-451LG",
+    "title": "Intermediate Accounting I Lab (Graduate)",
+    "department": "Accounting",
+    "credits": 1,
+    "description": "Lab concurrent with ACC-451G. Students work with real-world accounting situations including multiyear accrual recognition and in-depth study of current assets using accounting software.",
+    "skills_taught": ["Accounting software", "Accrual accounting", "Financial recording", "Applied accounting"],
+    "prerequisites": ["ACC-451"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-452G",
+    "title": "Intermediate Accounting II (Graduate)",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Graduate continuation of Intermediate Accounting I. Covers liabilities, stockholders' equity, investments, pension and postretirement benefits, leases, and cash flow statements.",
+    "skills_taught": ["Intermediate accounting", "Liabilities", "Equity accounting", "Pension accounting", "Lease accounting"],
+    "prerequisites": ["ACC-451"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-490G",
+    "title": "Introduction to Taxation (Graduate)",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Graduate-level individual taxation. Covers taxation concepts for income, deductions, credits, property transactions, and tax accounting methods. Covers taxation rules for financial planning.",
+    "skills_taught": ["Tax preparation", "Individual income tax", "Tax planning", "Tax accounting"],
+    "prerequisites": ["Upper-division/graduate-level status"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-501",
+    "title": "Advanced Accounting",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "For accounting graduate students. Covers consolidation requirements, consolidated financial statements, and accounting techniques for various business and non-business entities. Includes tax aspects and case studies.",
+    "skills_taught": ["Advanced accounting", "Consolidation", "Financial reporting", "Tax accounting", "Case analysis"],
+    "prerequisites": ["ACC-451", "ACC-452"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-512",
+    "title": "Federal Taxation of Business Enterprises",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Covers federal taxation of corporations, partnerships, estates, and trusts. Enables students to prepare corporation and partnership tax returns professionally. Also covers rules governing trusts and estates.",
+    "skills_taught": ["Corporate tax", "Partnership taxation", "Tax return preparation", "Estate and trust taxation"],
+    "prerequisites": ["Upper-division/graduate-level status"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ACC-530",
+    "title": "Auditing",
+    "department": "Accounting",
+    "credits": 3,
+    "description": "Covers auditing techniques, procedures, practices, and programs based on GAAP. Students learn best practices for working document preparation and report writing.",
+    "skills_taught": ["Auditing", "GAAP", "Audit documentation", "Report writing", "Audit procedures"],
+    "prerequisites": ["ACC-451", "ACC-452", "ACC-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "AI-450",
+    "title": "AI in Modern-Day Society: A Survey",
+    "department": "Artificial Intelligence",
+    "credits": 3,
+    "description": "Explores the intersection of AI and emerging technologies including Web 3.0, Metaverse, Blockchain, Cybersecurity, Quantum, Biotechnology, IoT, Edge Computing, Space technologies, and ESG frameworks. Also covers Physical AI and Agentic AI.",
+    "skills_taught": ["AI literacy", "Emerging technologies", "Critical thinking", "Ethics", "Business analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "AI-501",
+    "title": "Management and Leadership in AI",
+    "department": "Artificial Intelligence",
+    "credits": 3,
+    "description": "Covers leadership in AI-driven organizations. Topics include leading AI-human teams, organizational transformation, HR strategy, AI-powered innovation, AI ethics, governance, and cross-industry AI applications.",
+    "skills_taught": ["AI leadership", "Organizational transformation", "HR strategy", "AI ethics", "AI governance"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "AI-505",
+    "title": "Corporate Strategy in AI",
+    "department": "Artificial Intelligence",
+    "credits": 3,
+    "description": "Equips business leaders with strategic frameworks and governance principles for enterprise AI integration. Topics include AI value creation, portfolio and platform strategies, ethical/legal risk assessment, talent and data infrastructure, and AI KPIs. Includes capstone consulting project.",
+    "skills_taught": ["AI strategy", "Corporate governance", "Risk assessment", "AI ethics", "Business analytics", "Leadership"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "AI-510",
+    "title": "Data Science and AI",
+    "department": "Artificial Intelligence",
+    "credits": 3,
+    "description": "Comprehensive foundation in data science and AI. Covers data preprocessing, statistical analysis, machine learning, deep learning, and AI model development using Python, R, and cloud-based platforms. Emphasizes ethical AI.",
+    "skills_taught": ["Data science", "Machine learning", "Deep learning", "Python", "R", "AI ethics", "Cloud platforms"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "AI-515",
+    "title": "Leveraging AI and Emerging Technologies for Startups",
+    "department": "Artificial Intelligence",
+    "credits": 3,
+    "description": "Explores how startups can use AI and emerging technologies for innovative, scalable business models. Topics include AI-driven product development, cloud infrastructure, blockchain, IoT, automation, and lean startup principles. Final project: tech-enabled startup pitch.",
+    "skills_taught": ["AI for startups", "Product development", "Cloud infrastructure", "Lean startup", "Business modeling", "AI ethics"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-455G",
+    "title": "Server-Side Data Processing Using Python/PHP",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Teaches implementation of industrial-scale business algorithms and processing of complex data sets with backend analytics and relational database engines using Python or PHP server-side scripting.",
+    "skills_taught": ["Python", "PHP", "Server-side scripting", "Database engines", "Backend analytics", "Business algorithms"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-460G",
+    "title": "Introduction to Business Analytics (Graduate)",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Graduate-level business analytics. Uses Microsoft Excel tools for business data analysis, trend understanding, forecasting, and decision-making. Includes probability theory, hypothesis testing, and predictive modeling.",
+    "skills_taught": ["Business analytics", "Excel", "Forecasting", "Predictive modeling", "Hypothesis testing"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-463G",
+    "title": "Data Visualization (Graduate)",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Graduate-level data visualization. Students design, develop, analyze, and interpret visualizations and develop compelling data-driven presentations based on case studies.",
+    "skills_taught": ["Data visualization", "BI tools", "Storytelling with data", "Presentation design"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-470G",
+    "title": "Intro to Machine Learning-Based Forecasting (Graduate)",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Graduate-level ML forecasting. Python-based, covering AR/ARIMA and AI-based methods. Covers model selection, data preparation, anomaly handling, training, optimization, and decision-maker recommendations.",
+    "skills_taught": ["Machine learning", "Forecasting", "Python", "ARIMA", "Model evaluation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-501",
+    "title": "Quantitative Methods for Business",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Introduces contemporary business decision-making methodologies. Covers quantitative analysis, management science, Monte Carlo simulations, stochastic forecasting, portfolio optimization, dynamic project management, and VBA coding. Uses Excel, SPSS, Minitab, R, and other tools.",
+    "skills_taught": ["Quantitative analysis", "Monte Carlo simulation", "Forecasting", "Portfolio optimization", "VBA", "Excel", "SPSS", "R"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-520",
+    "title": "Business Analytics for Dashboards",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Teaches how to design and build analytics dashboards and data visualizations using a leading analytics tool. Covers best practices for data visualization and dashboard design.",
+    "skills_taught": ["Dashboard design", "Data visualization", "Analytics tools", "Business intelligence", "Data storytelling"],
+    "prerequisites": ["Upper-division/graduate-level status"],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-524",
+    "title": "Intermediate Business Analytics",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Teaches business analytics as applied by enterprises for strategy and decision-making. Covers foundations of business analytics, data analysis tools, major models, and big data/big analytics trends. Hands-on exercises required.",
+    "skills_taught": ["Business analytics", "Data analysis", "Decision modeling", "Big data", "Analytics tools"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-572",
+    "title": "Process Management for Analytics",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Teaches how to design and implement a self-service analytics (SSA) business process pipeline. Students learn to make trade-offs among computer technologies and apply their SSA pipeline to solve enterprise-level business challenges.",
+    "skills_taught": ["Self-service analytics", "Process management", "Business intelligence", "Pipeline design", "Technology evaluation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BAN-589",
+    "title": "Special Topics: Quantitative Risk Management (CQRM)",
+    "department": "Business Analytics",
+    "credits": 3,
+    "description": "Covers data and decision analytics under risk and uncertainty. Topics include Monte Carlo simulations, financial forecasting, predictive analytics, decision analytics, strategic real options, and capital portfolio allocation. Qualifies students to take the CQRM certification exam.",
+    "skills_taught": ["Risk management", "Monte Carlo simulation", "Predictive analytics", "Portfolio optimization", "Decision analytics", "CQRM certification prep"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-450G",
+    "title": "Professional and Technical Writing (Graduate)",
+    "department": "Business",
+    "credits": 3,
+    "description": "Graduate-level professional and technical writing. Covers technical reports, white papers, proposals, theses, and resumes. Also covers writing styles, approaches, formats, and citations.",
+    "skills_taught": ["Technical writing", "Report writing", "Proposal writing", "Academic writing", "Resume writing"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-587",
+    "title": "Independent Research Project (Graduate)",
+    "department": "Business",
+    "credits": 3,
+    "description": "Graduate one-on-one faculty mentorship for in-depth graduate-level research in business. Culminates in a publication-quality paper suitable for peer-reviewed journal submission.",
+    "skills_taught": ["Independent research", "Academic writing", "Critical thinking", "Research methodology"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-589",
+    "title": "Special Topics (Business)",
+    "department": "Business",
+    "credits": 3,
+    "description": "Special topics courses exposing graduate students to emerging business topics. Conducted the same way as regular courses by faculty or guest speakers.",
+    "skills_taught": ["Emerging business topics", "Topic-dependent"],
+    "prerequisites": ["Topic-dependent"],
+    "open_seats": null
+  },
+  {
+    "course_id": "BUS-595",
+    "title": "Business Capstone Course",
+    "department": "Business",
+    "credits": 3,
+    "description": "Integrates knowledge and hands-on experience from foundation, core, and elective coursework in the MBA or MSBAn program. Instructor guides students to develop integration ability. Student must take near the end of the program.",
+    "skills_taught": ["Business strategy", "Integration", "Research", "Leadership", "Presentation"],
+    "prerequisites": ["24 credit hours in related graduate business program"],
+    "open_seats": null
+  },
+  {
+    "course_id": "ECON-470G",
+    "title": "The Economics of Money, Banking, and Financial Markets",
+    "department": "Economics",
+    "credits": 3,
+    "description": "Fresh perspective on financial and monetary policies. Topics include interest rate behavior, monetary strategy, demand for money, and insight into monetary policy, financial system regulation, and internationalization of financial markets.",
+    "skills_taught": ["Monetary economics", "Banking", "Financial markets", "Interest rate analysis", "Monetary policy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-501",
+    "title": "Financial Management",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Introduces modern financial theories, tools, and methods for corporate financial management. Focuses on analysis and forecast of internal operations, short-term and long-term capital use, and maximizing shareholders' equity.",
+    "skills_taught": ["Financial management", "Capital markets", "Financial forecasting", "Corporate finance", "Investment analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-510",
+    "title": "Investment Analysis",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Covers foundations of investment management including portfolio theory, market efficiency, asset pricing models, factor models, and option pricing theory. Students create optimal investment strategies.",
+    "skills_taught": ["Investment analysis", "Portfolio theory", "Asset pricing", "Option pricing", "Market efficiency"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-512",
+    "title": "Financial Risk Management",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Further introduces modern financial theories for dealing with financial risks. Covers financial risk management for corporations, financial institutions, and government enterprises.",
+    "skills_taught": ["Financial risk management", "Risk modeling", "Derivatives", "Hedging", "Financial analysis"],
+    "prerequisites": ["FIN-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-522",
+    "title": "International Trade and Investment",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Covers theories of international trade, comparative advantage, regional economic blocks, multilateral trading system, and trade barriers. Students learn international payment, shipping, and distribution mechanics.",
+    "skills_taught": ["International trade", "Trade theory", "International payments", "Global supply chain", "Trade policy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-568",
+    "title": "Corporate Finance",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Covers executive compensation, corporate governance, and bankruptcy law. Also covers mergers, acquisitions, and valuations; corporate restructuring; LBOs; MBOs; and merchant banking.",
+    "skills_taught": ["Corporate finance", "Mergers and acquisitions", "Valuation", "Corporate governance", "Financial restructuring"],
+    "prerequisites": ["FIN-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-580",
+    "title": "Portfolio Management",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Teaches advanced portfolio decision-making. Topics include index models, portfolio performance measures, bond portfolio management, interest immunization, stock market anomalies, and market efficiency.",
+    "skills_taught": ["Portfolio management", "Bond management", "Performance measurement", "Index models", "Market efficiency"],
+    "prerequisites": ["FIN-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "FIN-585",
+    "title": "International Finance",
+    "department": "Finance",
+    "credits": 3,
+    "description": "Prepares students for careers in international finance. Covers the financial environment of multinational firms, foreign exchange management, and financial management in global markets.",
+    "skills_taught": ["International finance", "Foreign exchange", "Multinational finance", "Global financial markets", "Risk management"],
+    "prerequisites": ["FIN-501"],
+    "open_seats": null
+  },
+  {
+    "course_id": "GBM-500",
+    "title": "Green and Socially Responsible Management",
+    "department": "Green Business Management",
+    "credits": 3,
+    "description": "Covers environmental and social responsibility demands on modern businesses. Students learn to utilize socially responsible methodologies and formulate enterprise-wide policies integrating sustainability values.",
+    "skills_taught": ["Sustainability", "CSR", "Green management", "ESG", "Policy formulation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HRM-531",
+    "title": "Human Resource Management",
+    "department": "Human Resource Management",
+    "credits": 3,
+    "description": "Comprehensive overview of personnel management. Covers job analysis, candidate screening, interviewing, testing, hiring, evaluating, training, motivating, promoting, and compensation. Also covers global HR, diversity awareness, and sexual harassment requirements.",
+    "skills_taught": ["HR management", "Recruitment", "Performance evaluation", "Training", "Compensation", "Diversity and inclusion"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "HRM-532",
+    "title": "Strategic Workforce Planning",
+    "department": "Human Resource Management",
+    "credits": 3,
+    "description": "Covers workforce planning for various organization types. Topics include strategic planning, scheduling, succession planning, gap analysis, budgeting for manpower, and new HR configurations like self-managed teams, telecommuting, and outsourcing.",
+    "skills_taught": ["Workforce planning", "Succession planning", "Gap analysis", "HR strategy", "Organizational design"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-450G",
+    "title": "Organizational Behavior and Management (Graduate)",
+    "department": "Management",
+    "credits": 3,
+    "description": "Graduate-level organizational behavior. Covers communication, self-awareness, perception, motivation, problem-solving, culture, leadership theories, and organizational change.",
+    "skills_taught": ["Organizational behavior", "Leadership", "Communication", "Change management", "Motivation"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-451G",
+    "title": "Project Management (Graduate)",
+    "department": "Management",
+    "credits": 3,
+    "description": "Graduate-level project management. Covers project and program management principles, roles, matrix organization, and project management techniques. Requires proposal development, case studies, and independent projects.",
+    "skills_taught": ["Project management", "Program management", "Proposal development", "Case analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-460G",
+    "title": "Production and Operations Management (Graduate)",
+    "department": "Management",
+    "credits": 3,
+    "description": "Graduate-level operations management. Covers strategies, process design, and quantitative techniques. Uses Excel for multivariate constraints including forecasting, scheduling, inventory control, and quality control.",
+    "skills_taught": ["Operations management", "Production planning", "Forecasting", "Optimization", "Excel"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-460LG",
+    "title": "Production and Operations Management Lab (Graduate)",
+    "department": "Management",
+    "credits": 1,
+    "description": "Hands-on lab for graduate operations management. Students develop mathematical models and software-based implementations for cost optimization in production planning scenarios.",
+    "skills_taught": ["Mathematical modeling", "Software optimization", "Operations research", "Excel", "Cost optimization"],
+    "prerequisites": ["MGT-460G"],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-480G",
+    "title": "Entrepreneurship (Graduate)",
+    "department": "Management",
+    "credits": 3,
+    "description": "Graduate-level entrepreneurship. Covers evaluation, development, and creation of a successful business including organizational structure, market analysis, venture financing, and business plan development.",
+    "skills_taught": ["Entrepreneurship", "Business planning", "Market analysis", "Venture financing"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-482G",
+    "title": "Launching Innovative Startups (Graduate)",
+    "department": "Management",
+    "credits": 3,
+    "description": "Graduate-level startup course covering the entrepreneur development process from ideation through funding and marketing launch. Includes design thinking, lean startup, and market validation.",
+    "skills_taught": ["Startup launch", "Design thinking", "Lean startup", "Business modeling", "Marketing", "Fundraising"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-491G",
+    "title": "Agility-Based Leadership (Graduate)",
+    "department": "Management",
+    "credits": 3,
+    "description": "Graduate-level agility-based leadership using Business Agility Institute best practices. Covers cultural engagement, agile principles, operational efficiency, and strategies for workforce engagement and continuous improvement.",
+    "skills_taught": ["Agile leadership", "Business agility", "Organizational culture", "Continuous improvement"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-500",
+    "title": "Risk Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Teaches risk management concepts, processes, and strategy in a corporate environment. Topics include risk nature, management structure, information gathering, data analysis tools, and risk management techniques. Requires case studies and project.",
+    "skills_taught": ["Risk management", "Risk analysis", "Data analysis", "Strategic planning", "Corporate strategy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-501",
+    "title": "Agile Project Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Covers scrum-based agile project management. Topics include user stories, estimation techniques, sprint management, customer collaboration, progress measurement, and the roles of Scrum Master, Product Owner, and Development Team.",
+    "skills_taught": ["Agile", "Scrum", "Sprint planning", "User stories", "Product backlog", "Estimation techniques"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-510",
+    "title": "Strategic Management & Leadership",
+    "department": "Management",
+    "credits": 3,
+    "description": "Covers strategic management and leadership principles. Topics include ethics, culture and leadership, job design, decision-making, problem diagnosis, change management, and implementation. Team-based culminating consulting project.",
+    "skills_taught": ["Strategic management", "Leadership", "Change management", "Decision-making", "Ethics", "Team consulting"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-530",
+    "title": "Logistics and Operations Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Covers logistics and operations management including production, warehousing, transportation, and service delivery. Uses quantitative analytical techniques to make logistics and operations decisions in the context of e-commerce and globalization.",
+    "skills_taught": ["Logistics", "Supply chain management", "Operations research", "Quantitative analysis", "E-commerce operations"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-538",
+    "title": "International Business Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Covers international business environment including economic, financial, political, and cultural aspects of global trade. Topics include global organizational design and international management techniques. Requires country screening analysis.",
+    "skills_taught": ["International business", "Global strategy", "Cross-cultural management", "Market analysis", "Trade analysis"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-540",
+    "title": "Management of Innovation",
+    "department": "Management",
+    "credits": 3,
+    "description": "Equips students with knowledge and skills to manage new and innovative enterprises. Topics include technology forecasting, program/product selection, market development, financial management, regulations, and ethics.",
+    "skills_taught": ["Innovation management", "Technology forecasting", "Product management", "Market development", "Financial management"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-542",
+    "title": "Technology and Product Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Provides practical experience in product development. Covers technology product design, planning, production, marketing, product life cycle, MRD, product positioning, channel inventory management, and outbound communications.",
+    "skills_taught": ["Product management", "Technology planning", "Go-to-market strategy", "Product lifecycle", "Market positioning"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MGT-550",
+    "title": "Global Outsourcing and Vendor Management",
+    "department": "Management",
+    "credits": 3,
+    "description": "Covers global outsourcing management and supplier management. Topics include sourcing decisions, pricing dynamics, ethical considerations, globalization, risk management, and interaction with other organizational functions.",
+    "skills_taught": ["Outsourcing", "Vendor management", "Supply chain", "Risk management", "Global sourcing"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-450G",
+    "title": "Marketing Management (Graduate)",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Graduate-level marketing management. Studies marketing via real-world cases covering situation assessment, strategy formulation, marketing planning, implementation, and evaluation.",
+    "skills_taught": ["Marketing management", "Strategic marketing", "Case analysis", "Marketing planning"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-483G",
+    "title": "Monetizing Intellectual Property (Graduate)",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Graduate-level IP monetization. Covers innovative models for generating capital from intangible assets including licensing, royalty securitizations, collateralization, copyrights, trademarks, trade secrets, and patents.",
+    "skills_taught": ["IP monetization", "Licensing", "Royalty management", "IP strategy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-491G",
+    "title": "The Art of Negotiation (Graduate)",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Graduate-level negotiation. Develops advanced skills for complex negotiation scenarios including strategy, disciplined preparation, and interpersonal skills. Includes Silicon Valley-focused case studies and simulations.",
+    "skills_taught": ["Negotiation", "Persuasion", "Stakeholder management", "Strategic thinking", "Interpersonal skills"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-541",
+    "title": "Strategic Marketing",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Covers marketing research and data analysis for strategic positioning. Includes primary and secondary research techniques, market segmentation, strategic positioning, and channel marketing. Requires a marketing research project.",
+    "skills_taught": ["Marketing research", "Data analysis", "Market segmentation", "Strategic positioning", "Channel marketing"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-542",
+    "title": "Global Marketing",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Develops global marketing strategies including marketing research, segmentation, and positioning. Students incorporate global product policy decisions into a comprehensive market entry plan.",
+    "skills_taught": ["Global marketing", "Market entry strategy", "International segmentation", "Product positioning"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-545",
+    "title": "Global Trade and Operations",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Develops knowledge and understanding of the global marketing environment, concepts, and tools for global market penetration. Covers managerial identification of opportunities, problem resolution, and implementation of solutions.",
+    "skills_taught": ["Global trade", "International marketing", "Market penetration", "Global operations", "Strategic management"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-550",
+    "title": "Consumer and Buyer Behavior",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Applies modern behavior theory to purchasing decision-making. Topics include psychology of consumption, brand loyalty, group vs. individual decision-making, intuitive vs. rational decision-making, and integration of buyer behavior into marketing and sales strategies.",
+    "skills_taught": ["Consumer behavior", "Buyer psychology", "Brand loyalty", "Marketing strategy", "Sales strategy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-551",
+    "title": "Sales Management",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Covers selling strategies, sales force management, relationship and product selling, customer relationship ownership, and customer personas. Additional topics include forecasting, pricing, negotiation, recruitment, territory assignment, and channel management.",
+    "skills_taught": ["Sales management", "Sales strategy", "CRM", "Negotiation", "Forecasting", "Team management"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-552",
+    "title": "Brand Management and Marketing",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Covers building, measuring, and increasing brand equity. Topics include brand strategy, branding in the digital era, naming new products, and building brand extensions.",
+    "skills_taught": ["Brand management", "Brand equity", "Brand strategy", "Digital branding", "Market positioning"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-553",
+    "title": "Digital Marketing and Social Media",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Covers digital marketing and social media influence using creativity, critical thinking, and data analysis. Teaches the ASCOR digital marketing framework, online value proposition optimization, and creation of multistage digital marketing campaigns.",
+    "skills_taught": ["Digital marketing", "Social media marketing", "Campaign management", "Data analytics", "Content strategy"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "MKT-554",
+    "title": "Search Engine Optimization (SEO)",
+    "department": "Marketing",
+    "credits": 3,
+    "description": "Teaches search engine algorithms and optimization techniques to achieve high rankings. Topics include keyword research, meta tag editing, web scraping, indexing concepts, and alternatives to Google. Assumes working knowledge of HTML.",
+    "skills_taught": ["SEO", "Keyword research", "Web analytics", "HTML", "Content optimization", "Search algorithms"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-450G",
+    "title": "Emotional Intelligence (Graduate)",
+    "department": "Social Science",
+    "credits": 3,
+    "description": "Graduate-level EI course. Covers recognizing and controlling emotions in oneself and others, increasing EQ, and managing interpersonal relations. Students assess their EQ at the start and end of the course.",
+    "skills_taught": ["Emotional intelligence", "Self-awareness", "Interpersonal skills", "Emotion management", "Self-assessment"],
+    "prerequisites": [],
+    "open_seats": null
+  },
+  {
+    "course_id": "SOC-501",
+    "title": "Emotional Intelligence Essentials",
+    "department": "Social Science",
+    "credits": 1,
+    "description": "Focuses on mastery of emotional intelligence for managing interpersonal relations. First half covers recognizing EQ issues in others and oneself. Second half covers synthesizing solutions in complex professional and personal relationships.",
+    "skills_taught": ["Emotional intelligence", "Interpersonal skills", "Self-awareness", "Conflict resolution"],
+    "prerequisites": [],
+    "open_seats": null
+  }
+]
