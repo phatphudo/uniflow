@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     openai_api_key: str = os.getenv("OPENAI_API_KEY")
     """Required when ai_model starts with 'openai:'."""
 
-    serper_api_key: str = ""
+    serper_api_key: str = os.getenv("SERPER_API_KEY")
     """Required for live event search in Agent 2 (Phase 4+)."""
 
     logfire_token: str

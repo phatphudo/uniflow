@@ -18,19 +18,20 @@ from ai.orchestrator import run_uniflow
 from app.sidebar import UserInputs
 from schemas.inputs import TranscriptData
 from schemas.report import FinalReport
-
+from config import settings
+from retrieval.src.vector_store import get_collection
 
 def build_stub_deps() -> OrchestratorDeps:
     """
-    Phase 1 stub dependencies — no real DB or calendar service wired.
-    Replace with real ChromaDB collection and Calendar API client in Phase 6.
+    Phase 1 stub dependencies — no real calendar service wired.
+    Replace with real Calendar API client in Phase 6.
     """
     return OrchestratorDeps(
         resume_text="",
         transcript_data=TranscriptData(student_name="", gpa=0.0, completed=[]),
-        course_collection=None,  # type: ignore[arg-type]
+        course_collection=get_collection(),
         calendar_service=None,
-        search_api_key="",
+        search_api_key=settings.serper_api_key,
     )
 
 

@@ -1,7 +1,6 @@
 import argparse
 from pathlib import Path
 from retriever import agent
-from src.ingest import ingest_pdf
 from src.vector_store import add_chunks
 import json
 from schemas.retrieval import Chunk, record_to_text
