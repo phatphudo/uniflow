@@ -17,6 +17,7 @@ from pydantic_ai import Agent, RunContext
 from ai.agents.deps import OrchestratorDeps
 from ai.prompts import load_prompt
 from config import settings
+from retrieval.src.vector_store import query as chroma_query
 from schemas.agent2 import (
     AdvisorReport,
     CourseRecommendation,
@@ -41,20 +42,15 @@ def get_advisor():
             system_prompt=_SYSTEM_PROMPT,
         )
 
-        @_advisor.tool
-        async def search_courses(
-            ctx: RunContext[OrchestratorDeps], query: str
-        ) -> list[dict]:
+        @_advisor.tool_plain
+        def search_courses(query: str) -> list[dict]:
             """Semantic search over the college course catalog in ChromaDB."""
+            results = chroma_query(query, k=5)
             import json
-            results = ctx.deps.course_collection.query(
-                query_texts=[query],
-                n_results=5,
-            )
-            return [
-                json.loads(meta["data"])
-                for meta in results["metadatas"][0]
-            ]
+            print(f"\n[search_courses] query={query!r}")
+            print(f"[search_courses] results ({len(results)}):")
+            print(json.dumps(results, indent=2, default=str))
+            return results
 
         @_advisor.tool
         async def search_events(

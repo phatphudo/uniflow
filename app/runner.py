@@ -19,7 +19,6 @@ from app.sidebar import UserInputs
 from schemas.inputs import TranscriptData
 from schemas.report import FinalReport
 from config import settings
-from retrieval.src.vector_store import get_collection
 
 _pool = ThreadPoolExecutor(max_workers=1)
 
@@ -41,7 +40,6 @@ def build_stub_deps() -> OrchestratorDeps:
     return OrchestratorDeps(
         resume_text="",
         transcript_data=TranscriptData(student_name="", gpa=0.0, completed=[]),
-        course_collection=get_collection(),
         calendar_service=None,
         search_api_key=settings.serper_api_key,
     )
