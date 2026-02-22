@@ -29,6 +29,14 @@ def render_interview(ir: InterviewResult) -> None:
         unsafe_allow_html=True,
     )
 
+    # TTS: play the question aloud
+    try:
+        from ai.agents.agent3 import get_question_audio
+        audio_bytes = get_question_audio(ir.question)
+        st.audio(audio_bytes, format="audio/mp3")
+    except Exception:
+        pass  # TTS unavailable (no API key or network) — skip silently
+
     # Answer card
     st.markdown(
         f"""
