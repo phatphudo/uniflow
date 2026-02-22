@@ -8,18 +8,22 @@ Agent is created lazily so Phase 1 works without API keys.
 """
 
 from __future__ import annotations
-
 from pathlib import Path
+import io
+import json
+import os
+import subprocess
+import tempfile
 import wave
-import sounddevice as sd
 from ai.prompts import load_prompt
 from config import settings
 from schemas.agent3 import InterviewResult, StarScores
 from openai import OpenAI
 from pydantic_ai import Agent
 import asyncio
-import time
-import threading
+from schemas.agent1 import PositionProfile
+from ai.agents.agent1 import MOCK_POSITION_PROFILE
+from schemas.agent3 import Agent3Input
 
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
@@ -39,75 +43,185 @@ def get_interview_coach():
         )
     return _interview_coach
 
-def _write_pcm16_wav(path: Path, frames, sample_rate: int, channels: int) -> None:
-    """Persist int16 PCM frames to a WAV file."""
-    with wave.open(str(path), "wb") as wav_file:
+
+
+async def receive_student_answer(
+    *,
+    duration_seconds: float = 5.0,
+    sample_rate: int = 16_000,
+    channels: int = 1,
+) -> str:
+    """Record from microphone and transcribe directly — no file saved."""
+    import sounddevice as sd
+
+    recording = sd.rec(
+        int(duration_seconds * sample_rate),
+        samplerate=sample_rate,
+        channels=channels,
+        dtype="int16",
+    )
+    sd.wait()
+
+    buffer = io.BytesIO()
+    with wave.open(buffer, "wb") as wav_file:
         wav_file.setnchannels(channels)
         wav_file.setsampwidth(2)  # int16
         wav_file.setframerate(sample_rate)
-        wav_file.writeframes(frames.tobytes())
-
-
-async def record_student_answer(
-    filename: str,
-    *,
-    duration_seconds: float = 5.0, #Adjust longer for longer answers
-    sample_rate: int = 16_000,
-    channels: int = 1,
-) -> Path:
-    """Record a student's answer from the default input device and save as WAV."""
-    if duration_seconds <= 0:
-        raise ValueError("duration_seconds must be > 0")
-    if sample_rate <= 0:
-        raise ValueError("sample_rate must be > 0")
-    if channels <= 0:
-        raise ValueError("channels must be > 0")
-
-    output_path = Path(filename).expanduser().resolve()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    try:
-        recording = sd.rec(
-            int(duration_seconds * sample_rate),
-            samplerate=sample_rate,
-            channels=channels,
-            dtype="int16",
-        )
-        sd.wait()
-    except Exception as exc:
-        raise RuntimeError(f"Failed to record audio: {exc}") from exc
-
-    _write_pcm16_wav(output_path, recording, sample_rate, channels)
-    return output_path
-
-
-def transcribe_student_answer(
-    audio_path: str = "student_answer.wav",
-    *,
-    model: str | None = None,
-) -> str:
-    """Transcribe a WAV/MP3 file into text using OpenAI STT."""
-    input_path = Path(audio_path).expanduser().resolve()
-    if not input_path.exists():
-        raise FileNotFoundError(f"Audio file not found: {input_path}")
-    if input_path.stat().st_size == 0:
-        raise ValueError(f"Audio file is empty: {input_path}")
+        wav_file.writeframes(recording.tobytes())
+    buffer.seek(0)
+    buffer.name = "answer.wav"  # OpenAI SDK needs a .name to detect format
 
     api_key = settings.openai_api_key
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
 
     client = OpenAI(api_key=api_key)
-    with input_path.open("rb") as audio_file:
-        transcription = client.audio.transcriptions.create(
-            model=model or settings.stt_model,
-            file=audio_file,
-        )
+    transcription = client.audio.transcriptions.create(
+        model=settings.stt_model,
+        file=buffer,
+    )
+    return (transcription.text or "").strip()
 
-    text = (transcription.text or "").strip()
+def text_to_speech(
+    question: str,
+    *,
+    voice: str = "alloy",
+    model: str | None = None,
+) -> None:
+    """Convert question text to speech and play it immediately."""
+    text = question.strip()
     if not text:
-        raise RuntimeError("Transcription returned empty text.")
-    return transcription.text
+        raise ValueError("Question text must not be empty.")
+
+    api_key = settings.openai_api_key
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
+
+    client = OpenAI(api_key=api_key)
+    response = client.audio.speech.create(
+        model=model or settings.agent3_model,
+        voice=voice,
+        input=text,
+    )
+
+    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp:
+        temp_path = Path(tmp.name)
+
+    try:
+        if hasattr(response, "stream_to_file"):
+            response.stream_to_file(temp_path)
+        else:
+            temp_path.write_bytes(response.read())
+
+        # macOS default audio player
+        subprocess.run(["afplay", str(temp_path)], check=True)
+    finally:
+        if temp_path.exists():
+            os.unlink(temp_path)
+
+# ── Mock pipeline helpers ─────────────────────────────────────────────────────
+MOCK_STUDENT_ANSWER = (
+    "During my internship, our team had conflicting requests from design and sales "
+    "for the roadmap. I was responsible for prioritization. I built a scorecard with "
+    "impact and effort, aligned stakeholders in a working session, and proposed a plan. "
+    "We shipped the top 3 features and improved weekly active users by 11%."
+)
+
+
+def _mock_star_score(student_answer: str) -> StarScores:
+    """Rule-based STAR scoring for local mock runs (no model call)."""
+    text = student_answer.lower()
+
+    # Situation: context cues
+    situation = 10
+    if any(k in text for k in ("during", "at my", "team", "project", "internship")):
+        situation += 8
+    if len(student_answer) > 200:
+        situation += 3
+
+    # Task: ownership cues
+    task = 8
+    if any(k in text for k in ("i was responsible", "my role", "owned", "responsible")):
+        task += 10
+
+    # Action: concrete verbs
+    action = 8
+    action_hits = sum(
+        1
+        for k in ("built", "analyzed", "aligned", "proposed", "implemented", "led")
+        if k in text
+    )
+    action += min(action_hits * 3, 12)
+
+    # Result: measurable outcomes
+    result = 6
+    if any(k in text for k in ("%","increased","reduced","improved","grew","saved")):
+        result += 14
+    if any(k in text for k in ("users", "revenue", "retention", "nps", "conversion")):
+        result += 4
+
+    # Clamp to schema range
+    return StarScores(
+        situation=max(0, min(25, situation)),
+        task=max(0, min(25, task)),
+        action=max(0, min(25, action)),
+        result=max(0, min(25, result)),
+    )
+
+
+def run_mock_agent3_pipeline(student_answer: str | None = None) -> InterviewResult:
+    """
+    Local mock of Agent 3 pipeline:
+    1) use mock student profile/context
+    2) get (mock) student answer
+    3) return STAR-style judged InterviewResult
+    """
+    _ = MOCK_AGENT3_INPUT.position_profile  # mock profile/context source
+    question = MOCK_GENERATED_QUESTION.question
+    answer = student_answer or MOCK_STUDENT_ANSWER
+    score = _mock_star_score(answer)
+
+    strengths: list[str] = []
+    improvements: list[str] = []
+
+    if score.situation >= 16:
+        strengths.append("Context is clear and grounded in a real scenario.")
+    else:
+        improvements.append("Make the Situation more specific (team, timeline, constraints).")
+
+    if score.task >= 16:
+        strengths.append("Your personal ownership and responsibility are explicit.")
+    else:
+        improvements.append("Clarify your exact task and scope of ownership.")
+
+    if score.action >= 16:
+        strengths.append("Actions are concrete and show decision-making.")
+    else:
+        improvements.append("Describe your actions step-by-step with concrete methods.")
+
+    if score.result >= 16:
+        strengths.append("Result includes measurable impact.")
+    else:
+        improvements.append("Add measurable outcomes (%, KPI change, business impact).")
+
+    return InterviewResult(
+        question=question,
+        student_answer=answer,
+        star_scores=score,
+        strengths=strengths or ["Solid baseline answer structure."],
+        improvements=improvements,
+        stronger_closing=(
+            "A stronger close: 'The prioritized roadmap shipped in 6 weeks and "
+            "improved weekly active users by 11%, and I reused the framework for the "
+            "next planning cycle.'"
+        ),
+    )
+
+
+
+
+
+
 
 # ── Phase 1 mock ──────────────────────────────────────────────────────────────
 MOCK_INTERVIEW_RESULT = InterviewResult(
@@ -138,13 +252,36 @@ MOCK_INTERVIEW_RESULT = InterviewResult(
         "doubling down on the initiative in Q4.'"
     ),
 )
+#--------------Second Mock ---------------------
+MOCK_GENERATED_QUESTION = InterviewResult(
+    question=(
+        "Tell me about a time you had to align engineering, design, and business "
+        "stakeholders around a product roadmap decision with conflicting priorities."
+    ),
+    student_answer="",
+    star_scores=StarScores(situation=0, task=0, action=0, result=0),
+    strengths=[],
+    improvements=[],
+    stronger_closing="",
+)
+
+MOCK_AGENT3_INPUT = Agent3Input(
+    position_profile=MOCK_POSITION_PROFILE,
+    previous_interview_results=[MOCK_INTERVIEW_RESULT],
+    previous_interview_result=MOCK_INTERVIEW_RESULT,
+    student_answer="",
+)
 
 async def _demo() -> None:
     result = await get_interview_coach().run(MOCK_INTERVIEW_RESULT.model_dump_json())
     print(result.output)  # parsed InterviewResult
 
 if __name__ == "__main__":
-    print("Recorded student answer")
-    asyncio.run(record_student_answer("student_answer.wav"))
-    print("Recoding done")
-    print(transcribe_student_answer("student_answer.wav"))
+    # print("Recorded student answer")
+    # asyncio.run(record_student_answer("student_answer.wav"))
+    # print("Recoding done")
+    # print(transcribe_student_answer("student_answer.wav"))
+    # #Record the answer -> Transcript it -> pass it to AI -> AI judging
+    print("demo mock pipeline")
+    print(run_mock_agent3_pipeline().model_dump_json(indent=2))
+    text_to_speech("Tell me about a time you handled competing priorities.")
