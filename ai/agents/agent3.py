@@ -8,26 +8,23 @@ Agent is created lazily so Phase 1 works without API keys.
 """
 
 from __future__ import annotations
-import json
 from pathlib import Path
+import json
 import wave
-import sounddevice as sd
 from ai.prompts import load_prompt
 from config import settings
 from schemas.agent3 import InterviewResult, StarScores
 from openai import OpenAI
 from pydantic_ai import Agent
 import asyncio
-import time
-import threading
 from schemas.agent1 import PositionProfile
-
+from ai.agents.agent1 import MOCK_POSITION_PROFILE
+from schemas.agent3 import Agent3Input
 
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
 _GENERATE_QUESTION_PROMPT = load_prompt("generate_question")
 _interview_coach = None
-question_generator = None
 
 def get_interview_coach():
     """Return the PydanticAI Interview Coach agent, creating it on first call."""
@@ -68,6 +65,7 @@ async def record_student_answer(
     sample_rate: int = 16_000,
     channels: int = 1,
 ) -> Path:
+    import sounddevice as sd
     """Record a student's answer from the default input device and save as WAV."""
     if duration_seconds <= 0:
         raise ValueError("duration_seconds must be > 0")
@@ -135,34 +133,7 @@ async def receive_student_answer(filename: str,
     )
     return transcribe_student_answer(str(output_path))
 
-previous_student_answers= {}
-async def generate_question(
-    position_profile: PositionProfile,
-    previous_interview_results: list[InterviewResult] | None = None,
-) -> InterviewResult:
-    """
-    Generate the next interview question as an InterviewResult skeleton.
 
-    The function passes PositionProfile plus prior round context to the
-    generator prompt, then returns a validated InterviewResult.
-    """
-    payload: dict[str, object] = {
-        "position_profile": position_profile.model_dump(),
-        "previous_interview_results": [
-            item.model_dump() for item in (previous_interview_results or [])
-        ],
-    }
-    if previous_interview_results:
-        payload["previous_interview_result"] = previous_interview_results[-1].model_dump()
-
-    result = await get_question_generator().run(json.dumps(payload))
-    output = getattr(result, "output", None) or getattr(result, "data", None)
-    if output is None:
-        raise RuntimeError("Question generator returned no parsed output.")
-    return output
-
-
-    print(transcribe_student_answer("student_answer.wav"))
 
 
 
@@ -197,14 +168,35 @@ MOCK_INTERVIEW_RESULT = InterviewResult(
         "doubling down on the initiative in Q4.'"
     ),
 )
+#--------------Second Mock ---------------------
+MOCK_GENERATED_QUESTION = InterviewResult(
+    question=(
+        "Tell me about a time you had to align engineering, design, and business "
+        "stakeholders around a product roadmap decision with conflicting priorities."
+    ),
+    student_answer="",
+    star_scores=StarScores(situation=0, task=0, action=0, result=0),
+    strengths=[],
+    improvements=[],
+    stronger_closing="",
+)
+
+MOCK_AGENT3_INPUT = Agent3Input(
+    position_profile=MOCK_POSITION_PROFILE,
+    previous_interview_results=[MOCK_INTERVIEW_RESULT],
+    previous_interview_result=MOCK_INTERVIEW_RESULT,
+    student_answer="",
+)
 
 async def _demo() -> None:
     result = await get_interview_coach().run(MOCK_INTERVIEW_RESULT.model_dump_json())
     print(result.output)  # parsed InterviewResult
 
 if __name__ == "__main__":
-    print("Recorded student answer")
-    asyncio.run(record_student_answer("student_answer.wav"))
-    print("Recoding done")
-    print(transcribe_student_answer("student_answer.wav"))
-    #Record the answer -> Transcript it -> pass it to AI -> AI judging
+    # print("Recorded student answer")
+    # asyncio.run(record_student_answer("student_answer.wav"))
+    # print("Recoding done")
+    # print(transcribe_student_answer("student_answer.wav"))
+    # #Record the answer -> Transcript it -> pass it to AI -> AI judging
+    print("demo")
+    asyncio.run(_demo())

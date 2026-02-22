@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from schemas.agent1 import PositionProfile
 
 
 class StarScores(BaseModel):
@@ -30,5 +31,7 @@ class InterviewResult(BaseModel):
         }
 
 class Agent3Input(BaseModel):
-    student_answer: str
-    
+    position_profile: PositionProfile
+    previous_interview_results: list[InterviewResult] = Field(default_factory=list)
+    previous_interview_result: InterviewResult | None = None
+    student_answer: str = ""
