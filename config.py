@@ -29,7 +29,7 @@ class Settings(BaseSettings):
        'openai:gpt-4o'               (OpenAI)
     """
     # -- TTS and STT Agents ────────────────────────────────────────────────────
-    agent3_model: str = "openai:gpt-4o-tts"
+    agent3_model: str = os.getenv("AGENT3_MODEL")
     stt_model: str = "gpt-4o-mini-transcribe"
 
     # ── API Keys ────────────────────────────────────────────────────────────────

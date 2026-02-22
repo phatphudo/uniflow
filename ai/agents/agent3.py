@@ -10,6 +10,9 @@ Agent is created lazily so Phase 1 works without API keys.
 from __future__ import annotations
 from pathlib import Path
 import json
+import os
+import subprocess
+import tempfile
 import wave
 from ai.prompts import load_prompt
 from config import settings
@@ -124,6 +127,43 @@ async def receive_student_answer(filename: str,
         channels=channels,
     )
     return transcribe_student_answer(str(output_path))
+
+def text_to_speech(
+    question: str,
+    *,
+    voice: str = "alloy",
+    model: str | None = None,
+) -> None:
+    """Convert question text to speech and play it immediately."""
+    text = question.strip()
+    if not text:
+        raise ValueError("Question text must not be empty.")
+
+    api_key = settings.openai_api_key
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
+
+    client = OpenAI(api_key=api_key)
+    response = client.audio.speech.create(
+        model=model or settings.agent3_model,
+        voice=voice,
+        input=text,
+    )
+
+    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp:
+        temp_path = Path(tmp.name)
+
+    try:
+        if hasattr(response, "stream_to_file"):
+            response.stream_to_file(temp_path)
+        else:
+            temp_path.write_bytes(response.read())
+
+        # macOS default audio player
+        subprocess.run(["afplay", str(temp_path)], check=True)
+    finally:
+        if temp_path.exists():
+            os.unlink(temp_path)
 
 # ── Mock pipeline helpers ─────────────────────────────────────────────────────
 MOCK_STUDENT_ANSWER = (
@@ -290,3 +330,4 @@ if __name__ == "__main__":
     # #Record the answer -> Transcript it -> pass it to AI -> AI judging
     print("demo mock pipeline")
     print(run_mock_agent3_pipeline().model_dump_json(indent=2))
+    text_to_speech("Tell me about a time you handled competing priorities.")
