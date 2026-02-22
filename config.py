@@ -20,6 +20,8 @@ class Settings(BaseSettings):
         extra="ignore",  # silently ignore unrecognised env vars
     )
 
+    env: str
+
     # ── LLM ────────────────────────────────────────────────────────────────────
     ai_model: str = os.getenv("AI_MODEL")
     """PydanticAI model string. Examples:
@@ -36,6 +38,9 @@ class Settings(BaseSettings):
 
     serper_api_key: str = ""
     """Required for live event search in Agent 2 (Phase 4+)."""
+
+    logfire_token: str
+    """Required for Logfire integration."""
 
 
 # Singleton — import this everywhere instead of instantiating Settings() yourself.
