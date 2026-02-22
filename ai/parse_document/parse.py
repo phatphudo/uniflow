@@ -29,7 +29,7 @@ def _read_bytes(file: Union[str, Path, object]) -> bytes:
     return Path(file).expanduser().resolve().read_bytes()
 
 
-def parse_resume(file: Union[str, Path, object]) -> ResumeData:
+async def parse_resume(file: Union[str, Path, object]) -> ResumeData:
     """Extract structured resume data from a resume PDF.
 
     Returns a ResumeData object with name, skills, experience, education, and certifications.
@@ -39,7 +39,7 @@ def parse_resume(file: Union[str, Path, object]) -> ResumeData:
         _resume_agent = Agent(model=settings.ai_model, output_type=ResumeData)
 
     pdf_bytes = _read_bytes(file)
-    result = _resume_agent.run_sync(
+    result = await _resume_agent.run(
         [
             (
                 "Extract the candidate's information from this resume. "
@@ -52,7 +52,7 @@ def parse_resume(file: Union[str, Path, object]) -> ResumeData:
     return result.output
 
 
-def parse_transcript(file: Union[str, Path, object]) -> TranscriptData:
+async def parse_transcript(file: Union[str, Path, object]) -> TranscriptData:
     """Extract structured transcript data from a transcript PDF.
 
     Returns a TranscriptData object with student name, GPA, and course lists.
@@ -65,7 +65,7 @@ def parse_transcript(file: Union[str, Path, object]) -> TranscriptData:
         )
 
     pdf_bytes = _read_bytes(file)
-    result = _transcript_agent.run_sync(
+    result = await _transcript_agent.run(
         [
             (
                 "Extract the student transcript data from this document. "

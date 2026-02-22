@@ -9,55 +9,59 @@ from __future__ import annotations
 from ai.agents.agent1 import MOCK_POSITION_PROFILE
 from ai.agents.agent2 import MOCK_ADVISOR_REPORT
 from ai.agents.agent3 import MOCK_INTERVIEW_RESULT
+from ai.parse_document.parse import parse_resume, parse_transcript
 from ai.agents.deps import OrchestratorDeps
-from schemas.inputs import TranscriptCourse, TranscriptData
+from schemas.inputs import TranscriptCourse, TranscriptData, ResumeData
 from schemas.report import FinalReport
 
 # ── Phase 1 — Transcript stub parser ─────────────────────────────────────────
 
 
-def parse_transcript_pdf(path: str) -> TranscriptData:
+async def parse_transcript_pdf(path) -> TranscriptData:
     """
     Phase 1 stub: returns dummy TranscriptData.
     Phase 3 will replace with real pdfplumber extraction.
     """
-    return TranscriptData(
-        student_name="Alex Rivera",
-        gpa=3.4,
-        completed=[
-            TranscriptCourse(
-                course_id="CS-101",
-                title="Intro to Programming",
-                grade="A",
-                credits=3.0,
-                semester="Fall 2022",
-            ),
-            TranscriptCourse(
-                course_id="BUS-201",
-                title="Principles of Management",
-                grade="B+",
-                credits=3.0,
-                semester="Spring 2023",
-            ),
-            TranscriptCourse(
-                course_id="MATH-101",
-                title="Calculus I",
-                grade="B",
-                credits=4.0,
-                semester="Fall 2022",
-            ),
-        ],
-        in_progress=[
-            TranscriptCourse(
-                course_id="CS-301",
-                title="Software Engineering",
-                grade="IP",
-                credits=3.0,
-                semester="Spring 2026",
-            ),
-        ],
-    )
+    return await parse_transcript(path)
+    # TranscriptData(
+    #     student_name="Alex Rivera",
+    #     gpa=3.4,
+    #     completed=[
+    #         TranscriptCourse(
+    #             course_id="CS-101",
+    #             title="Intro to Programming",
+    #             grade="A",
+    #             credits=3.0,
+    #             semester="Fall 2022",
+    #         ),
+    #         TranscriptCourse(
+    #             course_id="BUS-201",
+    #             title="Principles of Management",
+    #             grade="B+",
+    #             credits=3.0,
+    #             semester="Spring 2023",
+    #         ),
+    #         TranscriptCourse(
+    #             course_id="MATH-101",
+    #             title="Calculus I",
+    #             grade="B",
+    #             credits=4.0,
+    #             semester="Fall 2022",
+    #         ),
+    #     ],
+    #     in_progress=[
+    #         TranscriptCourse(
+    #             course_id="CS-301",
+    #             title="Software Engineering",
+    #             grade="IP",
+    #             credits=3.0,
+    #             semester="Spring 2026",
+    #         ),
+    #     ],
+    # )
 
+async def parse_resume_pdf(path) -> ResumeData:
+    return await parse_resume(path)
 
 # ── Calendar push stub ────────────────────────────────────────────────────────
 
@@ -74,12 +78,12 @@ def push_to_calendar(calendar_service, event):
 
 
 async def run_uniflow(
-    resume_pdf_path: str,
-    transcript_pdf_path: str,
+    resume_pdf_path,   # UploadedFile | str | None
+    transcript_pdf_path,  # UploadedFile | str | None
     target_position: str,
     deps: OrchestratorDeps,
     student_answer: str,
-    use_mocks: bool = True,  # Phase 1: True; Phase 6: False
+    use_mocks: bool = False,  # Phase 1: True; Phase 6: False
 ) -> FinalReport:
     """
     Orchestrates the full UniFlow pipeline.
@@ -93,14 +97,12 @@ async def run_uniflow(
 
     # ── Step 1: Parse inputs ──────────────────────────────────────────────────
     if use_mocks:
-        resume_text = "[MOCK RESUME] Senior PM with 2 years experience in B2B SaaS."
-        transcript_data = parse_transcript_pdf(transcript_pdf_path)
+        resume_data_json = "[MOCK RESUME] Senior PM with 2 years experience in B2B SaaS."
+        transcript_data = await parse_transcript_pdf(transcript_pdf_path)
     else:
-        import pdfplumber
-
-        with pdfplumber.open(resume_pdf_path) as pdf:
-            resume_text = "\n".join(page.extract_text() or "" for page in pdf.pages)
-        transcript_data = parse_transcript_pdf(transcript_pdf_path)
+        resume_data = await parse_resume_pdf(resume_pdf_path)
+        resume_data_json = resume_data.model_dump_json()
+        transcript_data = await parse_transcript_pdf(transcript_pdf_path)
 
     # ── Step 2: Agent 1 — Position Analyst ───────────────────────────────────
     if use_mocks:
@@ -109,7 +111,7 @@ async def run_uniflow(
         from ai.agents.agent1 import get_position_analyst
 
         agent1_result = await get_position_analyst().run(target_position)
-        position_profile = agent1_result.data
+        position_profile = agent1_result.output
 
     # ── Step 3: Orchestrator filters Agent 1 output ───────────────────────────
     skill_benchmark = position_profile.must_have
@@ -128,12 +130,12 @@ async def run_uniflow(
         agent2_prompt = (
             f"skill_benchmark: {skill_benchmark}\n"
             f"seniority_level: {seniority_level}\n"
-            f"resume_text: {resume_text}\n"
+            f"resume_text: {resume_data_json}\n"
             f"transcript_data: {transcript_data.model_dump_json()}\n"
             f"target_position: {target_position}\n"
         )
         agent2_result = await get_advisor().run(agent2_prompt, deps=deps)
-        advisor_report = agent2_result.data
+        advisor_report = agent2_result.output 
 
     # ── Step 5: Agent 3 — Interview Coach ────────────────────────────────────
     if use_mocks:
@@ -149,7 +151,7 @@ async def run_uniflow(
             f"student_answer: {student_answer}\n"
         )
         agent3_result = await get_interview_coach().run(agent3_prompt)
-        interview_result = agent3_result.data
+        interview_result = agent3_result.output
 
     # ── Step 6: Google Calendar push (if opted in) ────────────────────────────
     calendar_synced = False

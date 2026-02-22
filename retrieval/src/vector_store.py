@@ -7,7 +7,7 @@ def get_collection():
         api_key=os.getenv("OPENAI_API_KEY"),
         model_name="text-embedding-3-small"
     )
-    client = chromadb.PersistentClient(path="vector_db", embedding_function=embedding_fn)
+    client = chromadb.PersistentClient(path="vector_db")
     return client.get_or_create_collection(
         name="documents",
         embedding_function=embedding_fn)

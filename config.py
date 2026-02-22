@@ -20,7 +20,7 @@ class Settings(BaseSettings):
         extra="ignore",  # silently ignore unrecognised env vars
     )
 
-    env: str
+    environment: str = os.getenv("LOGFIRE_ENVIRONMENT") # maps to ENVIRONMENT= in .env
 
     # ── LLM ────────────────────────────────────────────────────────────────────
     ai_model: str = os.getenv("AI_MODEL")
@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     """
     # -- TTS and STT Agents ────────────────────────────────────────────────────
     agent3_model: str = os.getenv("AGENT3_MODEL")
-    stt_model: str = "gpt-4o-mini-transcribe"
+    stt_model: str = "whisper-1"
 
     # ── API Keys ────────────────────────────────────────────────────────────────
     openai_api_key: str = os.getenv("OPENAI_API_KEY")

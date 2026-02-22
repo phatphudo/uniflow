@@ -11,6 +11,9 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+import httpx
+from pydantic_ai import Agent, RunContext
+
 from ai.agents.deps import OrchestratorDeps
 from ai.prompts import load_prompt
 from config import settings
@@ -31,9 +34,6 @@ def get_advisor():
     """Return the PydanticAI Advisor agent, creating it on first call."""
     global _advisor
     if _advisor is None:
-        import httpx
-        from pydantic_ai import Agent, RunContext
-
         _advisor = Agent(
             model=settings.ai_model,
             output_type=AdvisorReport,
@@ -46,16 +46,14 @@ def get_advisor():
             ctx: RunContext[OrchestratorDeps], query: str
         ) -> list[dict]:
             """Semantic search over the college course catalog in ChromaDB."""
+            import json
             results = ctx.deps.course_collection.query(
                 query_texts=[query],
                 n_results=5,
             )
             return [
-                {**meta, "similarity": dist}
-                for meta, dist in zip(
-                    results["metadatas"][0],
-                    results["distances"][0],
-                )
+                json.loads(meta["data"])
+                for meta in results["metadatas"][0]
             ]
 
         @_advisor.tool
@@ -63,13 +61,19 @@ def get_advisor():
             ctx: RunContext[OrchestratorDeps], query: str
         ) -> list[dict]:
             """Live web search for professional events via Serper API."""
-            async with httpx.AsyncClient() as client:
-                resp = await client.post(
-                    "https://google.serper.dev/search",
-                    headers={"X-API-KEY": ctx.deps.search_api_key},
-                    json={"q": query, "num": 10},
-                )
-            return resp.json().get("organic", [])
+            try:
+                async with httpx.AsyncClient(timeout=10.0) as client:
+                    resp = await client.post(
+                        "https://google.serper.dev/search",
+                        headers={"X-API-KEY": ctx.deps.search_api_key},
+                        json={"q": query, "num": 10},
+                    )
+                    resp.raise_for_status()
+                    return resp.json().get("organic", [])
+            except httpx.HTTPStatusError as e:
+                raise RuntimeError(f"Serper API error {e.response.status_code}: {e.response.text}") from e
+            except httpx.RequestError as e:
+                raise RuntimeError(f"Serper API request failed: {e}") from e
 
     return _advisor
 
