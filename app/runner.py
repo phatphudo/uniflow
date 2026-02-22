@@ -18,7 +18,7 @@ from ai.orchestrator import run_uniflow
 from app.sidebar import UserInputs
 from schemas.inputs import TranscriptData
 from schemas.report import FinalReport
-
+from config import settings
 
 def build_stub_deps() -> OrchestratorDeps:
     """
@@ -30,7 +30,7 @@ def build_stub_deps() -> OrchestratorDeps:
         transcript_data=TranscriptData(student_name="", gpa=0.0, completed=[]),
         course_collection=None,  # type: ignore[arg-type]
         calendar_service=None,
-        search_api_key="",
+        search_api_key=settings.serper_api_key,
     )
 
 
