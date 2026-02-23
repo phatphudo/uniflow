@@ -20,15 +20,13 @@ from schemas.inputs import TranscriptData
 from schemas.report import FinalReport
 from config import settings
 
-_pool = ThreadPoolExecutor(max_workers=1)
+# A dedicated thread pool so async coroutines run in a fresh event loop,
+# avoiding conflicts with Streamlit's uvloop.
+_pool = ThreadPoolExecutor(max_workers=2)
 
 
-def _run_async(coro):
-    """Run an async coroutine in a fresh event loop on a separate thread.
-
-    Streamlit uses uvloop, which blocks nested asyncio.run() calls.
-    Running in a separate thread gives us our own event loop.
-    """
+def run_async(coro):
+    """Run an async coroutine in a fresh event loop on a background thread."""
     return _pool.submit(asyncio.run, coro).result()
 
 
@@ -49,14 +47,13 @@ def run_analysis(inputs: UserInputs) -> FinalReport:
     """Invoke the orchestrator with a spinner and return the FinalReport."""
     deps = build_stub_deps()
 
-    with st.spinner("🔍 Analyzing your profile…"):
-        report = _run_async(
+    with st.spinner("Analyzing your profile..."):
+        report = run_async(
             run_uniflow(
-                resume_pdf_path=inputs.resume_file,
-                transcript_pdf_path=inputs.transcript_file,
+                resume_pdf_path=inputs.resume_file if inputs.resume_file else "mock.pdf",
+                transcript_pdf_path=inputs.transcript_file if inputs.transcript_file else "mock.pdf",
                 target_position=inputs.target_position,
                 deps=deps,
-                student_answer=inputs.student_answer,
                 use_mocks=False,
             )
         )

@@ -11,8 +11,8 @@ from app.config import configure_page, inject_css
 from app.panels.benchmark import render_benchmark
 from app.panels.courses import render_courses
 from app.panels.events import render_events
-from app.panels.interview import render_interview
-from app.runner import run_analysis
+from app.panels.interview import render_interview_chat
+from app.runner import run_analysis, run_async
 from app.sidebar import render_sidebar
 
 
@@ -32,14 +32,17 @@ def run_app() -> None:
         "and get your career gap analysis in seconds."
     )
 
-    if not inputs.run_clicked:
+    # ── 4. Run orchestrator (cached in session_state) ────────────────────────
+    if inputs.run_clicked:
+        st.session_state.report = run_analysis(inputs)
+
+    if "report" not in st.session_state:
         st.info(
-            "👈 Fill in your details on the left and click **Analyze My Profile** to begin."
+            "Fill in your details on the left and click **Analyze My Profile** to begin."
         )
         return
 
-    # ── 4. Run orchestrator ───────────────────────────────────────────────────
-    report = run_analysis(inputs)
+    report = st.session_state.report
 
     # ── 5. Top row: Benchmark (left) + Courses (right) ────────────────────────
     col_left, col_right = st.columns([1, 1], gap="large")
@@ -58,7 +61,7 @@ def run_app() -> None:
             calendar_push_ready=report.advisor_report.calendar_push_ready,
         )
     with col4:
-        render_interview(report.interview_result)
+        render_interview_chat(report, run_async)
 
     # ── 7. Footer ─────────────────────────────────────────────────────────────
     st.divider()

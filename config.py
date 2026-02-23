@@ -20,7 +20,7 @@ class Settings(BaseSettings):
         extra="ignore",  # silently ignore unrecognised env vars
     )
 
-    env: str = os.getenv("LOGFIRE_ENVIRONMENT") # maps to ENVIRONMENT= in .env
+    env: str = os.getenv("LOGFIRE_ENVIRONMENT")
 
     # ── LLM ────────────────────────────────────────────────────────────────────
     ai_model: str = os.getenv("AI_MODEL")

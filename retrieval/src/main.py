@@ -1,10 +1,10 @@
 import argparse
 from pathlib import Path
-from retriever import agent
-from src.vector_store import add_chunks
+from retrieval.src.retriever import agent
+from retrieval.src.vector_store import add_chunks
 import json
 from schemas.retrieval import Chunk, record_to_text
-def build_index(json_path="data/raw/courses.json"):
+def build_index(json_path="/Users/Local Documents/uniflow/retrieval/data/processed/courses.json"):
     records = json.load(open(json_path))
     chunks = [
         Chunk(

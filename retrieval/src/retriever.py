@@ -1,5 +1,5 @@
 from pydantic_ai import Agent
-from src.vector_store import query as chroma_query
+from retrieval.src.vector_store import query as chroma_query
 from config import settings
 agent =Agent(
     model=settings.ai_model,

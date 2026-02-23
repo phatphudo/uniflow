@@ -11,60 +11,22 @@ from ai.agents.agent2 import MOCK_ADVISOR_REPORT
 from ai.agents.agent3 import MOCK_INTERVIEW_RESULT
 from ai.parse_document.parse import parse_resume, parse_transcript
 from ai.agents.deps import OrchestratorDeps
-from schemas.inputs import TranscriptCourse, TranscriptData, ResumeData
+from schemas.agent3 import InterviewResult
+from schemas.inputs import TranscriptData, ResumeData
 from schemas.report import FinalReport
 
-# ── Phase 1 — Transcript stub parser ─────────────────────────────────────────
 
+# ── Parse helpers ─────────────────────────────────────────────────────────────
 
 async def parse_transcript_pdf(path) -> TranscriptData:
-    """
-    Phase 1 stub: returns dummy TranscriptData.
-    Phase 3 will replace with real pdfplumber extraction.
-    """
     return await parse_transcript(path)
-    # TranscriptData(
-    #     student_name="Alex Rivera",
-    #     gpa=3.4,
-    #     completed=[
-    #         TranscriptCourse(
-    #             course_id="CS-101",
-    #             title="Intro to Programming",
-    #             grade="A",
-    #             credits=3.0,
-    #             semester="Fall 2022",
-    #         ),
-    #         TranscriptCourse(
-    #             course_id="BUS-201",
-    #             title="Principles of Management",
-    #             grade="B+",
-    #             credits=3.0,
-    #             semester="Spring 2023",
-    #         ),
-    #         TranscriptCourse(
-    #             course_id="MATH-101",
-    #             title="Calculus I",
-    #             grade="B",
-    #             credits=4.0,
-    #             semester="Fall 2022",
-    #         ),
-    #     ],
-    #     in_progress=[
-    #         TranscriptCourse(
-    #             course_id="CS-301",
-    #             title="Software Engineering",
-    #             grade="IP",
-    #             credits=3.0,
-    #             semester="Spring 2026",
-    #         ),
-    #     ],
-    # )
+
 
 async def parse_resume_pdf(path) -> ResumeData:
     return await parse_resume(path)
 
-# ── Calendar push stub ────────────────────────────────────────────────────────
 
+# ── Calendar push stub ────────────────────────────────────────────────────────
 
 def push_to_calendar(calendar_service, event):
     """
@@ -76,14 +38,12 @@ def push_to_calendar(calendar_service, event):
 
 # ── Main orchestration function ───────────────────────────────────────────────
 
-
 async def run_uniflow(
-    resume_pdf_path,   # UploadedFile | str | None
-    transcript_pdf_path,  # UploadedFile | str | None
+    resume_pdf_path,        # UploadedFile | str | None
+    transcript_pdf_path,    # UploadedFile | str | None
     target_position: str,
     deps: OrchestratorDeps,
-    student_answer: str,
-    use_mocks: bool = False,  # Phase 1: True; Phase 6: False
+    use_mocks: bool = False,
 ) -> FinalReport:
     """
     Orchestrates the full UniFlow pipeline.
@@ -135,23 +95,30 @@ async def run_uniflow(
             f"target_position: {target_position}\n"
         )
         agent2_result = await get_advisor().run(agent2_prompt, deps=deps)
-        advisor_report = agent2_result.output 
+        advisor_report = agent2_result.output
 
-    # ── Step 5: Agent 3 — Interview Coach ────────────────────────────────────
+    # ── Step 5: Agent 3 — Interview Coach (first question only) ───────────────
     if use_mocks:
         interview_result = MOCK_INTERVIEW_RESULT
     else:
-        from ai.agents.agent3 import get_interview_coach
+        from ai.agents.agent3 import generate_question
+        from schemas.agent3 import StarScores
 
         top_gap = advisor_report.gap_report.top_gap
-        agent3_prompt = (
-            f"top_gap: {top_gap}\n"
-            f"interview_topics: {position_profile.interview_topics}\n"
-            f"position_context: {target_position}\n"
-            f"student_answer: {student_answer}\n"
+        first_question = await generate_question(
+            top_gap=top_gap,
+            interview_topics=position_profile.interview_topics,
+            target_position=target_position,
+            previous_results=[],
         )
-        agent3_result = await get_interview_coach().run(agent3_prompt)
-        interview_result = agent3_result.output
+        interview_result = InterviewResult(
+            question=first_question,
+            student_answer="",
+            star_scores=StarScores(situation=0, task=0, action=0, result=0),
+            strengths=[],
+            improvements=[],
+            stronger_closing="",
+        )
 
     # ── Step 6: Google Calendar push (if opted in) ────────────────────────────
     calendar_synced = False
