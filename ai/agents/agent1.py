@@ -31,6 +31,7 @@ def get_position_analyst():
             model=settings.ai_model,
             output_type=PositionProfile,
             system_prompt=_SYSTEM_PROMPT,
+            output_retries=3
         )
     return _position_analyst
 

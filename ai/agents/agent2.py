@@ -40,6 +40,7 @@ def get_advisor():
             output_type=AdvisorReport,
             deps_type=OrchestratorDeps,
             system_prompt=_SYSTEM_PROMPT,
+            output_retries=3
         )
 
         @_advisor.tool_plain
