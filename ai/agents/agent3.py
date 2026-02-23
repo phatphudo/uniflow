@@ -9,8 +9,8 @@ Agent is created lazily so Phase 1 works without API keys.
 
 from __future__ import annotations
 from pathlib import Path
+from functools import lru_cache
 import io
-import json
 import os
 import subprocess
 import tempfile
@@ -20,7 +20,6 @@ from config import settings
 from schemas.agent3 import InterviewResult, StarScores
 from openai import OpenAI
 from pydantic_ai import Agent
-import asyncio
 from schemas.agent1 import PositionProfile
 from ai.agents.agent1 import MOCK_POSITION_PROFILE
 from schemas.agent3 import Agent3Input
@@ -29,6 +28,12 @@ from schemas.agent3 import Agent3Input
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
 
 _interview_coach = None
+
+
+@lru_cache(maxsize=1)
+def get_openai_client() -> OpenAI:
+    """Return a cached OpenAI client — created once, reused on every call."""
+    return OpenAI(api_key=settings.openai_api_key)
 
 
 def get_interview_coach():
@@ -71,53 +76,21 @@ async def receive_student_answer(
     buffer.seek(0)
     buffer.name = "answer.wav"  # OpenAI SDK needs a .name to detect format
 
-    api_key = settings.openai_api_key
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
-
-    client = OpenAI(api_key=api_key)
-    transcription = client.audio.transcriptions.create(
+    transcription = get_openai_client().audio.transcriptions.create(
         model=settings.stt_model,
         file=buffer,
     )
     return (transcription.text or "").strip()
 
-def text_to_speech(
-    question: str,
-    *,
-    voice: str = "alloy",
-    model: str | None = None,
-) -> None:
-    """Convert question text to speech and play it immediately."""
-    text = question.strip()
-    if not text:
-        raise ValueError("Question text must not be empty.")
-
-    api_key = settings.openai_api_key
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
-
-    client = OpenAI(api_key=api_key)
-    response = client.audio.speech.create(
+# In agent3.py — new version of text_to_speech
+def get_question_audio(question: str, model: str | None = None) -> bytes:
+    """Return TTS audio bytes — play with st.audio() in Streamlit."""
+    response = get_openai_client().audio.speech.create(
         model=model or settings.agent3_model,
-        voice=voice,
-        input=text,
+        voice="alloy",
+        input=question.strip(),
     )
-
-    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp:
-        temp_path = Path(tmp.name)
-
-    try:
-        if hasattr(response, "stream_to_file"):
-            response.stream_to_file(temp_path)
-        else:
-            temp_path.write_bytes(response.read())
-
-        # macOS default audio player
-        subprocess.run(["afplay", str(temp_path)], check=True)
-    finally:
-        if temp_path.exists():
-            os.unlink(temp_path)
+    return response.read()  # raw MP3 bytes
 
 # ── Mock pipeline helpers ─────────────────────────────────────────────────────
 MOCK_STUDENT_ANSWER = (
@@ -284,4 +257,4 @@ if __name__ == "__main__":
     # #Record the answer -> Transcript it -> pass it to AI -> AI judging
     print("demo mock pipeline")
     print(run_mock_agent3_pipeline().model_dump_json(indent=2))
-    text_to_speech("Tell me about a time you handled competing priorities.")
+    get_question_audio("Tell me about a time you handled competing priorities.")

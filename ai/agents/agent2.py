@@ -11,9 +11,13 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+import httpx
+from pydantic_ai import Agent, RunContext
+
 from ai.agents.deps import OrchestratorDeps
 from ai.prompts import load_prompt
 from config import settings
+from retrieval.src.vector_store import query as chroma_query
 from schemas.agent2 import (
     AdvisorReport,
     CourseRecommendation,
@@ -31,9 +35,6 @@ def get_advisor():
     """Return the PydanticAI Advisor agent, creating it on first call."""
     global _advisor
     if _advisor is None:
-        import httpx
-        from pydantic_ai import Agent, RunContext
-
         _advisor = Agent(
             model=settings.ai_model,
             output_type=AdvisorReport,
@@ -41,35 +42,34 @@ def get_advisor():
             system_prompt=_SYSTEM_PROMPT,
         )
 
-        @_advisor.tool
-        async def search_courses(
-            ctx: RunContext[OrchestratorDeps], query: str
-        ) -> list[dict]:
+        @_advisor.tool_plain
+        def search_courses(query: str) -> list[dict]:
             """Semantic search over the college course catalog in ChromaDB."""
-            results = ctx.deps.course_collection.query(
-                query_texts=[query],
-                n_results=5,
-            )
-            return [
-                {**meta, "similarity": dist}
-                for meta, dist in zip(
-                    results["metadatas"][0],
-                    results["distances"][0],
-                )
-            ]
+            results = chroma_query(query, k=5)
+            import json
+            print(f"\n[search_courses] query={query!r}")
+            print(f"[search_courses] results ({len(results)}):")
+            print(json.dumps(results, indent=2, default=str))
+            return results
 
         @_advisor.tool
         async def search_events(
             ctx: RunContext[OrchestratorDeps], query: str
         ) -> list[dict]:
             """Live web search for professional events via Serper API."""
-            async with httpx.AsyncClient() as client:
-                resp = await client.post(
-                    "https://google.serper.dev/search",
-                    headers={"X-API-KEY": ctx.deps.search_api_key},
-                    json={"q": query, "num": 10},
-                )
-            return resp.json().get("organic", [])
+            try:
+                async with httpx.AsyncClient(timeout=10.0) as client:
+                    resp = await client.post(
+                        "https://google.serper.dev/search",
+                        headers={"X-API-KEY": ctx.deps.search_api_key},
+                        json={"q": query, "num": 10},
+                    )
+                    resp.raise_for_status()
+                    return resp.json().get("organic", [])
+            except httpx.HTTPStatusError as e:
+                raise RuntimeError(f"Serper API error {e.response.status_code}: {e.response.text}") from e
+            except httpx.RequestError as e:
+                raise RuntimeError(f"Serper API request failed: {e}") from e
 
     return _advisor
 

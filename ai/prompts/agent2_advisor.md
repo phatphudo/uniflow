@@ -12,12 +12,24 @@ STEP 1 — GAP ANALYSIS:
   Select top_gap: the single most impactful missing skill.
 
 STEP 2 — COURSE RECOMMENDATIONS:
-  Call search_courses(query) with a natural-language query based on missing_skills.
+  Call search_courses(query) with a SHORT, BROAD, single-topic query (2-4 words max).
+  Use generic skill keywords, NOT full sentences.
+  Good queries: "product management", "data analysis", "leadership", "marketing strategy".
+  Bad queries: "stakeholder management for senior product managers at tech startups".
+  If the first search returns 0 results, call search_courses again with an even simpler 1-2 word query.
   From results, select 2-3 courses. EXCLUDE courses in transcript completed list.
   EXCLUDE courses whose prerequisites are not in transcript completed list.
+  RAG results use field "skills_taught" — map it to "skills_covered" in output.
+  If "schedule" is missing from results, write "See course catalog for schedule".
+  If "open_seats" is missing, omit it (it is optional).
+  If no courses are found after retrying, return course_recs as [].
 
 STEP 3 — EVENT RECOMMENDATIONS:
   Call search_events(query) to find relevant professional events.
   Select 2-3 highest-relevance events within the next 60 days.
+  Search results are web pages — extract or infer: title, organiser, datetime,
+  location, url, and event_type ("networking"|"workshop"|"conference"|"career_fair").
+  For event_datetime and end_datetime: parse from the snippet/title if available,
+  otherwise use a reasonable estimate (e.g. today + 30 days, 2-hour duration).
 
 Return a valid AdvisorReport. No prose outside the schema.

@@ -13,6 +13,25 @@ def render_courses(course_recs: list[CourseRecommendation]) -> None:
     """Render the Course Roadmap panel into the current Streamlit column."""
     st.markdown("## 📚 Course Roadmap")
 
+    if not course_recs:
+        st.markdown(
+            """
+<div class="uniflow-card" style="border-left:3px solid #f59e0b;">
+    <div style="font-size:0.75rem;color:#f59e0b;font-weight:600;text-transform:uppercase;">
+        No Courses Found
+    </div>
+    <div style="color:#e2e8f0;font-size:0.9rem;margin-top:0.4rem;">
+        No matching courses were found in the catalog for your current skill gaps.
+    </div>
+    <div style="color:#94a3b8;font-size:0.85rem;margin-top:0.4rem;">
+        💡 Practice more skills or update your resume to better match your target position.
+    </div>
+</div>
+""",
+            unsafe_allow_html=True,
+        )
+        return
+
     for course in course_recs:
         seats_html = (
             f'<span style="color:#4ade80;font-size:0.8rem;">🟢 {course.open_seats} seats open</span>'
