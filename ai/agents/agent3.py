@@ -8,116 +8,90 @@ Agent is created lazily so Phase 1 works without API keys.
 """
 
 from __future__ import annotations
-from pathlib import Path
-import io
-import json
-import os
-import subprocess
-import tempfile
-import wave
+from functools import lru_cache
 from ai.prompts import load_prompt
 from config import settings
 from schemas.agent3 import InterviewResult, StarScores
 from openai import OpenAI
 from pydantic_ai import Agent
-import asyncio
-from schemas.agent1 import PositionProfile
 from ai.agents.agent1 import MOCK_POSITION_PROFILE
 from schemas.agent3 import Agent3Input
 
 # Loaded from disk — edit ai/prompts/agent3_interview_coach.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent3_interview_coach")
 
-_interview_coach = None
+
+@lru_cache(maxsize=1)
+def get_openai_client() -> OpenAI:
+    """Return a cached OpenAI client — created once, reused on every call."""
+    return OpenAI(api_key=settings.openai_api_key)
 
 
-def get_interview_coach():
+@lru_cache(maxsize=1)
+def get_interview_coach() -> Agent:
     """Return the PydanticAI Interview Coach agent, creating it on first call."""
-    global _interview_coach
-    if _interview_coach is None:
-
-        _interview_coach = Agent(
-            model=settings.ai_model,
-            output_type=InterviewResult,
-            system_prompt=_SYSTEM_PROMPT,
-        )
-    return _interview_coach
-
-
-
-async def receive_student_answer(
-    *,
-    duration_seconds: float = 5.0,
-    sample_rate: int = 16_000,
-    channels: int = 1,
-) -> str:
-    """Record from microphone and transcribe directly — no file saved."""
-    import sounddevice as sd
-
-    recording = sd.rec(
-        int(duration_seconds * sample_rate),
-        samplerate=sample_rate,
-        channels=channels,
-        dtype="int16",
+    return Agent(
+        model=settings.ai_model,
+        output_type=InterviewResult,
+        system_prompt=_SYSTEM_PROMPT,
     )
-    sd.wait()
 
-    buffer = io.BytesIO()
-    with wave.open(buffer, "wb") as wav_file:
-        wav_file.setnchannels(channels)
-        wav_file.setsampwidth(2)  # int16
-        wav_file.setframerate(sample_rate)
-        wav_file.writeframes(recording.tobytes())
-    buffer.seek(0)
-    buffer.name = "answer.wav"  # OpenAI SDK needs a .name to detect format
 
-    api_key = settings.openai_api_key
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
-
-    client = OpenAI(api_key=api_key)
-    transcription = client.audio.transcriptions.create(
-        model=settings.stt_model,
-        file=buffer,
-    )
-    return (transcription.text or "").strip()
-
-def text_to_speech(
-    question: str,
-    *,
-    voice: str = "alloy",
-    model: str | None = None,
-) -> None:
-    """Convert question text to speech and play it immediately."""
-    text = question.strip()
-    if not text:
-        raise ValueError("Question text must not be empty.")
-
-    api_key = settings.openai_api_key
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is missing. Set it in .env.")
-
-    client = OpenAI(api_key=api_key)
-    response = client.audio.speech.create(
-        model=model or settings.agent3_model,
+def get_question_audio(question: str, voice: str = "alloy") -> bytes:
+    """Return MP3 bytes for TTS rendering of question (for use with st.audio())."""
+    response = get_openai_client().audio.speech.create(
+        model=settings.agent3_model,
         voice=voice,
-        input=text,
+        input=question.strip(),
     )
+    if hasattr(response, "read"):
+        return response.read()
+    return b"".join(response.iter_bytes())
 
-    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp:
-        temp_path = Path(tmp.name)
 
-    try:
-        if hasattr(response, "stream_to_file"):
-            response.stream_to_file(temp_path)
-        else:
-            temp_path.write_bytes(response.read())
+async def generate_question(
+    top_gap: str,
+    interview_topics: list[str],
+    target_position: str,
+    previous_results: list[InterviewResult],
+) -> str:
+    """Generate the next interview question and return it as a string."""
+    history_json = [r.model_dump() for r in previous_results]
+    prompt = (
+        f"mode: generate_question\n"
+        f"top_gap: {top_gap}\n"
+        f"interview_topics: {interview_topics}\n"
+        f"position_context: {target_position}\n"
+        f"previous_interview_results: {history_json}\n"
+        f"student_answer: \n"
+    )
+    result = await get_interview_coach().run(prompt)
+    return result.output.question
 
-        # macOS default audio player
-        subprocess.run(["afplay", str(temp_path)], check=True)
-    finally:
-        if temp_path.exists():
-            os.unlink(temp_path)
+
+async def evaluate_answer(
+    question: str,
+    student_answer: str,
+    top_gap: str,
+    interview_topics: list[str],
+    target_position: str,
+    previous_results: list[InterviewResult],
+) -> InterviewResult:
+    """Evaluate a student's STAR answer and return a full InterviewResult."""
+    history_json = [r.model_dump() for r in previous_results]
+    prompt = (
+        f"mode: evaluate_answer\n"
+        f"question: {question}\n"
+        f"top_gap: {top_gap}\n"
+        f"interview_topics: {interview_topics}\n"
+        f"position_context: {target_position}\n"
+        f"previous_interview_results: {history_json}\n"
+        f"student_answer: {student_answer}\n"
+    )
+    result = await get_interview_coach().run(prompt)
+    return result.output
+
+
 
 # ── Mock pipeline helpers ─────────────────────────────────────────────────────
 MOCK_STUDENT_ANSWER = (
@@ -284,4 +258,4 @@ if __name__ == "__main__":
     # #Record the answer -> Transcript it -> pass it to AI -> AI judging
     print("demo mock pipeline")
     print(run_mock_agent3_pipeline().model_dump_json(indent=2))
-    text_to_speech("Tell me about a time you handled competing priorities.")
+    get_question_audio("Tell me about a time you handled competing priorities.")

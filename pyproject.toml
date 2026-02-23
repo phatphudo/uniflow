@@ -17,5 +17,6 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "sentence-transformers>=5.2.3",
     "sounddevice>=0.5.5",
+    "nest-asyncio>=1.6.0",
     "streamlit>=1.54.0",
 ]

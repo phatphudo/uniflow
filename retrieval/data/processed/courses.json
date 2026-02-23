@@ -2,7 +2,7 @@
   {
     "course_id": "APP-101",
     "title": "How To Tell Your Story: Cornerstone Course I",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Weaves together the art of writing with the principles of design thinking to explore the transformative power of story in both self-discovery and academic discourse. Covers the multifaceted process of writing, from brainstorming and outlining to drafting, revising, and editing. Emphasizes thesis statements, persuasive arguments, and integration of evidence. Digital tools including AI are embraced throughout.",
     "skills_taught": ["Academic writing", "Design thinking", "Thesis development", "Persuasive argumentation", "AI tools", "Self-narrative"],
@@ -12,7 +12,7 @@
   {
     "course_id": "APP-102",
     "title": "How to Design Your Life: A Journey Through Personal Epistemology",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Empowers students to become the architect of their own life by critically examining beliefs, values, and assumptions. Covers eight essential life domains: physical health, mental health, spiritual health, relationships, finances, play, growth, and career. Applies design thinking principles. Culminates in a personalized four-year life plan.",
     "skills_taught": ["Design thinking", "Critical thinking", "Self-inquiry", "Life planning", "Empathy", "Ideation", "Prototyping"],
@@ -22,7 +22,7 @@
   {
     "course_id": "APP-103",
     "title": "How to Communicate in a Global Context",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Delves into the complexities of communication in a globalized world, examining cultural nuances, technological advancements, and cross-cultural communication strategies. Covers public speaking, written communication, visual communication, and debate in varied cultural settings.",
     "skills_taught": ["Public speaking", "Written communication", "Visual communication", "Debate", "Cross-cultural communication", "Intercultural collaboration"],
@@ -32,7 +32,7 @@
   {
     "course_id": "APP-104",
     "title": "How to Lead: Transforming Insights from History into Modern Movements",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Comprehensive exploration of modern leadership theories, contemporary approaches, and timeless lessons from influential leaders. Analyzes case studies and social movements. Final project involves designing a movement and creating a model campaign.",
     "skills_taught": ["Leadership", "Case study analysis", "Campaign design", "Strategic thinking", "Movement building"],
@@ -42,7 +42,7 @@
   {
     "course_id": "APP-201",
     "title": "How to Use Math in Real Life: The Mathematical Mindsets that Shape Our World",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Explores mathematics as a flexible, conceptual, and creative way of thinking. Covers quantitative reasoning, linear equations, data analysis, and social justice applications of math. Emphasizes mathematical mindsets, productive struggle, and ethical dimensions of mathematical applications.",
     "skills_taught": ["Quantitative reasoning", "Data analysis", "Linear equations", "Mathematical modeling", "Critical analysis", "Problem-solving"],
@@ -52,7 +52,7 @@
   {
     "course_id": "APP-202",
     "title": "How Your Brain Works",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Blends foundational neuroscience with applied psychology. Covers brain structures, cognitive processes (attention, memory, learning agility), habits, and decision-making. Students design and conduct personal experiments to test learning strategies and build better habits.",
     "skills_taught": ["Neuroscience fundamentals", "Metacognition", "Habit formation", "Learning strategies", "Reflective writing", "Experimental design"],
@@ -62,7 +62,7 @@
   {
     "course_id": "APP-203",
     "title": "How to \"Be Creative\" in Partnership with Computation & Machine Learning",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Explores the evolving relationship between human and computational creativity. Covers cognitive and emotional factors influencing creativity, hands-on experimentation with generative tools and machine learning, and 360-degree feedback on creative products.",
     "skills_taught": ["Creative thinking", "Generative AI tools", "Machine learning basics", "Design", "Feedback and iteration", "Creative problem-solving"],
@@ -72,7 +72,7 @@
   {
     "course_id": "APP-204",
     "title": "How to Use Data Science & Game Thinking for Social Impact",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Navigates the intersection of data science, game theory, and social sciences to tackle societal challenges. Covers systems thinking, data modeling, research methods, and ethical implications. Final project involves creating a framework addressing a critical social challenge.",
     "skills_taught": ["Data science", "Game theory", "Systems thinking", "Data modeling", "Research methods", "Critical problem-solving"],
@@ -82,7 +82,7 @@
   {
     "course_id": "APP-301",
     "title": "How Can We Thrive? Scientific Inquiry & the Future of Sustainability (Collective Capstone)",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Examines Earth's sustainability through physical and biological sciences. Applies systems thinking to environmental integrity, economic viability, and social equity. Covers renewable energy, sustainable materials, circular economy, bio-inspired design, climate change, nanotechnology, and sustainable agriculture.",
     "skills_taught": ["Systems thinking", "Scientific inquiry", "Sustainability analysis", "Prototype development", "Interdisciplinary research"],
@@ -92,7 +92,7 @@
   {
     "course_id": "APP-302",
     "title": "How to Design Social Innovation/Impact Solutions to Thrive | SFBU Capstone",
-    "department": "Agility Praxis Pathway",
+    "department": "General Education",
     "credits": 3,
     "description": "Guides students through the design thinking process: user research, problem definition, ideation, and prototyping. Offers a social impact entrepreneurship pathway including support to launch an LLC or 501(c)3. Integrates social impact, business administration, and wellness.",
     "skills_taught": ["Design thinking", "User research", "Prototyping", "Entrepreneurship", "Social impact strategy", "Business planning"],

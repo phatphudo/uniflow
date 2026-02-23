@@ -1,13 +1,17 @@
 import chromadb, os
 from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
+from dotenv import load_dotenv
 import json
 from schemas.retrieval import Chunk
+
+load_dotenv()
+
 def get_collection():
     embedding_fn = OpenAIEmbeddingFunction(
         api_key=os.getenv("OPENAI_API_KEY"),
         model_name="text-embedding-3-small"
     )
-    client = chromadb.PersistentClient(path="vector_db", embedding_function=embedding_fn)
+    client = chromadb.PersistentClient(path="vector_db")
     return client.get_or_create_collection(
         name="documents",
         embedding_function=embedding_fn)
@@ -29,3 +33,7 @@ def query(text: str, k=5) -> list[dict]:
         json.loads(meta["data"])                    # returns your original JSON format
         for meta in results["metadatas"][0]
     ]
+
+
+if __name__ == "__main__":
+    print(query("Machine Learning"))
