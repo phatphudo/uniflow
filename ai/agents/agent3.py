@@ -257,4 +257,4 @@ if __name__ == "__main__":
     # #Record the answer -> Transcript it -> pass it to AI -> AI judging
     print("demo mock pipeline")
     print(run_mock_agent3_pipeline().model_dump_json(indent=2))
-    text_to_speech("Tell me about a time you handled competing priorities.")
+    get_question_audio("Tell me about a time you handled competing priorities.")
