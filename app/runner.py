@@ -13,12 +13,13 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 
 import streamlit as st
+
 from ai.agents.deps import OrchestratorDeps
 from ai.orchestrator import run_uniflow
 from app.sidebar import UserInputs
+from config import settings
 from schemas.inputs import TranscriptData
 from schemas.report import FinalReport
-from config import settings
 
 # A dedicated thread pool so async coroutines run in a fresh event loop,
 # avoiding conflicts with Streamlit's uvloop.
@@ -50,11 +51,14 @@ def run_analysis(inputs: UserInputs) -> FinalReport:
     with st.spinner("Analyzing your profile..."):
         report = run_async(
             run_uniflow(
-                resume_pdf_path=inputs.resume_file if inputs.resume_file else "mock.pdf",
-                transcript_pdf_path=inputs.transcript_file if inputs.transcript_file else "mock.pdf",
+                resume_pdf_path=(
+                    inputs.resume_file if inputs.resume_file else "mock.pdf"
+                ),
+                transcript_pdf_path=(
+                    inputs.transcript_file if inputs.transcript_file else "mock.pdf"
+                ),
                 target_position=inputs.target_position,
                 deps=deps,
-                use_mocks=False,
             )
         )
     return report
