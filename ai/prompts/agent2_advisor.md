@@ -55,38 +55,24 @@ STEP 1 — GAP ANALYSIS:
   • **Highlight strengths:** How to better showcase strengths on the resume.
   • **Improve overall alignment:** How to improve the benchmark score overall.
 
-STEP 2 — STUDY PLAN (SEMESTER-BY-SEMESTER ROADMAP):
+STEP 2 — STUDY PLAN:
 
-  Call search_courses with any short query. The tool returns a pre-filtered list of
-  recommended courses already matched to the student's remaining degree requirements
-  and skill gaps. Use those results directly — do not re-filter by transcript.
-  If "schedule" is missing, write "See course catalog for schedule".
+  Call search_courses with any short query (e.g. the target position or a skill keyword).
+  The tool handles all retrieval and semester packing internally and returns a fully
+  organised list of SemesterPlan objects — one per semester, all courses assigned,
+  credit rules already enforced:
+    - Bachelor (BSBA, BSCS): minimum 12 credits per semester, except the final semester.
+    - Master (MSCS, MSDS, MSEE): minimum 9 credits per semester, except the final semester.
+    - Only the final semester may carry fewer credits than the minimum. 
+    - Capstone is always placed in the final semester. Capstone course goes with the Involvement Degree, no way the Bachelor can get Master capstone, as well as data science can get other capstone class. Similar to the rest of them.
 
-  Organise the returned courses into semesters using these rules:
-  - Bachelor (BSBA, BSCS): minimum 12 credits per semester, except the final semester.
-  - Master (MSCS, MSDS, MSEE): minimum 9 credits per semester, except the final semester.
-  - Only the final semester may carry fewer credits than the minimum.
-  - Total credits across all semesters must equal credits_remaining.
-  - The capstone MUST go in the final semester:
-      BSBA → BUS493 | BSCS → CS494 | MSCS → CS595 | MSDS → DS595 | MSEE → EE595
-
-  Steps:
-  1. Compute min credits per semester from the degree level.
-  2. Number of semesters = ceil(credits_remaining / min_credits_per_semester).
-     If credits_remaining ≤ min_credits_per_semester → only 1 semester (the final).
-  3. Fill each non-final semester to at least the minimum credits; put the remainder
-     and the capstone in the final semester.
-  4. Label semesters "Semester 1", "Semester 2", …, "Final Semester".
-
-  Output each semester as a SemesterPlan:
-    semester_label, courses (list[CourseRecommendation]), total_credits, is_final.
-  Each CourseRecommendation must include: course_id, title, category, credits,
-  relevance_reason, skills_covered, schedule.
-  If no courses are returned, output study_plan as [].
+  Use the tool result directly as study_plan in the AdvisorReport.
+  Do NOT re-sort, re-assign, or drop any courses from the result.
+  If the tool returns [] (no courses found), set study_plan to [].
 
 STEP 3 — EVENT RECOMMENDATIONS:
   Call search_events(query) to find relevant professional events.
-  Select 3 highest-relevance events within the next 60 days in Bay Area specifically. If output-retries is exceeded but can't find enough 3 events, show as many as possible.
+  Select 3 highest-relevance events within the next 60 days in **Bay Area specifically**. If output-retries is exceeded but can't find enough 3 events, show as many as possible.
   Search results are web pages — extract or infer: title, organiser, datetime,
   location, url, and event_type ("networking"|"workshop"|"conference"|"career_fair").
   For event_datetime and end_datetime: parse from the snippet/title if available,

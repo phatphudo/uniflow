@@ -43,6 +43,7 @@ STEP 3 — ADD EXTRA COURSES IF CREDITS ALLOW:
     Add them to the list until extra_credits is used up.
 
   If extra_credits ≤ 0, skip this step.
+  Make sure the total credit is equal to the number of remaining credits.
 
 STEP 4 — ENRICH AND RETURN:
 
