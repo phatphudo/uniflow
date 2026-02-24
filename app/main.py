@@ -49,7 +49,7 @@ def run_app() -> None:
     with col_left:
         render_benchmark(report.advisor_report.gap_report)
     with col_right:
-        render_courses(report.advisor_report.course_recs)
+        render_courses(report.advisor_report.study_plan)
 
     st.divider()
 

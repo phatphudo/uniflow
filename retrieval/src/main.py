@@ -1,20 +1,36 @@
-import argparse
-from pathlib import Path
-from retrieval.src.retriever import agent
-from retrieval.src.vector_store import add_chunks
 import json
-from schemas.retrieval import Chunk, record_to_text
-def build_index(json_path="/Users/Local Documents/uniflow/retrieval/data/processed/courses.json"):
+from retrieval.src.vector_store import add_chunks
+from schemas.retrieval import Chunk, record_to_text, requirement_to_text
+
+COURSES_PATH = "/Users/Local Documents/uniflow/retrieval/data/processed/courses.json"
+REQUIREMENTS_PATH = "/Users/Local Documents/uniflow/retrieval/data/processed/requirements.json"
+
+
+def build_courses_index(json_path=COURSES_PATH):
     records = json.load(open(json_path))
     chunks = [
         Chunk(
-            text=record_to_text(r),   # only used for semantic search
+            text=record_to_text(r),
             source=r["course_id"],
-            data=r                    # full original record stored here
+            data=r
+        )
+        for r in records
+    ]
+    add_chunks(chunks, "courses")
+
+
+def build_requirements_index(json_path=REQUIREMENTS_PATH):
+    records = json.load(open(json_path))
+    chunks = [
+        Chunk(
+            text=requirement_to_text(r),
+            source=f"{r['degree_name']}_{i}",
+            data=r
         )
         for i, r in enumerate(records)
     ]
-    add_chunks(chunks)
+    add_chunks(chunks, "requirements")
 
 
-build_index()
+build_courses_index()
+build_requirements_index()

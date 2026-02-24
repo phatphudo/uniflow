@@ -81,6 +81,13 @@ async def run_uniflow(
         else "mid-level"
     )
 
+    # Populate deps so agent2's search_courses tool has full student context
+    deps.resume_text = resume_data_json
+    deps.transcript_data = transcript_data
+    deps.program_enrolled = program_enrolled
+    deps.credits_remaining = credits_remaining
+    deps.skill_benchmark = skill_benchmark
+
     # ── Step 4: Agent 2 — Course & Event Advisor ──────────────────────────────
     from ai.agents.agent2 import get_advisor
 
