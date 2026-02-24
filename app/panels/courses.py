@@ -5,6 +5,7 @@ All dynamic values are HTML-escaped before injection into templates.
 """
 
 import html
+import re
 
 import streamlit as st
 
@@ -14,6 +15,15 @@ from schemas.agent2 import SemesterPlan
 def _e(value) -> str:
     """HTML-escape a value to string."""
     return html.escape(str(value))
+
+
+def _clean_text(value) -> str:
+    """Strip model-returned HTML so the UI renders readable plain text."""
+    text = html.unescape(str(value))
+    text = re.sub(r"<\s*br\s*/?\s*>", " ", text, flags=re.IGNORECASE)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
 
 def render_courses(study_plan: list[SemesterPlan]) -> None:
@@ -45,30 +55,35 @@ def render_courses(study_plan: list[SemesterPlan]) -> None:
 
         courses_html = ""
         for course in semester.courses:
+            course_id = _clean_text(course.course_id)
+            category = _clean_text(course.category)
+            title = _clean_text(course.title)
+            schedule = _clean_text(course.schedule)
+            reason = _clean_text(course.relevance_reason)
             seats_html = (
                 f'<span style="color:#4ade80;font-size:0.75rem;">🟢 {_e(course.open_seats)} seats open</span>'
                 if course.open_seats
                 else ""
             )
             skills_html = "".join(
-                f'<span class="badge badge-matched" style="margin:2px">{_e(s)}</span>'
+                f'<span class="badge badge-matched" style="margin:2px">{_e(_clean_text(s))}</span>'
                 for s in course.skills_covered
             )
             courses_html += f"""
 <div style="padding:0.6rem 0;border-bottom:1px solid rgba(99,102,241,0.1);">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;">
     <div>
-      <span style="font-size:0.65rem;color:#64748b;font-weight:600;">{_e(course.course_id)}</span>
-      <span style="font-size:0.65rem;color:#475569;margin-left:0.5rem;">{_e(course.category)}</span>
-      <div style="font-size:0.95rem;font-weight:600;color:#e2e8f0;margin-top:2px;">{_e(course.title)}</div>
+      <span style="font-size:0.65rem;color:#64748b;font-weight:600;">{_e(course_id)}</span>
+      <span style="font-size:0.65rem;color:#475569;margin-left:0.5rem;">{_e(category)}</span>
+      <div style="font-size:0.95rem;font-weight:600;color:#e2e8f0;margin-top:2px;">{_e(title)}</div>
     </div>
     <div style="text-align:right;white-space:nowrap;margin-left:0.5rem;">
       <span style="font-size:0.75rem;color:#94a3b8;">{_e(course.credits)} cr</span><br>
       {seats_html}
     </div>
   </div>
-  <div style="color:#94a3b8;font-size:0.8rem;margin-top:0.3rem;">📅 {_e(course.schedule)}</div>
-  <div style="color:#c7d2fe;font-size:0.8rem;margin-top:0.2rem;">💡 {_e(course.relevance_reason)}</div>
+  <div style="color:#94a3b8;font-size:0.8rem;margin-top:0.3rem;">📅 {_e(schedule)}</div>
+  <div style="color:#c7d2fe;font-size:0.8rem;margin-top:0.2rem;">💡 {_e(reason)}</div>
   <div style="margin-top:0.4rem;">{skills_html}</div>
 </div>"""
 
