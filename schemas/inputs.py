@@ -34,6 +34,6 @@ class TranscriptData(BaseModel):
 class StudentInput(BaseModel):
     resume_text: str = Field(..., description="Raw text parsed from resume PDF")
     transcript_data: TranscriptData
-    target_position: str = Field(
-        ..., description="e.g. Product Manager at a tech startup"
-    )
+    target_position: str = Field(..., description="e.g. Product Manager at a tech startup")
+    program_enrolled: str = Field(..., description="e.g. BSCS, MSDS")
+    credits_remaining: int = Field(..., description="Total credits still needed to graduate")

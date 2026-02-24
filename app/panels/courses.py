@@ -1,14 +1,6 @@
-"""
-app/panels/courses.py — Panel 2: Course Roadmap.
-
-All dynamic values are HTML-escaped before injection into templates.
-"""
-
 import html
-
 import streamlit as st
-
-from schemas.agent2 import CourseRecommendation
+from schemas.agent2 import SemesterPlan
 
 
 def _e(value) -> str:
@@ -16,52 +8,61 @@ def _e(value) -> str:
     return html.escape(str(value))
 
 
-def render_courses(course_recs: list[CourseRecommendation]) -> None:
-    """Render the Course Roadmap panel."""
+def render_courses(study_plan: list[SemesterPlan]) -> None:
+    """Render the Course Roadmap panel without code-leakage."""
 
-    if not course_recs:
+    if not study_plan:
         st.markdown(
-            """
-<div class="uniflow-card" style="border-left:3px solid #f59e0b;">
-  <div style="font-size:0.75rem;color:#f59e0b;font-weight:600;text-transform:uppercase;">
-    No Courses Found
-  </div>
-  <div style="color:#e2e8f0;font-size:0.9rem;margin-top:0.4rem;">
-    No matching courses were found in the catalog for your current skill gaps.
-  </div>
-  <div style="color:#94a3b8;font-size:0.85rem;margin-top:0.4rem;">
-    💡 Practice more skills or update your resume to better match your target position.
-  </div>
-</div>
-""",
+            '<div style="color:#94a3b8;padding:1rem;">No courses found.</div>',
             unsafe_allow_html=True,
         )
         return
 
-    for course in course_recs:
-        seats_html = (
-            f'<span style="color:#4ade80;font-size:0.8rem;">🟢 {_e(course.open_seats)} seats open</span>'
-            if course.open_seats
-            else ""
-        )
-        skills_html = "".join(
-            f'<span class="badge badge-matched" style="margin:2px">{_e(s)}</span>'
-            for s in course.skills_covered
-        )
-        st.markdown(
-            f"""
-<div class="uniflow-card">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-    <div>
-      <div style="font-size:0.7rem;color:#64748b;font-weight:600;">{_e(course.course_id)}</div>
-      <div style="font-size:1.05rem;font-weight:600;color:#e2e8f0;margin-top:2px;">{_e(course.title)}</div>
-    </div>
-    {seats_html}
-  </div>
-  <div style="color:#94a3b8;font-size:0.85rem;margin-top:0.5rem;">📅 {_e(course.schedule)}</div>
-  <div style="color:#c7d2fe;font-size:0.85rem;margin-top:0.4rem;">💡 {_e(course.relevance_reason)}</div>
-  <div style="margin-top:0.6rem;">{skills_html}</div>
+    for semester in study_plan:
+        label_color = "#a78bfa" if semester.is_final else "#6366f1"
+        border_color = "#a78bfa" if semester.is_final else "rgba(99,102,241,0.4)"
+        label_tag = " — FINAL SEMESTER" if semester.is_final else ""
+
+        table_rows = ""
+        for course in semester.courses:
+            # Generate skill badges as a single flat string
+            skills_html = "".join(
+                [
+                    f'<span style="background:rgba(16,185,129,0.1);color:#10b981;border:1px solid #10b981;padding:2px 6px;border-radius:12px;font-size:10px;margin-right:4px;display:inline-block;margin-bottom:4px;">{_e(s)}</span>'
+                    for s in course.skills_covered
+                ]
+            )
+
+            table_rows += (
+                f'<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">'
+                f'<td style="padding:12px 8px;vertical-align:top;">'
+                f'<div style="font-size:0.7rem;color:#94a3b8;font-weight:bold;">{_e(course.course_id)}</div>'
+                f'<div style="font-size:0.9rem;color:#f8fafc;font-weight:600;">{_e(course.title)}</div>'
+                f"</td>"
+                f'<td style="padding:12px 8px;vertical-align:top;color:#94a3b8;font-size:0.85rem;">{_e(course.credits)} cr</td>'
+                f'<td style="padding:12px 8px;vertical-align:top;color:#cbd5e1;font-size:0.85rem;line-height:1.4;">{_e(course.relevance_reason)}</td>'
+                f'<td style="padding:12px 8px;vertical-align:top;">{skills_html}</td>'
+                f"</tr>"
+            )
+
+        # The final container must have NO leading indentation in the triple-quoted string
+        container_html = f"""
+<div style="border-left:4px solid {border_color};background:#0f172a;padding:1.5rem;border-radius:8px;margin-bottom:1.5rem;">
+<div style="display:flex;justify-content:space-between;margin-bottom:1rem;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:0.5rem;">
+<span style="color:{label_color};font-weight:800;font-size:0.8rem;letter-spacing:1px;">{_e(semester.semester_label)}{label_tag}</span>
+<span style="color:#64748b;font-size:0.8rem;">{_e(semester.total_credits)} Credits Total</span>
 </div>
-""",
-            unsafe_allow_html=True,
-        )
+<table style="width:100%;border-collapse:collapse;text-align:left;">
+<thead>
+<tr style="color:#64748b;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;">
+<th style="padding:8px;">Class</th>
+<th style="padding:8px;">Credits</th>
+<th style="padding:8px;">Why Take This</th>
+<th style="padding:8px;">Skillsets</th>
+</tr>
+</thead>
+<tbody>{table_rows}</tbody>
+</table>
+</div>"""
+
+        st.markdown(container_html, unsafe_allow_html=True)

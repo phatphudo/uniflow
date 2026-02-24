@@ -131,21 +131,66 @@ uv add <package-name>
 ## Architecture Overview
 
 ```
-Student inputs (resume PDF + transcript PDF + target position)
+Student inputs (target role + resume PDF + transcript PDF
+              + program enrolled + credits remaining + interview answer)
         ↓
-   Orchestrator  (ai/orchestrator.py)
-   ┌─────────────────────────────────────┐
-   │  Parse → Route → Filter → Assemble  │
-   └─────────────────────────────────────┘
-        ↓               ↓               ↓
-  Agent 1           Agent 2          Agent 3
-  Position          Course &         Interview
-  Analyst           Event Advisor    Coach
-                   (RAG + Search)   (STAR eval)
-        ↓               ↓               ↓
-        └───────── FinalReport ──────────┘
-                        ↓
-              Streamlit UI (4 panels)
+Streamlit UI (app/sidebar.py, app/runner.py)
+        ↓
+Orchestrator (ai/orchestrator.py)
+┌────────────────────────────────────────────────────────────────────┐
+│ Parse inputs → Agent routing → Result merge → FinalReport build   │
+└────────────────────────────────────────────────────────────────────┘
+        ↓                     ↓                          ↓
+   Agent 1                Agent 2                    Agent 3
+Position Analyst      Advisor (Gap +             Interview Coach
+ PositionProfile     Study Plan + Events)     (Question/TTS/STT + STAR eval)
+        │                    │                          │
+        │          ┌─────────┴──────────┐               │
+        │          │   search_courses   │               │
+        │          │        ↓           │               │
+        │          │   Retriever Agent  │               │
+        │          │  (retriever.py)    │               │
+        │          │   ┌────────────┐   │               │
+        │          │   │ get_degree │   │               │
+        │          │   │ _require-  │   │               │
+        │          │   │ ments      │   │               │
+        │          │   │ (JSON)     │   │               │
+        │          │   ├────────────┤   │               │
+        │          │   │ search_    │   │               │
+        │          │   │ documents  │   │               │
+        │          │   │ (ChromaDB) │   │               │
+        │          │   └────────────┘   │               │
+        │          │        ↓           │               │
+        │          │  Flat course list  │               │
+        │          │        ↓           │               │
+        │          │  Semester packing  │               │
+        │          │  (Python logic)    │               │
+        │          └────────────────────┘               │
+        │                    │                          │
+        │              study_plan +                     │
+        │            gap_report + events                │
+        │                    │                          │
+        └────────────────────┴────────── FinalReport ───┘
+                                     ↓
+                           Streamlit panels (4)
 ```
 
 Each agent's system prompt lives in `ai/prompts/*.md` — edit the markdown files to tune agent behavior without touching Python code.
+
+Run Flow:
+Orchestrator.run_uniflow()
+  │
+  ├─ Agent1.run()          ← LLM + no tools that call agents
+  │
+  ├─ Agent2.run()          ← LLM
+  │     │
+  │     ├─ search_courses()   ← Python async tool
+  │     │     │
+  │     │     └─ retriever_agent().run()   ← LLM (sub-agent, called ONCE)
+  │     │           │
+  │     │           ├─ get_degree_requirements()  ← Pure Python (JSON file)
+  │     │           └─ search_documents()         ← Pure Python (ChromaDB)
+  │     │
+  │     └─ search_events()    ← Python async tool (HTTP call only)
+  │
+  └─ Agent3.generate_question()  ← LLM + no tools that call agents

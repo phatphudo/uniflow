@@ -11,3 +11,4 @@ wheels/
 
 # Local environment variables — never commit secrets
 .env
+vector_db/

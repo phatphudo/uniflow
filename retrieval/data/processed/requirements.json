@@ -1,0 +1,878 @@
+[
+    {
+        "degree_name": "BSBA - Bachelor of Science in Business Administration",
+        "credits_to_graduate": 120,
+        "course_requirements": [
+            {
+                "category": "General Education",
+                "credits_required": 36,
+                "courses": [
+                    {
+                        "code": "APP101",
+                        "title": "How to Tell Your Story",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP102",
+                        "title": "How to Design Your Life",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP103",
+                        "title": "How to Communicate in a Global Context",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP104",
+                        "title": "How to Lead",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP201",
+                        "title": "How to Use Math in Real Life",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP202",
+                        "title": "How Your Brain Works",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP203",
+                        "title": "How to 'Be Creative' in Partnership with Computation and Machine Learning",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP204",
+                        "title": "How to Use Data Science and Game Thinking for Social Impact",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP301",
+                        "title": "How Can We Thrive? Scientific Inquiry and the Future of Sustainability",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP302",
+                        "title": "How to Design Social Innovations/Impact Solutions to Thrive",
+                        "credits": 3
+                    }
+                ]
+            },
+            {
+                "category": "Major Requirements",
+                "credits_required": 60,
+                "courses": [
+                    {
+                        "code": "ACC110",
+                        "title": "Financial Accounting",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BLAW310",
+                        "title": "Introduction to Business Law",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BUS450",
+                        "title": "Professional & Technical Writing",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BUS493",
+                        "title": "Senior Project",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ECON201",
+                        "title": "Principles of Macroeconomics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ECON202",
+                        "title": "Principles of Microeconomics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "FIN310",
+                        "title": "Fundamentals of Finance",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT310",
+                        "title": "Principles of Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT480",
+                        "title": "Entrepreneurship",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MKT310",
+                        "title": "Principles of Marketing",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN460",
+                        "title": "Introduction to Business Analytics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ACC110L",
+                        "title": "Financial Accounting Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "ACC120",
+                        "title": "Managerial Accounting",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ACC120L",
+                        "title": "Managerial Accounting Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "ACC450",
+                        "title": "Cost Accounting",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ACC451",
+                        "title": "Intermediate Accounting \u2013 I",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ACC451L",
+                        "title": "Intermediate Accounting \u2013 I Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "ACC452",
+                        "title": "Intermediate Accounting \u2013 II",
+                        "credits": 3
+                    },
+                    {
+                        "code": "ACC490",
+                        "title": "Introduction to Taxation",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN223",
+                        "title": "SQL & Relational Databases",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN335",
+                        "title": "Python Introduction for Commerce",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN337",
+                        "title": "JavaScript",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN452",
+                        "title": "Excel for Finance, Accounting, & Analytics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN455",
+                        "title": "Server-Side Data Processing Using Python/PHP",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN460L",
+                        "title": "Introduction to Business Analytics Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "BAN463",
+                        "title": "Data Visualization",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN470",
+                        "title": "Intro to Machine Learning-Based Forecasting",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BAN472",
+                        "title": "Introduction to Artificial Intelligence (AI)",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CPT401",
+                        "title": "Curricular Practicum I",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CPT402",
+                        "title": "Curricular Practicum II",
+                        "credits": 2
+                    },
+                    {
+                        "code": "ECON470",
+                        "title": "The Economics of Money, Banking, and Financial Markets",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MATH208",
+                        "title": "Probability and Statistics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT450",
+                        "title": "Organizational Behavior and Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT460",
+                        "title": "Production and Operations Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT460L",
+                        "title": "Production and Operations Management Lab",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT482",
+                        "title": "Launching Innovative Startups",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT483",
+                        "title": "Business Innovation \u2013 A Historical and Cultural Perspective",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MGT491",
+                        "title": "Agility-Based Leadership",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MKT221",
+                        "title": "HTML & CSS Web Page Construction",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MKT450",
+                        "title": "Marketing Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MKT483",
+                        "title": "Monetizing Intellectual Property",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MKT491",
+                        "title": "The Art of Negotiation",
+                        "credits": 3
+                    },
+                    {
+                        "code": "P450",
+                        "title": "Career Development",
+                        "credits": 1
+                    },
+                    {
+                        "code": "SOC501",
+                        "title": "Emotional Intelligence Essentials",
+                        "credits": 1
+                    }
+                ]
+            },
+            {
+                "category": "Electives",
+                "credits_required": 24,
+                "courses": [],
+                "notes": "Any course offered for academic credit not already applied to General Education or Major requirements. May include graduate-level courses (4xxG or 5xx). Max 6 credit hours of Curricular Practicum (CPT) may count toward graduation."
+            }
+        ]
+    },
+    {
+        "degree_name": "BSCS - Bachelor of Science in Computer Science",
+        "credits_to_graduate": 120,
+        "course_requirements": [
+            {
+                "category": "General Education",
+                "credits_required": 30,
+                "courses": [
+                    {
+                        "code": "APP101",
+                        "title": "How to Tell Your Story",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP103",
+                        "title": "How to Communicate in a Global Context",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP201",
+                        "title": "How to Use Math in Real Life",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP202",
+                        "title": "How Your Brain Works",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP301",
+                        "title": "How Can We Thrive? Scientific Inquiry & The Future of Sustainability",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP102",
+                        "title": "How to Design Your Life",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP203",
+                        "title": "How to 'Be Creative' in Partnership with Computation and Machine Learning",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP104",
+                        "title": "How to Lead",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP204",
+                        "title": "How to Use Data Science and Game Thinking for Social Impact",
+                        "credits": 3
+                    },
+                    {
+                        "code": "APP302",
+                        "title": "How to Design Social Innovation/Impact Solutions to Thrive",
+                        "credits": 3
+                    }
+                ]
+            },
+            {
+                "category": "Major Requirements",
+                "credits_required": 75,
+                "courses": [
+                    {
+                        "code": "MATH201",
+                        "title": "Calculus \u2013 I",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MATH202",
+                        "title": "Calculus \u2013 II",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MATH203",
+                        "title": "Linear Algebra",
+                        "credits": 3
+                    },
+                    {
+                        "code": "MATH208",
+                        "title": "Probability and Statistics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS200",
+                        "title": "Discrete Logic",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS230",
+                        "title": "Linux and Shell Scripting",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS230L",
+                        "title": "Linux and Shell Scripting Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CS250",
+                        "title": "Introduction to Programming",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS250L",
+                        "title": "Introduction to Programming Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CE305",
+                        "title": "Computer Organization",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS350",
+                        "title": "Data Structures",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS350L",
+                        "title": "Data Structures Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CS360",
+                        "title": "Programming in C and C++",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS360L",
+                        "title": "Programming in C and C++ Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CS380",
+                        "title": "Operating Systems",
+                        "credits": 3
+                    },
+                    {
+                        "code": "BUS450",
+                        "title": "Professional and Technical Writing",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS455",
+                        "title": "Algorithms & Structured Programming",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS457",
+                        "title": "Data Modeling and Implementation Techniques",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS457L",
+                        "title": "Database Technologies Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CS480",
+                        "title": "Java and Internet Applications",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS480L",
+                        "title": "Java Programming Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CS481",
+                        "title": "Introduction to Machine Learning and Data Science",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS487",
+                        "title": "Object-oriented Design and Implementations",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS494",
+                        "title": "Senior Capstone Project \u2013 I",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CE450",
+                        "title": "Fundamentals of Embedded Engineering",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS453",
+                        "title": "Compiler Design",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS470",
+                        "title": "Network Engineering and Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS477",
+                        "title": "Ethical Hacking and Penetration Testing",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS478",
+                        "title": "Blockchain Technology and Applications",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS483",
+                        "title": "Fundamentals of Artificial Intelligence",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS485",
+                        "title": "JavaScript and Internet Programming",
+                        "credits": 3
+                    }
+                ]
+            },
+            {
+                "category": "Electives",
+                "credits_required": 15,
+                "courses": [],
+                "notes": "Student may select courses in any discipline. Curricular practicum courses may be taken when applicable."
+            }
+        ]
+    },
+    {
+        "degree_name": "MSCS - Master of Science in Computer Science",
+        "credits_to_graduate": 36,
+        "course_requirements": [
+            {
+                "category": "Foundation Courses",
+                "credits_required": 11,
+                "courses": [
+                    {
+                        "code": "CS455G",
+                        "title": "Algorithms & Structured Programming",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS501",
+                        "title": "Practical Application of Algorithms (alternative to CS455G)",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS457G",
+                        "title": "Data Modeling and Implementation Techniques",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS457LG",
+                        "title": "Database Technologies Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "CS500",
+                        "title": "Object-Oriented Design in Python",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS500L",
+                        "title": "Object-Oriented Design in Python Lab",
+                        "credits": 1
+                    }
+                ]
+            },
+            {
+                "category": "Specialization Courses",
+                "credits_required": 12,
+                "courses": [
+                    {
+                        "code": "CS535",
+                        "title": "Network Security Fundamentals",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS571",
+                        "title": "Cloud Computing Infrastructure",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS581",
+                        "title": "Cloud Security",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS589",
+                        "title": "Special Topics (Cybersecurity or Data Science)",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS477G",
+                        "title": "Ethical Hacking and Penetration Testing",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS550",
+                        "title": "Machine Learning and Business Intelligence",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS570",
+                        "title": "Big Data Processing & Analytics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS481G",
+                        "title": "Introduction to Data Science",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS515",
+                        "title": "UNIX/Linux Network Programming",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS565",
+                        "title": "Advanced Network Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS575",
+                        "title": "Network Analysis and Testing",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS548",
+                        "title": "Web Services Techniques and REST Technologies",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS551",
+                        "title": "Mobile Computing for Android Mobile Devices",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS556",
+                        "title": "Mobile Applications on the iPhone Platform",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS521",
+                        "title": "Software Project Management",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS522",
+                        "title": "Software Quality Assurance and Test Automation",
+                        "credits": 3
+                    }
+                ],
+                "notes": "Student selects one concentration (Cybersecurity, Data Science, or Network Engineering) or any 4 cluster courses. Concentrations can be noted on transcript and diploma."
+            },
+            {
+                "category": "Electives",
+                "credits_required": 10,
+                "courses": [],
+                "notes": "Any graduate-level courses. At least 6 credit hours must be from courses numbered 500 or higher. Max 6 credit hours of practicum coursework may count toward graduation."
+            },
+            {
+                "category": "Capstone Course",
+                "credits_required": 3,
+                "courses": [
+                    {
+                        "code": "CS595",
+                        "title": "Computer Science Capstone Course",
+                        "credits": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "degree_name": "MSDS - Master of Science in Data Science",
+        "credits_to_graduate": 30,
+        "course_requirements": [
+            {
+                "category": "Foundation Courses",
+                "credits_required": 9,
+                "courses": [
+                    {
+                        "code": "CS481G",
+                        "title": "Introduction to Machine Learning and Data Science",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS500",
+                        "title": "Mathematics and Statistics for Data Science",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS501",
+                        "title": "Python Programming for Data Science",
+                        "credits": 3
+                    }
+                ]
+            },
+            {
+                "category": "Specialization Courses",
+                "credits_required": 12,
+                "courses": [
+                    {
+                        "code": "CS550",
+                        "title": "Machine Learning and Business Intelligence",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CS570",
+                        "title": "Big Data Processing & Analytics",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS512",
+                        "title": "Data Engineering",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS520",
+                        "title": "Deep Learning",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS535",
+                        "title": "Large Language Models (LLM)",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS540",
+                        "title": "Natural Language Processing (NLP)",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS565",
+                        "title": "Generative AI-Driven Intelligent Apps Development",
+                        "credits": 3
+                    },
+                    {
+                        "code": "DS589",
+                        "title": "Special Topics (related to Data Science)",
+                        "credits": 3
+                    }
+                ],
+                "notes": "Student selects any 4 courses (12 credit hours) from the list above."
+            },
+            {
+                "category": "Electives",
+                "credits_required": 6,
+                "courses": [],
+                "notes": "Any graduate-level credits in data science or other majors. Max 3 credit hours of practicum coursework (CPT501 or CPT502) may count toward graduation."
+            },
+            {
+                "category": "Capstone Course",
+                "credits_required": 3,
+                "courses": [
+                    {
+                        "code": "DS595",
+                        "title": "Data Science Capstone Course",
+                        "credits": 3
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "degree_name": "MSEE - Master of Science in Electrical Engineering",
+        "credits_to_graduate": 36,
+        "course_requirements": [
+            {
+                "category": "Foundation Courses",
+                "credits_required": 11,
+                "courses": [
+                    {
+                        "code": "CE450G",
+                        "title": "Fundamentals of Embedded Engineering",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CE450LG",
+                        "title": "Embedded Engineering Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "EE461G",
+                        "title": "Digital Design and HDL",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE461LG",
+                        "title": "Digital Design and HDL Lab",
+                        "credits": 1
+                    },
+                    {
+                        "code": "EE488G",
+                        "title": "Computer Architecture",
+                        "credits": 3
+                    }
+                ]
+            },
+            {
+                "category": "Specialization Courses",
+                "credits_required": 12,
+                "courses": [
+                    {
+                        "code": "EE517",
+                        "title": "Introduction to the Internet of Things (IoT)",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CE521",
+                        "title": "Real-time Systems and Programming",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CE522",
+                        "title": "Embedded Design in Networking Environment",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CE523",
+                        "title": "Embedded Design in Device Driver Environment",
+                        "credits": 3
+                    },
+                    {
+                        "code": "CE530",
+                        "title": "Embedded Software Design in Linux",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE504",
+                        "title": "Advanced Computer Architecture",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE553",
+                        "title": "System on Chip (SoC) Design",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE505",
+                        "title": "Advanced Digital IC Design",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE511",
+                        "title": "Advanced Analog IC Design",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE520",
+                        "title": "Advanced FPGA Design and Implementations",
+                        "credits": 3
+                    },
+                    {
+                        "code": "EE577",
+                        "title": "Design Verification with System Verilog",
+                        "credits": 3
+                    }
+                ],
+                "notes": "Student selects courses from areas of interest: IoT and Embedded Systems, Multicore Computing, or Modern IC Technologies."
+            },
+            {
+                "category": "Electives",
+                "credits_required": 10,
+                "courses": [],
+                "notes": "Any graduate-level courses, including outside of engineering. Max 6 credit hours of practicum coursework may count toward graduation."
+            },
+            {
+                "category": "Capstone Course",
+                "credits_required": 3,
+                "courses": [
+                    {
+                        "code": "EE595",
+                        "title": "Electrical Engineering Capstone Course",
+                        "credits": 3
+                    }
+                ]
+            }
+        ]
+    }
+]

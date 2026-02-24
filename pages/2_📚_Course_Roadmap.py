@@ -19,13 +19,16 @@ if "report" not in st.session_state:
     st.stop()
 
 report = st.session_state["report"]
-courses_per_sem = st.session_state.get("courses_per_semester", 4)
-semesters_left = st.session_state.get("semesters_remaining", 3)
+study_plan = report.advisor_report.study_plan
+
+total_semesters = len(study_plan)
+total_credits = sum(s.total_credits for s in study_plan)
+total_courses = sum(len(s.courses) for s in study_plan)
 
 st.caption(
-    f"Study plan: **{courses_per_sem} courses/semester** · "
-    f"**{semesters_left} semesters remaining** · "
-    f"Room for up to **{courses_per_sem * semesters_left} more courses**."
+    f"Study plan: **{total_semesters} semester{'s' if total_semesters != 1 else ''}** · "
+    f"**{total_courses} courses** · "
+    f"**{total_credits} credits**"
 )
 
-render_courses(report.advisor_report.course_recs)
+render_courses(study_plan)

@@ -6,28 +6,27 @@ from schemas.retrieval import Chunk
 
 load_dotenv()
 
-def get_collection():
+def get_collection(name: str):
     embedding_fn = OpenAIEmbeddingFunction(
         api_key=os.getenv("OPENAI_API_KEY"),
         model_name="text-embedding-3-small"
     )
     client = chromadb.PersistentClient(path="vector_db")
     return client.get_or_create_collection(
-        name="documents",
+        name=name,
         embedding_function=embedding_fn)
 
 
-
-def add_chunks(chunks: list[Chunk]):
-    collection = get_collection()
-    collection.add(
+def add_chunks(chunks: list[Chunk], collection_name: str):
+    collection = get_collection(collection_name)
+    collection.upsert(
         ids=[c.source for c in chunks],
         documents=[c.text for c in chunks],         # used for embedding & search
         metadatas=[{"data": json.dumps(c.data)} for c in chunks]  # full JSON preserved here
     )
 
-def query(text: str, k=5) -> list[dict]:
-    collection = get_collection()
+def query(text: str, collection_name: str, k=5) -> list[dict]:
+    collection = get_collection(collection_name)
     results = collection.query(query_texts=[text], n_results=k)
     return [
         json.loads(meta["data"])                    # returns your original JSON format
@@ -36,4 +35,4 @@ def query(text: str, k=5) -> list[dict]:
 
 
 if __name__ == "__main__":
-    print(query("Machine Learning"))
+    print(query("Machine Learning", "courses"))
