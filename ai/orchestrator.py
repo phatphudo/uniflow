@@ -38,21 +38,30 @@ def push_to_calendar(calendar_service, event):
 
 
 async def run_uniflow(
-    resume_pdf_path,  # UploadedFile | str | None
-    transcript_pdf_path,  # UploadedFile | str | None
+    resume_pdf_path,
+    transcript_pdf_path,
     target_position: str,
+    program_enrolled: str,  # <--- Added
+    credits_remaining: int,  # <--- Added
     deps: OrchestratorDeps,
 ) -> FinalReport:
     """
-    Orchestrates the full UniFlow pipeline.
-
-    Phase 1: All agents return hardcoded mock data. `use_mocks=True`.
-    Each phase replaces one block with a real agent call:
-      Phase 2: Agent 1 block
-      Phase 4: Agent 2 block
-      Phase 5: Agent 3 block + Calendar push
+    Orchestrates the full UniFlow pipeline with degree-specific study plans.
     """
+    # ── Step 0: Validation Logic ──────────────────────────────────────────────
+    # Check caps based on the degree type prefix (BS vs MS/MBA)
+    is_master = any(prefix in program_enrolled for prefix in ["MS", "MBA"])
+    is_bachelor = "BS" in program_enrolled
 
+    if is_bachelor and credits_remaining > 120:
+        raise ValueError(
+            "Invalid input: Bachelor's degrees at SFBU cannot have more than 120 credits remaining."
+        )
+
+    if is_master and credits_remaining > 36:
+        raise ValueError(
+            "Invalid input: Master's degrees at SFBU cannot have more than 36 credits remaining."
+        )
     # ── Step 1: Parse inputs ──────────────────────────────────────────────────
     resume_data = await parse_resume_pdf(resume_pdf_path)
     resume_data_json = resume_data.model_dump_json()
@@ -75,12 +84,15 @@ async def run_uniflow(
     # ── Step 4: Agent 2 — Course & Event Advisor ──────────────────────────────
     from ai.agents.agent2 import get_advisor
 
+    # We inject the study plan data here so the advisor knows the constraints
     agent2_prompt = (
+        f"target_position: {target_position}\n"
+        f"program_enrolled: {program_enrolled}\n"
+        f"credits_remaining: {credits_remaining}\n"
         f"skill_benchmark: {skill_benchmark}\n"
         f"seniority_level: {seniority_level}\n"
         f"resume_text: {resume_data_json}\n"
         f"transcript_data: {transcript_data.model_dump_json()}\n"
-        f"target_position: {target_position}\n"
     )
     agent2_result = await get_advisor().run(agent2_prompt, deps=deps)
     advisor_report = agent2_result.output
