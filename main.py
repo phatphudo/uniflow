@@ -4,11 +4,16 @@ Page 1 of 5: upload inputs, set parameters, trigger analysis.
 Results are cached in st.session_state so all other pages can read them.
 """
 
+import logfire
 import streamlit as st
 
 from ai.orchestrator import run_uniflow
 from app.config import configure_page, inject_css
 from app.runner import build_stub_deps, run_async
+from config import settings
+
+logfire.configure(token=settings.logfire_token, environment=settings.env)
+logfire.instrument_pydantic_ai()
 
 configure_page()
 inject_css()
