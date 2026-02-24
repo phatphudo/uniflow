@@ -41,8 +41,8 @@ async def run_uniflow(
     resume_pdf_path,
     transcript_pdf_path,
     target_position: str,
-    program_enrolled: str,  # <--- Added
-    credits_remaining: int,  # <--- Added
+    program_enrolled: str,
+    credits_remaining: int,
     deps: OrchestratorDeps,
 ) -> FinalReport:
     """
@@ -101,6 +101,7 @@ async def run_uniflow(
         f"resume_text: {resume_data_json}\n"
         f"transcript_data: {transcript_data.model_dump_json()}\n"
     )
+
     agent2_result = await get_advisor().run(agent2_prompt, deps=deps)
     advisor_report = agent2_result.output
 
