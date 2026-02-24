@@ -22,6 +22,7 @@ STEP 1 — GET ALL REQUIRED COURSES FOR THE DEGREE:
 
   From the result, extract every course from every category in course_requirements.
   For each course, record: code, title, credits, and which category it belongs to.
+  ###Always have the capstone class of the degree. Make sure that you do not bring the wrong capstone class of other degree###.
 
 STEP 2 — IDENTIFY REMAINING REQUIRED COURSES:
 
