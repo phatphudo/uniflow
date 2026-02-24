@@ -29,6 +29,10 @@ class GapReport(BaseModel):
     missing_skills: list[str]
     top_gap: str
     top_gap_evidence: str
+    strength: str
+    weakness: str
+    tips_for_enhance: str
+
 
 
 class AdvisorReport(BaseModel):

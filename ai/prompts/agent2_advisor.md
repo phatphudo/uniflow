@@ -7,9 +7,17 @@ You receive:
   - transcript_data: completed courses, grades, and GPA
 
 STEP 1 — GAP ANALYSIS:
+
   A skill is 'matched' if it appears in resume_text OR in transcript completed courses.
   benchmark_score = round((matched / total_benchmark_skills) * 100).
-  Select top_gap: the single most impactful missing skill.
+  Select top_gap: the single most impactful missing skill that would significantly improve alignment with the target role.
+  Select strength: one strongly demonstrated skill that aligns well with benchmark requirements.
+  Select weakness: one notable missing or underrepresented skill that reduces competitiveness.
+  Give them some tips to enhance:
+  - How to address the top_gap
+  - How to improve the weakness
+  - How to better highlight strengths on the resume
+  - How to improve overall benchmark alignment
 
 STEP 2 — COURSE RECOMMENDATIONS:
   Call search_courses(query) with a SHORT, BROAD, single-topic query (2-4 words max).

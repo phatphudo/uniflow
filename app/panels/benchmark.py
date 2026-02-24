@@ -65,6 +65,25 @@ def render_benchmark(gap: GapReport) -> None:
     <div style="color:#fca5a5;font-weight:500;margin-top:2px;">{_e(gap.top_gap)}</div>
     <div style="color:#94a3b8;font-size:0.8rem;margin-top:4px;">{_e(gap.top_gap_evidence)}</div>
   </div>
+  <div style="display:flex;gap:0.75rem;margin-top:0.75rem;">
+    <div style="flex:1;padding:0.75rem;background:rgba(34,197,94,0.08);
+                border-radius:10px;border-left:3px solid #4ade80;">
+      <div style="font-size:0.7rem;color:#4ade80;text-transform:uppercase;font-weight:600;">Strength</div>
+      <div style="color:#86efac;font-size:0.85rem;margin-top:4px;">{_e(gap.strength)}</div>
+    </div>
+    <div style="flex:1;padding:0.75rem;background:rgba(251,146,60,0.08);
+                border-radius:10px;border-left:3px solid #fb923c;">
+      <div style="font-size:0.7rem;color:#fb923c;text-transform:uppercase;font-weight:600;">Weakness</div>
+      <div style="color:#fdba74;font-size:0.85rem;margin-top:4px;">{_e(gap.weakness)}</div>
+    </div>
+  </div>
+  <div style="margin-top:0.75rem;padding:0.75rem;background:rgba(99,102,241,0.08);
+              border-radius:10px;border-left:3px solid #6366f1;">
+    <div style="font-size:0.7rem;color:#a78bfa;text-transform:uppercase;font-weight:600;">Tips to Enhance</div>
+    <div style="color:#c4b5fd;font-size:0.85rem;margin-top:6px;line-height:1.6;">
+      {_e(gap.tips_for_enhance).replace("\n", "<br>")}
+    </div>
+  </div>
 </div>
 """,
         unsafe_allow_html=True,
