@@ -63,8 +63,9 @@ STEP 2 — STUDY PLAN:
   credit rules already enforced:
     - Bachelor (BSBA, BSCS): minimum 12 credits per semester, except the final semester.
     - Master (MSCS, MSDS, MSEE): minimum 9 credits per semester, except the final semester.
+    - The Lab (the same course code with a big l at the end) should go together with the course
     - Only the final semester may carry fewer credits than the minimum. 
-    - Capstone is always placed in the final semester. Capstone course goes with the Involvement Degree, no way the Bachelor can get Master capstone, as well as data science can get other capstone class. Similar to the rest of them.
+    - **Capstone is always placed in the final semester. Capstone course goes with the Involvement Degree, no way the Bachelor can get Master capstone, as well as data science can get other capstone class. Similar to the rest of them.**
 
   Use the tool result directly as study_plan in the AdvisorReport.
   Do NOT re-sort, re-assign, or drop any courses from the result.
