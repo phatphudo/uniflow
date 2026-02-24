@@ -12,7 +12,6 @@ from __future__ import annotations
 from ai.prompts import load_prompt
 from config import settings
 from schemas.agent1 import PositionProfile
-import asyncio
 
 # Loaded from disk — edit ai/prompts/agent1_position_analyst.md to tune the prompt.
 _SYSTEM_PROMPT = load_prompt("agent1_position_analyst")
@@ -31,58 +30,12 @@ def get_position_analyst():
             model=settings.ai_model,
             output_type=PositionProfile,
             system_prompt=_SYSTEM_PROMPT,
-            output_retries=3
+            output_retries=3,
         )
     return _position_analyst
+
 
 async def analyze_position(job_description: str):
     analyst = get_position_analyst()
     result = await analyst.run(job_description)
     return result.output  # returns a populated PositionProfile instance
-
-# Example usage
-profile = asyncio.run(analyze_position("""
-    Senior Product Manager at a B2B SaaS startup.
-    3-5 years experience required. Must have experience with
-    agile methodologies, stakeholder management, and SQL...
-"""))
-
-print(profile.must_have)
-print(profile.interview_topics)
-
-# ── Phase 1 mock: bypass real LLM call ───────────────────────────────────────
-MOCK_POSITION_PROFILE = PositionProfile(
-    required_skills=[
-        "Product Roadmap",
-        "Stakeholder Management",
-        "Data Analysis",
-        "Agile/Scrum",
-        "User Research",
-        "SQL",
-        "A/B Testing",
-    ],
-    must_have=[
-        "Product Roadmap",
-        "Stakeholder Management",
-        "Agile/Scrum",
-        "User Research",
-    ],
-    nice_to_have=["SQL", "A/B Testing", "Data Analysis"],
-    seniority_indicators=[
-        "mid-level",
-        "2-4 years experience",
-        "cross-functional team lead",
-    ],
-    industry_scope=(
-        "Product Managers at tech startups operate within fast-paced, cross-functional teams "
-        "spanning engineering, design, and marketing. The role requires balancing short-term "
-        "delivery with long-term product vision, often reporting directly to a VP of Product."
-    ),
-    interview_topics=[
-        "Tell me about a product you built from 0 to 1",
-        "How do you prioritize features with competing stakeholder demands?",
-        "Describe a time you used data to change a product decision",
-        "How do you define success for a product launch?",
-        "Conflict resolution with engineers",
-    ],
-)

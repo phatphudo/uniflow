@@ -1,16 +1,10 @@
 """
 app/panels/interview.py — Panel 4: Interview Coach (multi-turn chat).
 
-render_interview_chat(report, run_async) manages a stateful interview session:
-  - Shows previous rounds (question -> answer -> STAR feedback) as expandable cards.
-  - Displays the current pending question (with optional TTS audio).
-  - Accepts a typed or voice-uploaded answer.
-  - On "Submit Answer": evaluates via agent3, then auto-generates the next question.
-  - On "End Session": shows a summary and allows restarting.
-
-State lives in st.session_state keyed by the first question so it resets when
-a new analysis is run.
+All dynamic values are HTML-escaped before injection into templates.
 """
+
+import html
 
 import streamlit as st
 
@@ -18,68 +12,77 @@ from schemas.agent3 import InterviewResult
 from schemas.report import FinalReport
 
 
+def _e(value) -> str:
+    """HTML-escape a value to string."""
+    return html.escape(str(value))
+
+
 # ── Helpers ───────────────────────────────────────────────────────────────────
+
 
 def _star_card(ir: InterviewResult, round_num: int) -> None:
     """Render a completed interview round as a collapsible card."""
     ss = ir.star_scores
     total = ss.total
-    label = f"Round {round_num} — {ir.question[:55]}{'...' if len(ir.question) > 55 else ''} | {total}/100"
+    label = (
+        f"Round {round_num} — {ir.question[:55]}{'...' if len(ir.question) > 55 else ''}"
+        f" | {total}/100"
+    )
     with st.expander(label, expanded=False):
         st.markdown(
             f"""<div class="uniflow-card">
-    <div style="font-size:0.7rem;color:#94a3b8;font-weight:600;
-                text-transform:uppercase;letter-spacing:0.06em;">Your Answer</div>
-    <div style="color:#cbd5e1;font-size:0.85rem;margin-top:0.3rem;">{ir.student_answer}</div>
+  <div style="font-size:0.7rem;color:#94a3b8;font-weight:600;
+              text-transform:uppercase;letter-spacing:0.06em;">Your Answer</div>
+  <div style="color:#cbd5e1;font-size:0.85rem;margin-top:0.3rem;">{_e(ir.student_answer)}</div>
 </div>""",
             unsafe_allow_html=True,
         )
         st.markdown(
             f"""<div class="uniflow-card">
-    <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div style="font-size:0.75rem;color:#94a3b8;font-weight:600;text-transform:uppercase;">
-            STAR Scorecard
-        </div>
-        <div style="font-size:1.5rem;font-weight:700;color:#a78bfa;">
-            {total}<span style="font-size:0.9rem;color:#64748b"> / 100</span>
-        </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-size:0.75rem;color:#94a3b8;font-weight:600;text-transform:uppercase;">
+      STAR Scorecard
     </div>
-    <div class="star-row">
-        <div class="star-box">
-            <div class="star-label">Situation</div>
-            <div class="star-score">{ss.situation}</div>
-            <div class="star-max">/ 25</div>
-        </div>
-        <div class="star-box">
-            <div class="star-label">Task</div>
-            <div class="star-score">{ss.task}</div>
-            <div class="star-max">/ 25</div>
-        </div>
-        <div class="star-box">
-            <div class="star-label">Action</div>
-            <div class="star-score">{ss.action}</div>
-            <div class="star-max">/ 25</div>
-        </div>
-        <div class="star-box">
-            <div class="star-label">Result</div>
-            <div class="star-score">{ss.result}</div>
-            <div class="star-max">/ 25</div>
-        </div>
+    <div style="font-size:1.5rem;font-weight:700;color:#a78bfa;">
+      {total}<span style="font-size:0.9rem;color:#64748b"> / 100</span>
     </div>
+  </div>
+  <div class="star-row">
+    <div class="star-box">
+      <div class="star-label">Situation</div>
+      <div class="star-score">{ss.situation}</div>
+      <div class="star-max">/ 25</div>
+    </div>
+    <div class="star-box">
+      <div class="star-label">Task</div>
+      <div class="star-score">{ss.task}</div>
+      <div class="star-max">/ 25</div>
+    </div>
+    <div class="star-box">
+      <div class="star-label">Action</div>
+      <div class="star-score">{ss.action}</div>
+      <div class="star-max">/ 25</div>
+    </div>
+    <div class="star-box">
+      <div class="star-label">Result</div>
+      <div class="star-score">{ss.result}</div>
+      <div class="star-max">/ 25</div>
+    </div>
+  </div>
 </div>""",
             unsafe_allow_html=True,
         )
         if ir.strengths:
             with st.expander("Strengths"):
                 for s in ir.strengths:
-                    st.markdown(f"- {s}")
+                    st.markdown(f"- {_e(s)}")
         if ir.improvements:
             with st.expander("Areas to Improve"):
                 for s in ir.improvements:
-                    st.markdown(f"- {s}")
+                    st.markdown(f"- {_e(s)}")
         if ir.stronger_closing:
             with st.expander("Stronger Closing Example"):
-                st.markdown(f"*{ir.stronger_closing}*")
+                st.markdown(f"*{_e(ir.stronger_closing)}*")
 
 
 def _transcribe(audio_file, cache_key: str) -> str:
@@ -89,6 +92,7 @@ def _transcribe(audio_file, cache_key: str) -> str:
             try:
                 from ai.agents.agent3 import get_openai_client
                 from config import settings
+
                 tr = get_openai_client().audio.transcriptions.create(
                     model=settings.stt_model,
                     file=audio_file,
@@ -102,12 +106,10 @@ def _transcribe(audio_file, cache_key: str) -> str:
 
 # ── Main render function ──────────────────────────────────────────────────────
 
+
 def render_interview_chat(report: FinalReport, run_async) -> None:
     """Render the multi-turn Interview Coach panel."""
-    st.markdown("## Interview Coach")
 
-    # Initialise session state for this report.
-    # Use the first question as a stable key so state resets on new analysis.
     report_key = report.interview_result.question
     if st.session_state.get("_interview_report_key") != report_key:
         st.session_state._interview_report_key = report_key
@@ -144,25 +146,25 @@ def render_interview_chat(report: FinalReport, run_async) -> None:
     round_num = len(history) + 1
     st.markdown(
         f"""<div class="uniflow-card" style="border-left:3px solid #a78bfa;">
-    <div style="font-size:0.7rem;color:#a78bfa;font-weight:600;
-                text-transform:uppercase;letter-spacing:0.06em;">
-        Question {round_num}
-    </div>
-    <div style="color:#e2e8f0;font-size:0.9rem;font-style:italic;margin-top:0.3rem;">
-        "{current_q}"
-    </div>
-</div>
-""",
+  <div style="font-size:0.7rem;color:#a78bfa;font-weight:600;
+              text-transform:uppercase;letter-spacing:0.06em;">
+    Question {round_num}
+  </div>
+  <div style="color:#e2e8f0;font-size:0.9rem;font-style:italic;margin-top:0.3rem;">
+    &ldquo;{_e(current_q)}&rdquo;
+  </div>
+</div>""",
         unsafe_allow_html=True,
     )
 
     # Optional TTS audio
     try:
         from ai.agents.agent3 import get_question_audio
+
         audio_bytes = get_question_audio(current_q)
         st.audio(audio_bytes, format="audio/mp3")
     except Exception:
-        pass  # TTS unavailable - skip silently
+        pass  # TTS unavailable — skip silently
 
     # ── Answer input ──────────────────────────────────────────────────────────
     st.markdown("#### Your Answer")
@@ -188,7 +190,6 @@ def render_interview_chat(report: FinalReport, run_async) -> None:
 
     # ── Action buttons ────────────────────────────────────────────────────────
     col_submit, col_end = st.columns([3, 1])
-
     with col_submit:
         submit = st.button("Submit Answer", type="primary", key=f"submit_r{round_num}")
     with col_end:
@@ -209,7 +210,6 @@ def render_interview_chat(report: FinalReport, run_async) -> None:
         topics = report.position_profile.interview_topics
         position = report.target_position
 
-        # Step 1: evaluate the current answer
         with st.spinner("Evaluating your answer..."):
             try:
                 result: InterviewResult = run_async(
@@ -228,7 +228,6 @@ def render_interview_chat(report: FinalReport, run_async) -> None:
 
         st.session_state.interview_history.append(result)
 
-        # Step 2: generate the next question
         with st.spinner("Preparing next question..."):
             try:
                 next_q: str = run_async(
