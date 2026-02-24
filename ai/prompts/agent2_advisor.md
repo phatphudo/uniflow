@@ -70,7 +70,7 @@ STEP 2 — COURSE RECOMMENDATIONS:
 
 STEP 3 — EVENT RECOMMENDATIONS:
   Call search_events(query) to find relevant professional events.
-  Select 2-3 highest-relevance events within the next 60 days.
+  Select 3 highest-relevance events within the next 60 days in Bay Area specifically. If output-retries is exceeded but can't find enough 3 events, show as many as possible.
   Search results are web pages — extract or infer: title, organiser, datetime,
   location, url, and event_type ("networking"|"workshop"|"conference"|"career_fair").
   For event_datetime and end_datetime: parse from the snippet/title if available,
