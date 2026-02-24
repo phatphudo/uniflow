@@ -47,21 +47,39 @@ with st.form("input_form"):
 
     st.markdown("### Study Plan")
     col3, col4 = st.columns(2)
+
+    # Left side: Program Enrolled Selectbox
     with col3:
-        courses_per_semester = st.number_input(
-            "Courses per semester",
-            min_value=1,
-            max_value=8,
-            value=st.session_state.get("courses_per_semester", 3),
-            help="How many courses can you take each semester?",
+        program_options = [
+            "BSCS - Bachelor of Science in Computer Science",
+            "MSCS - Master of Science in Computer Science",
+            "MBA - Master of Business Administration",
+            "BSBA - Bachelor of Science in Business Administration",
+            "MSDS - Master of Science in Data Science",
+            "MSEE - Master of Science in Electrical Engineering",
+            "MSBAn - Master of Science in Business Analytics",
+        ]
+        program_enrolled = st.selectbox(
+            "Program Enrolled",
+            options=program_options,
+            index=(
+                program_options.index(
+                    st.session_state.get("program_enrolled", program_options[0])
+                )
+                if "program_enrolled" in st.session_state
+                else 0
+            ),
+            help="Select the degree program you are currently pursuing.",
         )
+
+    # Right side: Credits Remaining Number Input
     with col4:
-        semesters_remaining = st.number_input(
-            "Semesters remaining",
-            min_value=1,
-            max_value=12,
-            value=st.session_state.get("semesters_remaining", 2),
-            help="How many full semesters do you have left until graduation?",
+        credits_remaining = st.number_input(
+            "Credits remaining",
+            min_value=0,
+            max_value=150,
+            value=st.session_state.get("credits_remaining", 30),
+            help="How many total credits do you have left to complete your degree?",
         )
 
     submitted = st.form_submit_button(
@@ -73,10 +91,10 @@ if submitted:
     if not resume_file or not transcript_file:
         st.error("Please upload both your Resume and Academic Transcript PDFs.")
     else:
-        # Persist study plan inputs in session_state for other pages to access
+        # Update session state with new Study Plan variables
         st.session_state["target_position"] = target_position
-        st.session_state["courses_per_semester"] = int(courses_per_semester)
-        st.session_state["semesters_remaining"] = int(semesters_remaining)
+        st.session_state["program_enrolled"] = program_enrolled
+        st.session_state["credits_remaining"] = int(credits_remaining)
 
         deps = build_stub_deps()
         with st.spinner("Analyzing your profile — this may take up to 30 seconds..."):
@@ -86,6 +104,8 @@ if submitted:
                         resume_pdf_path=resume_file,
                         transcript_pdf_path=transcript_file,
                         target_position=target_position,
+                        program_enrolled=program_enrolled,
+                        credits_remaining=credits_remaining,
                         deps=deps,
                     )
                 )
